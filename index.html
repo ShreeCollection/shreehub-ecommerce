@@ -187,6 +187,53 @@ footer{
     border-radius:50%;
     color:white;
 }
+
+/* NAVBAR */
+.navbar{
+    margin-top:15px;
+}
+
+.navbar ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+
+.navbar li{
+    position:relative;
+    margin:0 15px;
+}
+
+.navbar a{
+    color:#eee;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#d4af37;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+    position:absolute;
+    top:30px;
+    left:0;
+    background:#111;
+    border-radius:10px;
+    display:none;
+    min-width:180px;
+}
+
+.dropdown-menu a{
+    display:block;
+    padding:10px 15px;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
 </style>
 
 <!-- Google Analytics code here -->
@@ -205,6 +252,31 @@ footer{
 <header>
 <h1>Shree Collection | श्री कलेक्शन</h1>
 <p>Premium Gifts • Decor • Party Essentials</p>
+
+<nav class="navbar">
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li class="dropdown">
+<a href="#">Tools ▾</a>
+<div class="dropdown-menu">
+
+<a href="biodata-generator.html" target="_blank">
+Biodata Generator
+</a>
+
+<!-- Future tools add here -->
+<!-- <a href="#">Tool 2</a> -->
+
+</div>
+</li>
+
+</ul>
+</nav>
+
 </header>
 
 <section class="hero">
