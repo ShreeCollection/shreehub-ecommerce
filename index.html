@@ -10,6 +10,9 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
+html {
+  scroll-behavior: smooth;
+}
 body{
     font-family:'Poppins',sans-serif;
     background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 60%);
@@ -195,10 +198,10 @@ footer{
 
 .navbar ul{
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     list-style:none;
+    padding-left:20px;
 }
-
 .navbar li{
     position:relative;
     margin:0 15px;
@@ -231,7 +234,17 @@ footer{
     padding:10px 15px;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown-menu{
+    position:absolute;
+    top:30px;
+    left:0;
+    background:#111;
+    border-radius:10px;
+    display:none;
+    min-width:180px;
+}
+
+.dropdown-menu.show{
     display:block;
 }
 </style>
@@ -260,18 +273,23 @@ footer{
 
 <li><a href="#about">About</a></li>
 
-<li class="dropdown">
-<a href="#">Tools ▾</a>
-<div class="dropdown-menu">
+<li><a href="#products">Products</a></li>
 
-<a href="biodata-generator.html" target="_blank">
+<li><a href="#party">Party</a></li>
+
+<li><a href="#stores">Our Stores</a></li>
+
+<li><a href="#order">Place Order</a></li>
+
+<li class="dropdown">
+<a href="#" onclick="toggleMenu(event)">Tools ▾</a>
+
+<div class="dropdown-menu" id="dropdownMenu">
+<a href="https://yourusername.github.io/biodata-generator" target="_blank">
 Biodata Generator
 </a>
-
-<!-- Future tools add here -->
-<!-- <a href="#">Tool 2</a> -->
-
 </div>
+
 </li>
 
 </ul>
@@ -289,7 +307,7 @@ Biodata Generator
 </section>
 
 <!-- PRODUCTS -->
-<section class="section">
+<section id="products" class="section">
 <h2>Our Products</h2>
 <div class="grid">
 
@@ -303,6 +321,8 @@ Biodata Generator
 
 <div class="card"><div class="icon">👜</div><h3>Bags</h3><ul><li>Handbags</li><li>Daily Use</li></ul></div>
 
+<div class="card"><div class="icon">🔑</div><h3>Key Chains</h3><ul><li>Customised</li><li>Couple</li><li>Name Keychain</li><li>Photo Keychain</li></ul></div>
+
 <div class="card"><div class="icon">🍽</div><h3>Crockery</h3><ul><li>Kitchen</li><li>Serving</li></ul></div>
 
 <div class="card"><div class="icon">✨</div><h3>Figurines</h3><ul><li>Showpieces</li><li>Action Figures</li></ul></div>
@@ -311,7 +331,7 @@ Biodata Generator
 </section>
 
 <!-- PARTY -->
-<section class="section">
+<section id="party" class="section">
 <h2>Party & Decoration</h2>
 <div class="grid">
 
@@ -327,7 +347,7 @@ Biodata Generator
 </section>
 
 <!-- STORES -->
-<section class="section">
+<section id="stores" class="section">
 <h2>Our Stores</h2>
 <div class="grid">
 
@@ -354,13 +374,10 @@ Biodata Generator
 width="100%" height="300" style="border-radius:12px;"></iframe>
 </div>
 
-<p style="text-align:center;margin-top:20px;">
-📧 ShreeCollectionKart@gmail.com
-</p>
 </section>
 
 <!-- ORDER -->
-<section class="section">
+<section id="order" class="section">
 <h2>Place Your Order</h2>
 <form onsubmit="sendWhatsApp(); return false;">
 <input type="text" id="name" placeholder="Your Name" required>
@@ -368,6 +385,82 @@ width="100%" height="300" style="border-radius:12px;"></iframe>
 <textarea id="address" placeholder="Delivery Address" required></textarea>
 <button type="submit">Send Order</button>
 </form>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<h2>About Us</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🏪</div>
+<h3>Who We Are</h3>
+<p>
+Shree Collection is your one-stop destination for premium gifting, home decor, and party essentials.
+We bring trendy, affordable, and high-quality products for every occasion.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Our Mission</h3>
+<p>
+Our mission is to make every celebration special by providing unique and stylish products that
+add joy to your moments.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">💎</div>
+<h3>Why Choose Us</h3>
+<ul>
+<li>Premium Quality Products</li>
+<li>Latest Trending Items</li>
+<li>Affordable Pricing</li>
+<li>Trusted by Customers</li>
+</ul>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:20px;">
+📧 ShreeCollectionKart@gmail.com
+</p>
+
+</section> 
+
+<!-- COUNTERS -->
+<section class="section">
+<h2>Our Achievements</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">😊</div>
+<h3><span class="counter" data-target="1000">1000</span>+</h3>
+<p>Happy Customers</p>
+</div>
+
+<div class="card">
+<div class="icon">🎁</div>
+<h3><span class="counter" data-target="5000">3000</span>+</h3>
+<p>Products Sold</p>
+</div>
+
+<div class="card">
+<div class="icon">⭐</div>
+<h3><span class="counter" data-target="4.8">4.8</span></h3>
+<p>Customer Rating</p>
+</div>
+
+<div class="card">
+<div class="icon">🏪</div>
+<h3><span class="counter" data-target="2">2</span>+</h3>
+<p>Store Locations</p>
+</div>
+
+</div>
 </section>
 
 <footer>
@@ -385,6 +478,18 @@ let address=document.getElementById("address").value;
 let msg=`Order Details:%0AName:${name}%0AProduct:${product}%0AAddress:${address}`;
 window.open(`https://wa.me/919886901584?text=${msg}`);
 }
+
+function toggleMenu(e){
+    e.preventDefault();
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+// close dropdown when clicking outside
+window.addEventListener("click", function(e){
+    if (!e.target.closest(".dropdown")){
+        document.getElementById("dropdownMenu").classList.remove("show");
+    }
+});
 </script>
 
 </body>
