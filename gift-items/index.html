@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +33,7 @@ header h1{
     color:#d4af37;
 }
 
-header p{
-    color:#aaa;
-    font-size:12px;
-}
+header p{color:#aaa;font-size:12px;}
 
 /* NAVBAR */
 .menu-toggle{
@@ -84,8 +80,8 @@ header p{
 /* SEARCH */
 .search-box{text-align:center;margin:20px;}
 .search-box input{
-    padding:10px;
-    width:80%;
+    padding:12px;
+    width:85%;
     max-width:400px;
     border-radius:25px;
     border:none;
@@ -100,18 +96,23 @@ header p{
     border-radius:20px;
     background:#222;
     color:#fff;
+    cursor:pointer;
 }
 .filters button.active{
     background:#d4af37;
     color:black;
 }
 
+/* SECTION */
+.section{
+    padding:40px 20px;
+}
+
 /* GRID */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
-    padding:20px;
 }
 
 /* CARD */
@@ -133,9 +134,25 @@ header p{
 
 .card-content{padding:15px;}
 
-.card h3{color:#d4af37;}
+.card h3{color:#d4af37;margin-bottom:5px;}
 
-.price{margin:10px 0;font-weight:bold;}
+.card p{
+    font-size:13px;
+    color:#ccc;
+    margin-bottom:8px;
+}
+
+.card ul{
+    font-size:12px;
+    color:#bbb;
+    margin-bottom:10px;
+    padding-left:15px;
+}
+
+.price{
+    margin:10px 0;
+    font-weight:bold;
+}
 
 .btn{
     display:block;
@@ -145,6 +162,42 @@ header p{
     background:#25D366;
     color:white;
     text-decoration:none;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+}
+
+.modal-content{
+    background:#111;
+    margin:5% auto;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid rgba(212,175,55,0.3);
+}
+
+.modal img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.close{
+    float:right;
+    font-size:25px;
+    cursor:pointer;
 }
 
 /* FOOTER */
@@ -206,8 +259,20 @@ footer{
 <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db">
 <div class="card-content">
 <h3>Custom Photo Frame</h3>
+<p>Beautiful personalized frame for special memories.</p>
+<ul>
+<li>✔ Custom Name & Photo</li>
+<li>✔ LED Option</li>
+<li>✔ Premium Finish</li>
+</ul>
 <div class="price">₹499</div>
-<a class="btn" onclick="order('Custom Photo Frame')">Order on WhatsApp</a>
+<a class="btn" onclick="openModal(
+'Custom Photo Frame',
+'https://images.unsplash.com/photo-1607083206968-13611e3d76db',
+'Beautiful personalized frame for special memories.',
+'₹499',
+['Custom Name & Photo','LED Option','Premium Finish']
+)">View Details</a>
 </div>
 </div>
 
@@ -215,8 +280,20 @@ footer{
 <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da">
 <div class="card-content">
 <h3>Premium Gift Hamper</h3>
+<p>Luxury hamper with chocolates & decor.</p>
+<ul>
+<li>✔ Premium Packaging</li>
+<li>✔ Ready to Gift</li>
+<li>✔ Wedding Special</li>
+</ul>
 <div class="price">₹1499</div>
-<a class="btn" onclick="order('Premium Gift Hamper')">Order on WhatsApp</a>
+<a class="btn" onclick="openModal(
+'Premium Gift Hamper',
+'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da',
+'Luxury hamper with chocolates & decor.',
+'₹1499',
+['Premium Packaging','Ready to Gift','Wedding Special']
+)">View Details</a>
 </div>
 </div>
 
@@ -224,8 +301,20 @@ footer{
 <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659">
 <div class="card-content">
 <h3>Couple Gift Box</h3>
+<p>Romantic gift box for couples.</p>
+<ul>
+<li>✔ Love Theme</li>
+<li>✔ Anniversary Special</li>
+<li>✔ Couple Items</li>
+</ul>
 <div class="price">₹999</div>
-<a class="btn" onclick="order('Couple Gift Box')">Order on WhatsApp</a>
+<a class="btn" onclick="openModal(
+'Couple Gift Box',
+'https://images.unsplash.com/photo-1511988617509-a57c8a288659',
+'Romantic gift box for couples.',
+'₹999',
+['Love Theme','Anniversary Special','Couple Items']
+)">View Details</a>
 </div>
 </div>
 
@@ -233,11 +322,36 @@ footer{
 <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
 <div class="card-content">
 <h3>Funny Mug</h3>
+<p>Quirky mug to make people smile.</p>
+<ul>
+<li>✔ Funny Design</li>
+<li>✔ Budget Friendly</li>
+<li>✔ Gift for Friends</li>
+</ul>
 <div class="price">₹299</div>
-<a class="btn" onclick="order('Funny Mug')">Order on WhatsApp</a>
+<a class="btn" onclick="openModal(
+'Funny Mug',
+'https://images.unsplash.com/photo-1585386959984-a4155224a1ad',
+'Quirky mug to make people smile.',
+'₹299',
+['Funny Design','Budget Friendly','Gift for Friends']
+)">View Details</a>
 </div>
 </div>
 
+</div>
+
+<!-- MODAL -->
+<div id="productModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<img id="modalImg">
+<h2 id="modalTitle"></h2>
+<p id="modalDesc"></p>
+<ul id="modalFeatures"></ul>
+<div class="price" id="modalPrice"></div>
+<a id="modalBtn" class="btn">Order on WhatsApp</a>
+</div>
 </div>
 
 <footer>
@@ -276,6 +390,27 @@ document.getElementById("search").addEventListener("keyup", function(){
         card.style.display=text.includes(value) ? "block" : "none";
     });
 });
+
+function openModal(title,img,desc,price,features){
+    document.getElementById("modalTitle").innerText=title;
+    document.getElementById("modalImg").src=img;
+    document.getElementById("modalDesc").innerText=desc;
+    document.getElementById("modalPrice").innerText=price;
+
+    let list="";
+    features.forEach(f=>list+=`<li>${f}</li>`);
+    document.getElementById("modalFeatures").innerHTML=list;
+
+    document.getElementById("modalBtn").onclick=function(){
+        order(title);
+    };
+
+    document.getElementById("productModal").style.display="block";
+}
+
+function closeModal(){
+    document.getElementById("productModal").style.display="none";
+}
 
 function order(product){
     let msg=`I want to order: ${product}`;
