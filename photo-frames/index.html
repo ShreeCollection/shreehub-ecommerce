@@ -9,193 +9,56 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 60%);color:#eee;}
 
-body{
-    font-family:'Poppins',sans-serif;
-    background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 60%);
-    color:#eee;
-}
+header{background:rgba(0,0,0,0.7);padding:20px;text-align:center;}
+header h1{color:#d4af37;}
 
-/* HEADER */
-header{
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-    padding:20px;
-    text-align:center;
-    border-bottom:1px solid rgba(212,175,55,0.2);
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-header h1{
-    font-family:'Playfair Display',serif;
-    color:#d4af37;
-}
-
-header p{color:#aaa;font-size:12px;}
-
-/* NAV */
-.navbar ul{
-    display:flex;
-    list-style:none;
-    padding-left:20px;
-}
+.navbar ul{display:flex;list-style:none;padding-left:20px;}
 .navbar li{margin:0 15px;}
 .navbar a{color:#eee;text-decoration:none;}
-.navbar a:hover{color:#d4af37;}
 
-/* SEARCH */
 .search-box{text-align:center;margin:20px;}
-.search-box input{
-    padding:12px;
-    width:85%;
-    max-width:400px;
-    border-radius:25px;
-    border:none;
-}
+.search-box input{padding:12px;width:85%;max-width:400px;border-radius:25px;border:none;}
 
-/* FILTER */
 .filters{text-align:center;margin-bottom:20px;}
-.filters button{
-    margin:5px;
-    padding:8px 15px;
-    border:none;
-    border-radius:20px;
-    background:#222;
-    color:#fff;
-}
-.filters button.active{
-    background:#d4af37;color:black;
-}
+.filters button{margin:5px;padding:8px 15px;border:none;border-radius:20px;background:#222;color:#fff;}
+.filters button.active{background:#d4af37;color:black;}
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    padding:20px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:20px;}
 
-/* CARD */
-.card{
-    background:#111;
-    border-radius:15px;
-    overflow:hidden;
-    border:1px solid rgba(212,175,55,0.2);
-}
-.card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
+.card{background:#111;border-radius:15px;border:1px solid rgba(212,175,55,0.2);}
+.card img{width:100%;height:180px;object-fit:cover;}
 .card-content{padding:15px;}
-.card h3{color:#d4af37;}
+.price{color:#d4af37;margin:10px 0;}
 
-.price{
-    margin:10px 0;
-    font-weight:bold;
-    color:#d4af37;
-}
+.btn{background:#25D366;padding:10px;border-radius:20px;color:white;border:none;cursor:pointer;width:100%;}
 
-.btn{
-    display:block;
-    padding:10px;
-    text-align:center;
-    background:#25D366;
-    border-radius:20px;
-    color:white;
-    text-decoration:none;
-    cursor:pointer;
-}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;align-items:center;justify-content:center;opacity:0;transition:.3s;}
+.modal.show{opacity:1;}
 
-/* MODAL FIXED */
-.modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    z-index:999;
-    align-items:center;
-    justify-content:center;
-}
+.modal-content{background:#111;padding:20px;width:90%;max-width:400px;border-radius:15px;position:relative;transform:scale(.8);transition:.3s;}
+.modal.show .modal-content{transform:scale(1);}
 
-.modal-content{
-    background:#111;
-    padding:20px;
-    width:90%;
-    max-width:400px;
-    border-radius:15px;
-    text-align:center;
-    position:relative;
-}
+.close{position:absolute;top:10px;right:15px;font-size:25px;cursor:pointer;}
 
-.close{
-    position:absolute;
-    top:10px;
-    right:15px;
-    font-size:25px;
-    cursor:pointer;
-}
+.image-container img{width:100%;height:220px;transition:.4s;}
+.image-container:hover img{transform:scale(1.3);}
 
-/* IMAGE ZOOM */
-.image-container{
-    overflow:hidden;
-    border-radius:10px;
-}
-.image-container img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    transition:transform 0.4s ease;
-}
-.image-container:hover img{
-    transform:scale(1.3);
-}
+.gallery{display:flex;gap:10px;justify-content:center;margin:10px;}
+.gallery img{width:60px;height:60px;cursor:pointer;opacity:.7;}
+.gallery img:hover{opacity:1;border:2px solid gold;}
 
-/* GALLERY */
-.gallery{
-    display:flex;
-    gap:10px;
-    margin:10px 0;
-    justify-content:center;
-}
-.gallery img{
-    width:60px;
-    height:60px;
-    object-fit:cover;
-    border-radius:8px;
-    cursor:pointer;
-    opacity:0.7;
-}
-.gallery img:hover{
-    opacity:1;
-    border:2px solid #d4af37;
-}
-
-#noResults{text-align:center;display:none;color:#aaa;}
+.loader{position:fixed;width:100%;height:100%;background:#000;color:#d4af37;display:none;align-items:center;justify-content:center;z-index:1000;}
 
 footer{text-align:center;padding:20px;border-top:1px solid rgba(212,175,55,0.2);}
-
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1> Shree Collection | श्री कलेक्शन </h1>
-<p>Crystal • Laminated • Matte • 3D/5D • Customised • LED </p>
+<h1>Shree Collection</h1>
 <nav class="navbar">
 <ul>
 <li><a href="/">Home</a></li>
@@ -204,164 +67,144 @@ footer{text-align:center;padding:20px;border-top:1px solid rgba(212,175,55,0.2);
 </nav>
 </header>
 
-<!-- SEARCH -->
 <div class="search-box">
 <input type="text" id="search" placeholder="Search frames...">
 </div>
 
-<!-- FILTER -->
 <div class="filters">
 <button onclick="setCategory('all')" class="active">All</button>
 <button onclick="setCategory('custom')">Spiritual</button>
 <button onclick="setCategory('crystal')">Premium</button>
 </div>
 
-<!-- PRODUCTS -->
 <div class="grid" id="productGrid">
 
-<!-- Cards unchanged -->
+<!-- 1 -->
 <div class="card" data-category="custom">
 <img src="/assets/images/photo-frames/7horse-stone.png">
 <div class="card-content">
 <h3>7 Horse Stone Frame</h3>
 <div class="price">₹399</div>
-<a class="btn" onclick="openModal('7 Horse Stone Frame','/assets/images/photo-frames/7horse-stone.png','Symbol of success and prosperity','₹399',['Vastu Approved','Premium Print'])">View</a>
+<button class="btn" onclick="openModal('7 Horse Stone Frame','/assets/images/photo-frames/7horse-stone.png','Success & prosperity','₹399',['Vastu Approved'])">View</button>
 </div>
 </div>
 
+<!-- 2 -->
 <div class="card" data-category="custom">
 <img src="/assets/images/photo-frames/Haare-ka-Sahara.png">
 <div class="card-content">
 <h3>Haare Ka Sahara</h3>
 <div class="price">₹399</div>
-<a class="btn" onclick="openModal('Haare Ka Sahara','/assets/images/photo-frames/Haare-ka-Sahara.png','Spiritual positivity frame','₹399',['Religious','High Quality'])">View</a>
+<button class="btn" onclick="openModal('Haare Ka Sahara','/assets/images/photo-frames/Haare-ka-Sahara.png','Spiritual','₹399',['Religious'])">View</button>
 </div>
 </div>
 
+<!-- 3 -->
 <div class="card" data-category="custom">
 <img src="/assets/images/photo-frames/IncreasesSales.png">
 <div class="card-content">
-<h3>Increase Sales Frame</h3>
+<h3>Increase Sales</h3>
 <div class="price">₹399</div>
-<a class="btn" onclick="openModal('Increase Sales Frame','/assets/images/photo-frames/IncreasesSales.png','Boost business growth','₹399',['Shop Use','Attract Customers'])">View</a>
+<button class="btn" onclick="openModal('Increase Sales','/assets/images/photo-frames/IncreasesSales.png','Business growth','₹399',['Shop Use'])">View</button>
 </div>
 </div>
 
+<!-- 4 -->
 <div class="card" data-category="crystal">
 <img src="/assets/images/photo-frames/ShreeYantra.png">
 <div class="card-content">
 <h3>Shree Yantra</h3>
 <div class="price">₹399</div>
-<a class="btn" onclick="openModal('Shree Yantra','/assets/images/photo-frames/ShreeYantra.png','Wealth & peace energy','₹399',['Spiritual','Premium'])">View</a>
+<button class="btn" onclick="openModal('Shree Yantra','/assets/images/photo-frames/ShreeYantra.png','Wealth & peace','₹399',['Spiritual'])">View</button>
 </div>
 </div>
 
+<!-- 5 -->
 <div class="card" data-category="crystal">
 <img src="/assets/images/photo-frames/laxmi_Kuber.png">
 <div class="card-content">
 <h3>Laxmi Kuber</h3>
 <div class="price">₹399</div>
-<a class="btn" onclick="openModal('Laxmi Kuber','/assets/images/photo-frames/laxmi_Kuber.png','Attract prosperity','₹399',['Divine','Money Attraction'])">View</a>
+<button class="btn" onclick="openModal('Laxmi Kuber','/assets/images/photo-frames/laxmi_Kuber.png','Prosperity','₹399',['Divine'])">View</button>
 </div>
 </div>
 
 </div>
 
-<p id="noResults">No results found 😕</p>
-
-<!-- MODAL -->
 <div id="modal" class="modal">
 <div class="modal-content">
-
-<span class="close" onclick="closeModal()">&times;</span>
-
-<div class="image-container">
-<img id="mImg">
-</div>
-
+<span class="close" onclick="closeModal()">×</span>
+<div class="image-container"><img id="mImg"></div>
 <div id="gallery" class="gallery"></div>
-
 <h2 id="mTitle"></h2>
 <p id="mDesc"></p>
 <ul id="mFeatures"></ul>
 <div class="price" id="mPrice"></div>
-
-<a id="mBtn" class="btn">Order on WhatsApp</a>
-
+<button id="mBtn" class="btn">Order on WhatsApp</button>
 </div>
 </div>
+
+<div id="loader" class="loader">Loading...</div>
 
 <footer>
 <p>© 2026 Shree Collection</p>
 </footer>
-
-<a class="whatsapp" href="https://wa.me/919886901584">💬</a>
 
 <script>
 let selectedCategory="all";
 
 function setCategory(cat){
 selectedCategory=cat;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
 event.target.classList.add("active");
 runSearch();
 }
 
 function runSearch(){
 let val=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-let found=false;
-
-cards.forEach(card=>{
-let text=card.innerText.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+let match=card.innerText.toLowerCase().includes(val);
 let cat=card.dataset.category;
-
-if(text.includes(val)&&(selectedCategory==="all"||cat.includes(selectedCategory))){
-card.style.display="block";
-found=true;
-}else{
-card.style.display="none";
-}
+card.style.display=(match&&(selectedCategory==="all"||cat.includes(selectedCategory)))?"block":"none";
 });
-
-document.getElementById("noResults").style.display=found?"none":"block";
 }
 
-document.getElementById("search").addEventListener("keyup",runSearch);
-
-/* MODAL */
 function openModal(title,img,desc,price,features){
+document.getElementById("loader").style.display="flex";
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+
 document.getElementById("mTitle").innerText=title;
 document.getElementById("mImg").src=img;
 document.getElementById("mDesc").innerText=desc;
 document.getElementById("mPrice").innerText=price;
 
+document.getElementById("gallery").innerHTML=`<img src="${img}" onclick="changeImage('${img}')">`;
+
 let list="";
-features.forEach(f=>list+=`<li>✔ ${f}</li>`);
+features.forEach(f=>list+=`<li>${f}</li>`);
 document.getElementById("mFeatures").innerHTML=list;
 
-document.getElementById("gallery").innerHTML =
-`<img src="${img}" onclick="changeImage('${img}')">`;
-
-document.getElementById("mBtn").onclick=function(){
-let msg=`I want to order:\n${title}\nPrice: ${price}`;
-window.open(`https://wa.me/919886901584?text=${encodeURIComponent(msg)}`);
+document.getElementById("mBtn").onclick=()=>{
+window.open(`https://wa.me/919886901584?text=I want ${title}`);
 };
 
-document.getElementById("modal").style.display="flex";
+let modal=document.getElementById("modal");
+modal.style.display="flex";
+setTimeout(()=>modal.classList.add("show"),10);
+
+},300);
 }
 
-function changeImage(src){
-document.getElementById("mImg").src=src;
-}
+function changeImage(src){document.getElementById("mImg").src=src;}
 
 function closeModal(){
-document.getElementById("modal").style.display="none";
+let modal=document.getElementById("modal");
+modal.classList.remove("show");
+setTimeout(()=>modal.style.display="none",300);
 }
 
-window.onclick=function(e){
-if(e.target.id==="modal"){closeModal();}
-}
+window.onclick=e=>{if(e.target.id==="modal")closeModal();}
 </script>
 
 </body>
