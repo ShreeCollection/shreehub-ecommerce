@@ -134,7 +134,7 @@ header p{color:#aaa;font-size:12px;}
 
 .card-content{padding:15px;}
 
-.card h3{color:#d4af37;margin-bottom:5px;}
+.card h3{color:#d4af37;margin-bottom:18px;}
 
 .card p{
     font-size:13px;
@@ -143,10 +143,24 @@ header p{color:#aaa;font-size:12px;}
 }
 
 .card ul{
-    font-size:12px;
-    color:#bbb;
-    margin-bottom:10px;
-    padding-left:15px;
+    list-style:none;
+    padding-left:0;
+    margin:10px 0;
+}
+
+.card ul li{
+    font-size:13px;
+    color:#ccc;
+    margin:4px 0;
+    display:flex;
+    align-items:center;
+}
+
+.card ul li::before{
+    content:"✔";
+    color:#25D366;
+    margin-right:8px;
+    font-weight:bold;
 }
 
 .price{
@@ -156,12 +170,16 @@ header p{color:#aaa;font-size:12px;}
 
 .btn{
     display:block;
+    width:100%;              /* 🔥 full width */
     text-align:center;
-    padding:10px;
+    padding:12px;
     border-radius:25px;
     background:#25D366;
     color:white;
     text-decoration:none;
+    font-weight:500;
+    border:none;
+    cursor:pointer;
 }
 
 /* MODAL */
