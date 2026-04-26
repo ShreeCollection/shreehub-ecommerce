@@ -1,1 +1,325 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Frames | Shree Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 60%);
+    color:#eee;
+}
+
+/* HEADER */
+header{
+    background:rgba(0,0,0,0.7);
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid rgba(212,175,55,0.2);
+}
+
+header h1{
+    font-family:'Playfair Display',serif;
+    color:#d4af37;
+}
+
+/* NAV */
+.navbar ul{
+    display:flex;
+    list-style:none;
+    padding-left:20px;
+}
+.navbar li{margin:0 15px;}
+.navbar a{color:#eee;text-decoration:none;}
+.navbar a:hover{color:#d4af37;}
+
+/* SEARCH */
+.search-box{text-align:center;margin:20px;}
+.search-box input{
+    padding:12px;
+    width:85%;
+    max-width:400px;
+    border-radius:25px;
+    border:none;
+}
+
+/* SUGGESTIONS */
+.suggestions{
+    max-width:400px;
+    margin:5px auto;
+    background:#111;
+    border-radius:10px;
+    display:none;
+}
+.suggestions div{padding:10px;cursor:pointer;}
+.suggestions div:hover{background:#222;}
+
+/* FILTER */
+.filters{text-align:center;margin-bottom:20px;}
+.filters button{
+    margin:5px;
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    background:#222;
+    color:#fff;
+}
+.filters button.active{
+    background:#d4af37;color:black;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:#111;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid rgba(212,175,55,0.2);
+}
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+.card-content{padding:15px;}
+.card h3{color:#d4af37;}
+
+.price{
+    margin:10px 0;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+.btn{
+    display:block;
+    padding:10px;
+    text-align:center;
+    background:#25D366;
+    border-radius:20px;
+    color:white;
+    text-decoration:none;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+}
+.modal-content{
+    background:#111;
+    margin:5% auto;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    border-radius:15px;
+    text-align:center;
+}
+.modal img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.close{float:right;font-size:25px;cursor:pointer;}
+
+.highlight{background:#d4af37;color:black;}
+
+#noResults{text-align:center;display:none;color:#aaa;}
+
+footer{text-align:center;padding:20px;border-top:1px solid rgba(212,175,55,0.2);}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Shree Collection</h1>
+<nav class="navbar">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/gift-items/">Gift Items</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- SEARCH -->
+<div class="search-box">
+<input type="text" id="search">
+<div id="suggestions" class="suggestions"></div>
+</div>
+
+<!-- FILTER -->
+<div class="filters">
+<button onclick="setCategory('all')" class="active">All</button>
+<button onclick="setCategory('custom')">Spiritual</button>
+<button onclick="setCategory('crystal')">Premium</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="grid" id="productGrid">
+
+<div class="card" data-category="custom">
+<img src="/assets/images/photo-frames/7horse-stone.png">
+<div class="card-content">
+<h3>7 Horse Stone Frame</h3>
+<div class="price">₹399</div>
+<a class="btn" onclick="openModal('7 Horse Stone Frame','/assets/images/photo-frames/7horse-stone.png','Symbol of success and prosperity','₹399',['Vastu Approved','Premium Print'])">View</a>
+</div>
+</div>
+
+<div class="card" data-category="custom">
+<img src="/assets/images/photo-frames/Haare-ka-Sahara.png">
+<div class="card-content">
+<h3>Haare Ka Sahara</h3>
+<div class="price">₹399</div>
+<a class="btn" onclick="openModal('Haare Ka Sahara','/assets/images/photo-frames/Haare-ka-Sahara.png','Spiritual positivity frame','₹399',['Religious','High Quality'])">View</a>
+</div>
+</div>
+
+<div class="card" data-category="custom">
+<img src="/assets/images/photo-frames/IncreasesSales.png">
+<div class="card-content">
+<h3>Increase Sales Frame</h3>
+<div class="price">₹399</div>
+<a class="btn" onclick="openModal('Increase Sales Frame','/assets/images/photo-frames/IncreasesSales.png','Boost business growth','₹399',['Shop Use','Attract Customers'])">View</a>
+</div>
+</div>
+
+<div class="card" data-category="crystal">
+<img src="/assets/images/photo-frames/ShreeYantra.png">
+<div class="card-content">
+<h3>Shree Yantra</h3>
+<div class="price">₹399</div>
+<a class="btn" onclick="openModal('Shree Yantra','/assets/images/photo-frames/ShreeYantra.png','Wealth & peace energy','₹399',['Spiritual','Premium'])">View</a>
+</div>
+</div>
+
+<div class="card" data-category="crystal">
+<img src="/assets/images/photo-frames/laxmi_Kuber.png">
+<div class="card-content">
+<h3>Laxmi Kuber</h3>
+<div class="price">₹399</div>
+<a class="btn" onclick="openModal('Laxmi Kuber','/assets/images/photo-frames/laxmi_Kuber.png','Attract prosperity','₹399',['Divine','Money Attraction'])">View</a>
+</div>
+</div>
+
+</div>
+
+<p id="noResults">No results found 😕</p>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<img id="mImg">
+<h2 id="mTitle"></h2>
+<p id="mDesc"></p>
+<ul id="mFeatures"></ul>
+<div class="price" id="mPrice"></div>
+<a id="mBtn" class="btn">Order on WhatsApp</a>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Shree Collection</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919886901584">💬</a>
+
+<script>
+const searchInput=document.getElementById("search");
+const suggestions=document.getElementById("suggestions");
+let selectedCategory="all";
+
+/* debounce */
+function debounce(func,delay){
+let t;
+return function(){
+clearTimeout(t);
+t=setTimeout(()=>func.apply(this,arguments),delay);
+}
+}
+
+/* category */
+function setCategory(cat){
+selectedCategory=cat;
+document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+event.target.classList.add("active");
+runSearch();
+}
+
+/* search */
+const runSearch=debounce(function(){
+let val=searchInput.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+let found=false;
+
+cards.forEach(card=>{
+let text=card.innerText.toLowerCase();
+let cat=card.dataset.category;
+
+if(text.includes(val)&&(selectedCategory==="all"||cat.includes(selectedCategory))){
+card.style.display="block";
+found=true;
+}else{
+card.style.display="none";
+}
+});
+
+document.getElementById("noResults").style.display=found?"none":"block";
+},300);
+
+searchInput.addEventListener("keyup",runSearch);
+
+/* modal */
+function openModal(title,img,desc,price,features){
+document.getElementById("mTitle").innerText=title;
+document.getElementById("mImg").src=img;
+document.getElementById("mDesc").innerText=desc;
+document.getElementById("mPrice").innerText=price;
+
+let list="";
+features.forEach(f=>list+=`<li>✔ ${f}</li>`);
+document.getElementById("mFeatures").innerHTML=list;
+
+document.getElementById("mBtn").onclick=function(){
+let msg=`I want to order:\n${title}\nPrice: ${price}`;
+window.open(`https://wa.me/919886901584?text=${encodeURIComponent(msg)}`);
+};
+
+document.getElementById("modal").style.display="block";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
