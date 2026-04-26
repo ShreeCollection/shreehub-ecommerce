@@ -247,6 +247,45 @@ footer{
 .dropdown-menu.show{
     display:block;
 }
+
+/* MOBILE NAV FIX */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:#d4af37;
+    cursor:pointer;
+    text-align:right;
+    padding-right:20px;
+}
+
+/* Mobile Styles */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .navbar ul{
+        flex-direction:column;
+        align-items:flex-start;
+        background:#111;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        display:none;
+        padding:15px;
+    }
+
+    .navbar ul.show{
+        display:flex;
+    }
+
+    .navbar li{
+        margin:10px 0;
+    }
+}
+
 </style>
 
 <!-- Google Analytics code here -->
@@ -263,8 +302,11 @@ footer{
 <body>
 
 <header>
+
 <h1>Shree Collection | श्री कलेक्शन</h1>
 <p>Premium Gifts • Decor • Party Essentials</p>
+
+<div class="menu-toggle" onclick="toggleNav()">☰</div>
 
 <nav class="navbar">
 <ul>
@@ -311,9 +353,20 @@ Biodata Generator
 <h2>Our Products</h2>
 <div class="grid">
 
-<div class="card"><div class="icon">🖼</div><h3>Photo Frames</h3><ul><li>Divine</li><li>Muslim</li><li>Customised</li><li>LED</li></ul></div>
+<div class="card"><div class="icon">🖼</div><h3>Photo Frames</h3><ul><li>Crystal</li><li>Matte</li><li>Laminated<li>3D/5D</li></li><li>Customised</li><li>LED</li></ul></div>
 
-<div class="card"><div class="icon">🎁</div><h3>Gift Items</h3><ul><li>Birthday</li><li>Anniversary</li><li>Wedding</li><li>Kids</li></ul></div>
+<a href="gift-items/index.html" style="text-decoration:none;color:inherit;">
+<div class="card">
+  <div class="icon">🎁</div>
+  <h3>Gift Items</h3>
+  <ul>
+    <li>Personalized Gifts</li>
+    <li>Experience Gifts</li>
+    <li>Luxury & Premium</li>
+    <li>Romantic Gifts</li>
+  </ul>
+</div>
+</a>
 
 <div class="card"><div class="icon">🏠</div><h3>Home Decor</h3><ul><li>Wall Decor</li><li>Showpieces</li></ul></div>
 
@@ -444,7 +497,7 @@ add joy to your moments.
 
 <div class="card">
 <div class="icon">🎁</div>
-<h3><span class="counter" data-target="5000">3000</span>+</h3>
+<h3><span class="counter" data-target="5000">50000</span>+</h3>
 <p>Products Sold</p>
 </div>
 
@@ -470,6 +523,11 @@ add joy to your moments.
 <a class="whatsapp" href="https://wa.me/919886901584">💬</a>
 
 <script>
+
+function toggleNav(){
+    document.querySelector(".navbar ul").classList.toggle("show");
+}
+
 function sendWhatsApp(){
 let name=document.getElementById("name").value;
 let product=document.getElementById("product").value;
