@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Smart Gift Finder| Shree Collection</title>
-<meta name="description" content="Premium smart gift finder with menu, horizontal product rows, auto filters, your products first, then online suggestions.">
+<meta name="description" content="200+ smart gift suggestions with unique product images, premium design, menu, budget filters, horizontal rows.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,19 +13,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
 font-family:'Poppins',sans-serif;
-background:radial-gradient(circle at top,#1a1a1a,#0d0d0d 60%);
+background:radial-gradient(circle at top,#151515,#090909 60%);
 color:#fff;
 overflow-x:hidden;
 }
@@ -79,9 +72,7 @@ font-size:14px;
 transition:.3s;
 }
 
-.navbar a:hover{
-color:#d4af37;
-}
+.navbar a:hover{color:#d4af37;}
 
 /* HERO */
 .hero{
@@ -96,9 +87,7 @@ line-height:1.3;
 margin-bottom:12px;
 }
 
-.hero span{
-color:#d4af37;
-}
+.hero span{color:#d4af37;}
 
 .hero p{
 max-width:760px;
@@ -107,14 +96,13 @@ color:#bbb;
 line-height:1.8;
 }
 
-/* CONTAINER */
+/* MAIN */
 .container{
-max-width:1400px;
+max-width:1450px;
 margin:auto;
 padding:20px;
 }
 
-/* FILTER */
 .glass{
 background:rgba(255,255,255,.05);
 border:1px solid rgba(212,175,55,.15);
@@ -175,7 +163,7 @@ font-weight:700;
 cursor:pointer;
 }
 
-/* PRODUCT ROW */
+/* ROW */
 .product-row{
 display:flex;
 gap:18px;
@@ -184,10 +172,7 @@ scroll-behavior:smooth;
 padding-bottom:12px;
 }
 
-.product-row::-webkit-scrollbar{
-height:8px;
-}
-
+.product-row::-webkit-scrollbar{height:8px;}
 .product-row::-webkit-scrollbar-thumb{
 background:#d4af37;
 border-radius:20px;
@@ -217,6 +202,7 @@ height:190px;
 object-fit:cover;
 border-radius:14px;
 margin-bottom:14px;
+background:#111;
 }
 
 .card h3{
@@ -296,18 +282,6 @@ margin-bottom:16px;
 display:none;
 }
 
-.modal-box h3{
-font-size:26px;
-color:#d4af37;
-margin-bottom:14px;
-}
-
-.modal-box p{
-color:#ddd;
-line-height:1.8;
-margin-bottom:16px;
-}
-
 .close-btn{
 width:100%;
 padding:14px;
@@ -342,9 +316,7 @@ font-size:14px;
 /* MOBILE */
 @media(max-width:768px){
 
-.menu-toggle{
-display:block;
-}
+.menu-toggle{display:block;}
 
 .navbar ul{
 display:none;
@@ -355,17 +327,10 @@ border-radius:12px;
 margin-top:12px;
 }
 
-.navbar ul.show{
-display:flex;
-}
+.navbar ul.show{display:flex;}
 
-.hero h2{
-font-size:34px;
-}
-
-.section-title{
-font-size:26px;
-}
+.hero h2{font-size:34px;}
+.section-title{font-size:26px;}
 
 .card{
 min-width:230px;
@@ -375,7 +340,6 @@ max-width:230px;
 .btn-row{
 flex-direction:column;
 }
-
 }
 </style>
 </head>
@@ -383,7 +347,6 @@ flex-direction:column;
 <body>
 
 <header>
-
 <h1>Smart Gift Finder</h1>
 <p>Presented by Shree Collection</p>
 
@@ -391,29 +354,23 @@ flex-direction:column;
 
 <nav class="navbar">
 <ul id="navMenu">
-
 <li><a href="/">🏠 Home</a></li>
 <li><a href="/gift-items/">🎁 Gift Items</a></li>
 <li><a href="/photo-frames/">🖼 Photo Frames</a></li>
 <li><a href="/tools/biodata-generator/">📄 Biodata Tool</a></li>
 <li><a href="/#order">🛒 Order</a></li>
-
 </ul>
 </nav>
-
 </header>
 
 <section class="hero">
 <h2>Find The <span>Perfect Gift</span> Instantly 🎁</h2>
-<p>
-Swipe products like Amazon. Your products first, then smart online suggestions.
-</p>
+<p>200+ gifts • unique product images • every budget • swipe suggestions</p>
 </section>
 
 <div class="container">
 
 <div class="glass">
-
 <div class="form-grid">
 
 <select id="relation">
@@ -448,55 +405,38 @@ Swipe products like Amazon. Your products first, then smart online suggestions.
 </select>
 
 </div>
-
 </div>
 
-<!-- OUR PRODUCTS -->
 <div class="section">
-
 <div class="section-header">
 <div class="section-title">🎁 Shree Collection Picks</div>
-
 <div class="arrow-wrap">
 <button class="arrow-btn" onclick="scrollRow('ownRow',-320)">‹</button>
 <button class="arrow-btn" onclick="scrollRow('ownRow',320)">›</button>
 </div>
 </div>
-
 <div class="product-row" id="ownRow"></div>
-
 </div>
 
-<!-- ONLINE -->
 <div class="section">
-
 <div class="section-header">
 <div class="section-title">🌐 More Online Suggestions</div>
-
 <div class="arrow-wrap">
 <button class="arrow-btn" onclick="scrollRow('onlineRow',-320)">‹</button>
 <button class="arrow-btn" onclick="scrollRow('onlineRow',320)">›</button>
 </div>
 </div>
-
 <div class="product-row" id="onlineRow"></div>
-
 </div>
 
 </div>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-box">
-
 <img id="modalImage" class="modal-image">
-
 <h3 id="modalTitle"></h3>
-
 <p id="modalText"></p>
-
 <button class="close-btn" onclick="closeModal()">Close</button>
-
 </div>
 </div>
 
@@ -511,7 +451,7 @@ document.getElementById("navMenu").classList.toggle("show");
 
 let myProducts=[];
 
-/* LOAD OWN PRODUCTS */
+/* OWN PRODUCTS */
 Promise.all([
 fetch("/gift-items/products.json").then(r=>r.json()),
 fetch("/photo-frames/products.json").then(r=>r.json())
@@ -524,57 +464,82 @@ generateGifts();
 generateGifts();
 });
 
-/* FALLBACK */
-const onlineProducts = [
-["Rose Teddy Combo","Girlfriend"],
-["Chocolate Gift Box","Girlfriend"],
-["Leather Wallet","Boyfriend"],
-["Smart Watch","Boyfriend"],
-["Luxury Saree","Wife"],
-["Gold Necklace","Wife"],
-["Classic Watch","Husband"],
-["Premium Shirt","Husband"],
-["Kitchen Set","Mother"],
-["Flower Bouquet","Mother"],
-["Formal Wallet","Father"],
-["Travel Bag","Father"],
-["Funny Mug","Friend"],
-["Bluetooth Speaker","Friend"],
-["Couple Mug Set","Girlfriend"],
-["Gaming Mouse","Boyfriend"],
-["Designer Handbag","Wife"],
-["Gym Kit","Husband"],
-["Decor Vase","Mother"],
-["Coffee Hamper","Father"],
-["Snack Box","Friend"]
-].map((x,i)=>{
+/* IMAGE MAP */
+function getProductImage(name){
 
-let name=x[0];
-let relation=x[1];
-let store=i%2===0?"Amazon":"Flipkart";
+name=name.toLowerCase();
 
-return{
+if(name.includes("rose")) return "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=800";
+if(name.includes("teddy")) return "https://images.unsplash.com/photo-1615486363973-f79f6d7f45b4?w=800";
+if(name.includes("perfume")) return "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800";
+if(name.includes("wallet")) return "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800";
+if(name.includes("watch")) return "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800";
+if(name.includes("mug")) return "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=800";
+if(name.includes("speaker")) return "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800";
+if(name.includes("saree")) return "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800";
+if(name.includes("handbag")) return "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800";
+if(name.includes("necklace")) return "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800";
+if(name.includes("gaming")) return "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800";
+if(name.includes("phone")) return "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800";
+if(name.includes("flower")) return "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800";
+if(name.includes("kitchen")) return "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800";
+if(name.includes("shoe")) return "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800";
+if(name.includes("bag")) return "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800";
+if(name.includes("ring")) return "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800";
+if(name.includes("chocolate")) return "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800";
+if(name.includes("lamp")) return "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800";
+if(name.includes("frame")) return "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800";
+
+return "https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800";
+}
+
+/* PRODUCT DATABASE 200+ */
+const groups={
+Girlfriend:["Rose Teddy","Chocolate Box","Couple Mug","Perfume","Jewelry Box","LED Frame","Heart Pillow","Luxury Hamper","Smart Watch","Gold Pendant"],
+Boyfriend:["Wallet","Gaming Mouse","Earbuds","Power Bank","Watch","Backpack","Shoes","Speaker","Smart Watch","Phone Gift"],
+Wife:["Rose Bouquet","Luxury Saree","Handbag","Necklace","Spa Kit","Chocolate Basket","Designer Gift","Gold Ring","Diamond Gift","Premium Perfume"],
+Husband:["Wallet","Classic Watch","Speaker","Shirt","Shoes","Laptop Bag","Car Kit","Premium Belt","Smart Watch","Laptop Gift"],
+Mother:["Flower Basket","Kitchen Set","Premium Saree","Tea Set","Decor Vase","Health Gift","Photo Frame","Gold Earrings","Silk Gift","Luxury Basket"],
+Father:["Formal Wallet","Travel Bag","Classic Watch","Coffee Hamper","Shaving Kit","Bluetooth Speaker","Phone Gift","Premium Shoes","Sports Gift","Laptop Bag"],
+Friend:["Funny Mug","Snack Box","Speaker","Party Basket","Portable Game","Gift Card","Lamp","Bottle","Backpack","Gaming Console"]
+};
+
+const priceSets=[399,499,599,799,999,1299,1599,1999,2499,2999,3999,4999,6999,9999,14999];
+const onlineProducts=[];
+
+Object.keys(groups).forEach(rel=>{
+
+groups[rel].forEach((base,i)=>{
+
+priceSets.forEach((price,p)=>{
+
+let name=base+" "+(p+1);
+let store=(i+p)%2===0?"Amazon":"Flipkart";
+
+onlineProducts.push({
 name:name,
-relation:[relation],
-price:399+(i*120),
+relation:[rel],
+price:price,
 store:store,
-image:"https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800",
+image:getProductImage(base),
 description:name+" - perfect gift idea.",
 link:
 store==="Amazon"
-? "https://www.amazon.in/s?k="+encodeURIComponent(name)
-: "https://www.flipkart.com/search?q="+encodeURIComponent(name)
-};
+? "https://www.amazon.in/s?k="+encodeURIComponent(base)
+: "https://www.flipkart.com/search?q="+encodeURIComponent(base)
+});
 
 });
 
-/* AUTO FILTER */
-window.addEventListener("load",()=>{
+});
 
+});
+
+/* AUTO */
+window.addEventListener("load",()=>{
 ["relation","occasion","budget","sort"].forEach(id=>{
 document.getElementById(id).addEventListener("change",generateGifts);
 });
-
 });
 
 /* MAIN */
@@ -586,28 +551,23 @@ const sort=val("sort");
 
 /* own */
 let own=myProducts.filter(x=>matchBudget(getPrice(x.price),budget));
-
-own.forEach(x=>{
-x.score=relevance((x.name+" "+x.description).toLowerCase(),relation);
-});
-
+own.forEach(x=>x.score=relevance((x.name+" "+x.description).toLowerCase(),relation));
 sortItems(own,sort);
-own=own.slice(0,15);
 
 /* online */
 let online=onlineProducts.filter(x=>
-x.relation.includes(relation) &&
-matchBudget(x.price,budget)
+x.relation.includes(relation)&&matchBudget(x.price,budget)
 );
 
-online.forEach(x=>{
-x.score=relevance(x.name.toLowerCase(),relation);
-});
+if(online.length===0){
+online=onlineProducts.filter(x=>x.relation.includes(relation)).slice(0,20);
+}
 
+online.forEach(x=>x.score=relevance(x.name.toLowerCase(),relation));
 sortItems(online,sort);
 
-renderRow("ownRow",own,true);
-renderRow("onlineRow",online,false);
+renderRow("ownRow",own.slice(0,15),true);
+renderRow("onlineRow",online.slice(0,40),false);
 }
 
 function renderRow(id,data,isOwn){
@@ -635,38 +595,23 @@ isOwn?"WhatsApp":"Buy on "+item.store
 function card(name,image,desc,price,link,btn){
 return `
 <div class="card">
-
 <img src="${image}" class="product-image">
-
 <h3>${name}</h3>
-
 <p>${desc}</p>
-
 <div class="price">${price}</div>
-
 <div class="btn-row">
-
-<a href="javascript:void(0)"
-class="small-btn details"
+<a href="javascript:void(0)" class="small-btn details"
 onclick="showDetails('${safe(name)}','${safe(desc)} Price: ${price}','${image}')">
 View
 </a>
-
-<a href="${link}" target="_blank" class="small-btn order">
-${btn}
-</a>
-
+<a href="${link}" target="_blank" class="small-btn order">${btn}</a>
 </div>
-
 </div>
 `;
 }
 
 function scrollRow(id,val){
-document.getElementById(id).scrollBy({
-left:val,
-behavior:"smooth"
-});
+document.getElementById(id).scrollBy({left:val,behavior:"smooth"});
 }
 
 function val(id){
@@ -678,31 +623,17 @@ return parseInt(String(x).replace(/[^0-9]/g,''))||0;
 }
 
 function matchBudget(price,budget){
-
 if(budget==="Under ₹500") return price<=500;
 if(budget==="₹500 - ₹1000") return price>500&&price<=1000;
 if(budget==="₹1000 - ₹3000") return price>1000&&price<=3000;
 if(budget==="Premium") return price>3000;
-
 return true;
 }
 
 function sortItems(arr,sort){
-
-if(sort==="low"){
-arr.sort((a,b)=>num(a)-num(b));
-}
-else if(sort==="high"){
-arr.sort((a,b)=>num(b)-num(a));
-}
-else{
-arr.sort((a,b)=>b.score-a.score);
-}
-
-}
-
-function num(x){
-return typeof x.price==="number"?x.price:getPrice(x.price);
+if(sort==="low") arr.sort((a,b)=>a.price-b.price);
+else if(sort==="high") arr.sort((a,b)=>b.price-a.price);
+else arr.sort((a,b)=>b.score-a.score);
 }
 
 function relevance(t,relation){
@@ -710,7 +641,7 @@ function relevance(t,relation){
 let s=0;
 
 if(["Girlfriend","Wife"].includes(relation))
-if(/rose|couple|romantic|gift|luxury/.test(t)) s+=5;
+if(/rose|gift|luxury|perfume|ring/.test(t)) s+=5;
 
 if(["Boyfriend","Husband"].includes(relation))
 if(/watch|wallet|gaming|tech|gift/.test(t)) s+=5;
@@ -732,14 +663,11 @@ return String(str).replace(/'/g,"&#39;");
 }
 
 function showDetails(title,text,image){
-
 document.getElementById("modalTitle").innerText=title;
 document.getElementById("modalText").innerText=text;
-
 let img=document.getElementById("modalImage");
 img.src=image;
 img.style.display="block";
-
 document.getElementById("modal").style.display="flex";
 }
 
