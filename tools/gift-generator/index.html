@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>India's Smart Gift Finder PRO | Shree Collection</title>
-<meta name="description" content="Premium smart gift finder with horizontal product rows, swipe products, your products first, then online suggestions.">
+<title>Smart Gift Finder| Shree Collection</title>
+<meta name="description" content="Premium smart gift finder with menu, horizontal product rows, auto filters, your products first, then online suggestions.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,10 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -50,6 +54,35 @@ color:#aaa;
 margin-top:4px;
 }
 
+/* MENU */
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#d4af37;
+cursor:pointer;
+margin-top:10px;
+}
+
+.navbar ul{
+display:flex;
+justify-content:center;
+gap:18px;
+list-style:none;
+margin-top:14px;
+flex-wrap:wrap;
+}
+
+.navbar a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
+}
+
+.navbar a:hover{
+color:#d4af37;
+}
+
 /* HERO */
 .hero{
 padding:60px 20px 30px;
@@ -63,7 +96,9 @@ line-height:1.3;
 margin-bottom:12px;
 }
 
-.hero span{color:#d4af37;}
+.hero span{
+color:#d4af37;
+}
 
 .hero p{
 max-width:760px;
@@ -111,10 +146,10 @@ margin-top:40px;
 
 .section-header{
 display:flex;
-align-items:center;
 justify-content:space-between;
-margin-bottom:14px;
+align-items:center;
 gap:10px;
+margin-bottom:14px;
 }
 
 .section-title{
@@ -140,7 +175,7 @@ font-weight:700;
 cursor:pointer;
 }
 
-/* AMAZON ROW */
+/* PRODUCT ROW */
 .product-row{
 display:flex;
 gap:18px;
@@ -304,7 +339,25 @@ color:#bbb;
 font-size:14px;
 }
 
+/* MOBILE */
 @media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.navbar ul{
+display:none;
+flex-direction:column;
+background:#111;
+padding:15px;
+border-radius:12px;
+margin-top:12px;
+}
+
+.navbar ul.show{
+display:flex;
+}
 
 .hero h2{
 font-size:34px;
@@ -330,8 +383,24 @@ flex-direction:column;
 <body>
 
 <header>
-<h1>India's Smart Gift Finder PRO</h1>
+
+<h1>Smart Gift Finder</h1>
 <p>Presented by Shree Collection</p>
+
+<div class="menu-toggle" onclick="toggleNav()">☰</div>
+
+<nav class="navbar">
+<ul id="navMenu">
+
+<li><a href="/">🏠 Home</a></li>
+<li><a href="/gift-items/">🎁 Gift Items</a></li>
+<li><a href="/photo-frames/">🖼 Photo Frames</a></li>
+<li><a href="/tools/biodata-generator/">📄 Biodata Tool</a></li>
+<li><a href="/#order">🛒 Order</a></li>
+
+</ul>
+</nav>
+
 </header>
 
 <section class="hero">
@@ -432,14 +501,17 @@ Swipe products like Amazon. Your products first, then smart online suggestions.
 </div>
 
 <footer>
-<h3>Shree Collection | श्री कलेक्शन</h3>
-<p>Premium Gifts • Decor • Party Essentials</p>
+<p>© 2026 Shree Collection</p>
 </footer>
 
 <script>
+function toggleNav(){
+document.getElementById("navMenu").classList.toggle("show");
+}
+
 let myProducts=[];
 
-/* load own products */
+/* LOAD OWN PRODUCTS */
 Promise.all([
 fetch("/gift-items/products.json").then(r=>r.json()),
 fetch("/photo-frames/products.json").then(r=>r.json())
@@ -452,7 +524,7 @@ generateGifts();
 generateGifts();
 });
 
-/* fallback */
+/* FALLBACK */
 const onlineProducts = [
 ["Rose Teddy Combo","Girlfriend"],
 ["Chocolate Gift Box","Girlfriend"],
@@ -496,7 +568,7 @@ store==="Amazon"
 
 });
 
-/* auto change */
+/* AUTO FILTER */
 window.addEventListener("load",()=>{
 
 ["relation","occasion","budget","sort"].forEach(id=>{
@@ -505,12 +577,12 @@ document.getElementById(id).addEventListener("change",generateGifts);
 
 });
 
-/* main */
+/* MAIN */
 function generateGifts(){
 
-const relation = val("relation");
-const budget = val("budget");
-const sort = val("sort");
+const relation=val("relation");
+const budget=val("budget");
+const sort=val("sort");
 
 /* own */
 let own=myProducts.filter(x=>matchBudget(getPrice(x.price),budget));
