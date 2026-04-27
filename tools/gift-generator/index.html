@@ -18,15 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 font-family:'Poppins',sans-serif;
@@ -93,12 +87,10 @@ flex-wrap:wrap;
 text-decoration:none;
 color:#eee;
 font-size:14px;
-transition:0.3s;
+transition:.3s;
 }
 
-.navbar a:hover{
-color:#d4af37;
-}
+.navbar a:hover{color:#d4af37;}
 
 /* HERO */
 .hero{
@@ -113,9 +105,7 @@ line-height:1.3;
 margin-bottom:15px;
 }
 
-.hero span{
-color:#d4af37;
-}
+.hero span{color:#d4af37;}
 
 .hero p{
 max-width:760px;
@@ -133,12 +123,12 @@ padding:20px;
 }
 
 .glass{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,.05);
 backdrop-filter:blur(12px);
-border:1px solid rgba(212,175,55,0.18);
+border:1px solid rgba(212,175,55,.18);
 border-radius:22px;
 padding:28px;
-box-shadow:0 18px 45px rgba(0,0,0,0.35);
+box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
 .form-grid{
@@ -169,12 +159,12 @@ color:#111;
 font-size:17px;
 font-weight:700;
 cursor:pointer;
-transition:0.3s;
+transition:.3s;
 }
 
 button:hover{
 transform:translateY(-3px);
-box-shadow:0 12px 28px rgba(212,175,55,0.25);
+box-shadow:0 12px 28px rgba(212,175,55,.25);
 }
 
 .section-title{
@@ -191,19 +181,20 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:22px;
 }
 
+/* CARD */
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(212,175,55,0.14);
+background:rgba(255,255,255,.05);
+border:1px solid rgba(212,175,55,.14);
 border-radius:20px;
 padding:22px;
 text-align:center;
-transition:0.35s;
+transition:.35s;
 }
 
 .card:hover{
 transform:translateY(-8px);
 border-color:#d4af37;
-box-shadow:0 18px 35px rgba(0,0,0,0.45);
+box-shadow:0 18px 35px rgba(0,0,0,.45);
 }
 
 .icon{
@@ -228,6 +219,7 @@ min-height:55px;
 margin:12px 0;
 color:#98e198;
 font-size:14px;
+font-weight:700;
 }
 
 .btn-row{
@@ -243,8 +235,9 @@ border-radius:10px;
 text-decoration:none;
 font-size:14px;
 font-weight:600;
-transition:0.3s;
+transition:.3s;
 text-align:center;
+cursor:pointer;
 }
 
 .details{
@@ -265,7 +258,7 @@ transform:translateY(-2px);
 .modal{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,0.78);
+background:rgba(0,0,0,.78);
 display:none;
 justify-content:center;
 align-items:center;
@@ -277,21 +270,15 @@ z-index:9999;
 max-width:520px;
 width:100%;
 background:#111;
-border:1px solid rgba(212,175,55,0.2);
+border:1px solid rgba(212,175,55,.2);
 border-radius:20px;
 padding:28px;
 animation:pop .25s ease;
 }
 
 @keyframes pop{
-from{
-transform:scale(.8);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
+from{transform:scale(.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
 }
 
 .modal-box h3{
@@ -311,9 +298,9 @@ footer{
 text-align:center;
 padding:40px 20px;
 margin-top:60px;
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,.55);
 backdrop-filter:blur(8px);
-border-top:1px solid rgba(212,175,55,0.14);
+border-top:1px solid rgba(212,175,55,.14);
 }
 
 footer h3{
@@ -339,20 +326,9 @@ font-size:14px;
 font-weight:600;
 }
 
-.whatsapp{
-background:#25D366;
-color:#fff;
-}
-
-.instagram{
-background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);
-color:#fff;
-}
-
-.facebook{
-border:1px solid #d4af37;
-color:#d4af37;
-}
+.whatsapp{background:#25D366;color:#fff;}
+.instagram{background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);color:#fff;}
+.facebook{border:1px solid #d4af37;color:#d4af37;}
 
 .copy{
 margin-top:18px;
@@ -363,9 +339,7 @@ color:#777;
 /* MOBILE */
 @media(max-width:768px){
 
-.menu-toggle{
-display:block;
-}
+.menu-toggle{display:block;}
 
 .navbar ul{
 display:none;
@@ -377,26 +351,15 @@ border-radius:12px;
 margin-top:12px;
 }
 
-.navbar ul.show{
-display:flex;
-}
+.navbar ul.show{display:flex;}
 
-.navbar li{
-margin:8px 0;
-}
+.navbar li{margin:8px 0;}
 
-.hero h2{
-font-size:34px;
-}
+.hero h2{font-size:34px;}
 
-.section-title{
-font-size:28px;
-}
+.section-title{font-size:28px;}
 
-.btn-row{
-flex-direction:column;
-}
-
+.btn-row{flex-direction:column;}
 }
 </style>
 </head>
@@ -404,7 +367,6 @@ flex-direction:column;
 <body>
 
 <header>
-
 <h1>India’s Smart Gift Finder</h1>
 <p>Presented by Shree Collection</p>
 
@@ -413,24 +375,19 @@ flex-direction:column;
 <nav class="navbar">
 <ul>
 <li><a href="/">🏠 Home</a></li>
-<li><a href="/#products">🎁 Products</a></li>
-<li><a href="/#stores">📍 Stores</a></li>
-<li><a href="/#about">ℹ️ About</a></li>
+<li><a href="/gift-items/">🎁 Gift Items</a></li>
+<li><a href="/photo-frames/">🖼 Photo Frames</a></li>
 <li><a href="/#order">🛒 Order</a></li>
 </ul>
 </nav>
-
 </header>
 
 <section class="hero">
-
 <h2>Find The <span>Perfect Gift</span> In Seconds 🎁</h2>
-
 <p>
 Smart gift ideas for birthdays, anniversaries, weddings, festivals and every special moment.
 Choose relation, occasion and budget to get premium recommendations instantly.
 </p>
-
 </section>
 
 <div class="container">
@@ -485,7 +442,6 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
 
 <h3>Shree Collection | श्री कलेक्शन</h3>
@@ -493,13 +449,9 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 <p>Premium Gifts • Decor • Party Essentials</p>
 
 <div class="social">
-
 <a href="https://wa.me/919886901584" target="_blank" class="whatsapp">WhatsApp</a>
-
 <a href="https://www.instagram.com/shreecollection.store/" target="_blank" class="instagram">Instagram</a>
-
 <a href="https://www.facebook.com/shreecollection.store/" target="_blank" class="facebook">Facebook</a>
-
 </div>
 
 <p>Your trusted destination for premium gifts, customized items, decor & celebration essentials.</p>
@@ -513,267 +465,71 @@ function toggleNav(){
 document.querySelector(".navbar ul").classList.toggle("show");
 }
 
-/* SMART DATABASE */
-const giftData = [
+/* LOAD PRODUCTS */
+let allProducts = [];
 
-{
-relation:"Girlfriend",
-occasion:["Birthday","Valentine","Anniversary"],
-budget:"Under ₹500",
-icon:"🍫",
-name:"Chocolate Box",
-desc:"Sweet romantic surprise gift.",
-price:"₹399"
-},
+Promise.all([
+fetch("/gift-items/products.json").then(r=>r.json()),
+fetch("/photo-frames/products.json").then(r=>r.json())
+])
+.then(([giftItems, photoFrames])=>{
+allProducts = [...giftItems,...photoFrames];
+})
+.catch(err=>console.log(err));
 
-{
-relation:"Girlfriend",
-occasion:["Birthday","Valentine","Anniversary"],
-budget:"₹500 - ₹1000",
-icon:"🖼",
-name:"Personalized Photo Frame",
-desc:"Romantic custom memory gift.",
-price:"₹799"
-},
-
-{
-relation:"Girlfriend",
-occasion:["Valentine","Anniversary"],
-budget:"₹1000 - ₹3000",
-icon:"💡",
-name:"Custom LED Lamp",
-desc:"Photo/name engraved glowing lamp.",
-price:"₹1499"
-},
-
-{
-relation:"Girlfriend",
-occasion:["Birthday","Valentine"],
-budget:"Premium",
-icon:"👜",
-name:"Luxury Handbag",
-desc:"Elegant premium handbag.",
-price:"₹2999"
-},
-
-{
-relation:"Boyfriend",
-occasion:["Birthday","Farewell"],
-budget:"Under ₹500",
-icon:"☕",
-name:"Custom Mug",
-desc:"Cute useful personalized mug.",
-price:"₹449"
-},
-
-{
-relation:"Boyfriend",
-occasion:["Birthday","Farewell"],
-budget:"₹500 - ₹1000",
-icon:"👛",
-name:"Leather Wallet",
-desc:"Stylish daily use wallet.",
-price:"₹899"
-},
-
-{
-relation:"Boyfriend",
-occasion:["Birthday","Anniversary"],
-budget:"₹1000 - ₹3000",
-icon:"⌚",
-name:"Stylish Watch",
-desc:"Modern premium watch.",
-price:"₹2499"
-},
-
-{
-relation:"Boyfriend",
-occasion:["Birthday"],
-budget:"Premium",
-icon:"🎧",
-name:"Bluetooth Earbuds",
-desc:"Useful premium gadget gift.",
-price:"₹3999"
-},
-
-{
-relation:"Wife",
-occasion:["Birthday","Anniversary"],
-budget:"₹500 - ₹1000",
-icon:"🌹",
-name:"Rose Combo",
-desc:"Romantic flowers combo.",
-price:"₹999"
-},
-
-{
-relation:"Wife",
-occasion:["Birthday","Anniversary"],
-budget:"₹1000 - ₹3000",
-icon:"🧴",
-name:"Luxury Perfume",
-desc:"Elegant fragrance gift.",
-price:"₹2499"
-},
-
-{
-relation:"Wife",
-occasion:["Anniversary"],
-budget:"Premium",
-icon:"💍",
-name:"Jewelry Set",
-desc:"Beautiful premium jewelry.",
-price:"₹5999"
-},
-
-{
-relation:"Husband",
-occasion:["Birthday","Anniversary"],
-budget:"₹500 - ₹1000",
-icon:"☕",
-name:"Coffee Hamper",
-desc:"Perfect gift for coffee lover.",
-price:"₹899"
-},
-
-{
-relation:"Husband",
-occasion:["Birthday","Anniversary"],
-budget:"₹1000 - ₹3000",
-icon:"⌚",
-name:"Premium Watch",
-desc:"Timeless classy watch.",
-price:"₹2999"
-},
-
-{
-relation:"Mother",
-occasion:["Birthday"],
-budget:"₹500 - ₹1000",
-icon:"🌸",
-name:"Flower Bouquet",
-desc:"Elegant floral surprise.",
-price:"₹799"
-},
-
-{
-relation:"Mother",
-occasion:["Birthday"],
-budget:"₹1000 - ₹3000",
-icon:"🧣",
-name:"Premium Saree",
-desc:"Traditional graceful gift.",
-price:"₹2499"
-},
-
-{
-relation:"Father",
-occasion:["Birthday"],
-budget:"₹500 - ₹1000",
-icon:"👛",
-name:"Leather Wallet",
-desc:"Useful classy gift.",
-price:"₹899"
-},
-
-{
-relation:"Father",
-occasion:["Birthday"],
-budget:"₹1000 - ₹3000",
-icon:"⌚",
-name:"Classic Watch",
-desc:"Elegant timeless style.",
-price:"₹2499"
-},
-
-{
-relation:"Friend",
-occasion:["Birthday","Farewell"],
-budget:"Under ₹500",
-icon:"🍫",
-name:"Chocolate Box",
-desc:"Classic friendship gift.",
-price:"₹399"
-},
-
-{
-relation:"Friend",
-occasion:["Birthday","Farewell"],
-budget:"₹500 - ₹1000",
-icon:"🎁",
-name:"Gift Hamper",
-desc:"Snacks + goodies combo.",
-price:"₹799"
-},
-
-{
-relation:"Friend",
-occasion:["Birthday"],
-budget:"₹1000 - ₹3000",
-icon:"🎧",
-name:"Bluetooth Speaker",
-desc:"Fun premium gift.",
-price:"₹2499"
-}
-
-];
-
-/* MAIN FILTER */
+/* MAIN */
 function generateGifts(){
 
-let relation = document.getElementById("relation").value;
-let occasion = document.getElementById("occasion").value;
-let budget = document.getElementById("budget").value;
-let results = document.getElementById("results");
+const relation = document.getElementById("relation").value;
+const occasion = document.getElementById("occasion").value;
+const budget = document.getElementById("budget").value;
+const results = document.getElementById("results");
 
-results.innerHTML = "";
-
-let filtered = giftData.filter(item =>
-item.relation === relation &&
-item.occasion.includes(occasion) &&
-item.budget === budget
-);
-
-/* fallback */
-if(filtered.length === 0){
-filtered = giftData.filter(item =>
-item.relation === relation
-).slice(0,3);
-}
-
-/* no data */
-if(filtered.length === 0){
-results.innerHTML = `
-<div class="card">
-<h3>No Gifts Found</h3>
-<p>Please try another filter.</p>
-</div>
-`;
+if(allProducts.length === 0){
+results.innerHTML = "<div class='card'><h3>Loading...</h3></div>";
+setTimeout(generateGifts,500);
 return;
 }
 
-/* render */
+let filtered = allProducts.filter(item => {
+const price = getPrice(item.price);
+return matchRelation(item,relation) &&
+matchOccasion(item,occasion) &&
+matchBudget(price,budget);
+});
+
+if(filtered.length === 0){
+filtered = allProducts.filter(item=>matchRelation(item,relation)).slice(0,6);
+}
+
+if(filtered.length === 0){
+results.innerHTML = "<div class='card'><h3>No Gifts Found</h3><p>Please try another filter.</p></div>";
+return;
+}
+
+results.innerHTML = "";
+
 filtered.forEach(item=>{
 
 results.innerHTML += `
 <div class="card">
 
-<div class="icon">${item.icon}</div>
+<div class="icon">${getIcon(item.category)}</div>
 
 <h3>${item.name}</h3>
 
-<p>${item.desc}</p>
+<p>${item.description}</p>
 
 <div class="price">${item.price}</div>
 
 <div class="btn-row">
 
 <a href="javascript:void(0)" class="small-btn details"
-onclick="showDetails('${item.name}','${item.desc} Price: ${item.price}')">
+onclick="showDetails('${safe(item.name)}','${safe(item.description)} Price: ${item.price}')">
 View Details
 </a>
 
-<a href="https://wa.me/919886901584?text=I am interested in ${item.name}"
+<a href="https://wa.me/919886901584?text=I am interested in ${encodeURIComponent(item.name)}"
 target="_blank"
 class="small-btn order">
 WhatsApp
@@ -788,7 +544,63 @@ WhatsApp
 
 }
 
-/* popup */
+/* HELPERS */
+function getPrice(price){
+return parseInt(String(price).replace(/[^0-9]/g,'')) || 0;
+}
+
+function matchBudget(price,budget){
+if(budget==="Under ₹500") return price<=500;
+if(budget==="₹500 - ₹1000") return price>500 && price<=1000;
+if(budget==="₹1000 - ₹3000") return price>1000 && price<=3000;
+if(budget==="Premium") return price>3000;
+return true;
+}
+
+function matchRelation(item,relation){
+const t=(item.name+" "+item.description).toLowerCase();
+
+if(["Girlfriend","Wife"].includes(relation))
+return /rose|couple|romantic|photo|perfume|gift|frame/.test(t);
+
+if(["Boyfriend","Husband"].includes(relation))
+return /wallet|watch|mug|speaker|frame|gift/.test(t);
+
+if(relation==="Mother")
+return /flower|saree|frame|gift|spiritual/.test(t);
+
+if(relation==="Father")
+return /wallet|watch|frame|gift|spiritual/.test(t);
+
+return true;
+}
+
+function matchOccasion(item,occasion){
+const t=(item.name+" "+item.description).toLowerCase();
+
+if(occasion==="Valentine") return /romantic|couple|rose|love/.test(t);
+if(occasion==="Anniversary") return /couple|frame|premium|gift/.test(t);
+if(occasion==="Wedding") return /premium|hamper|gift/.test(t);
+if(occasion==="Farewell") return /mug|wallet|speaker|gift/.test(t);
+
+return true;
+}
+
+function getIcon(cat){
+if(cat==="personalized") return "🖼";
+if(cat==="luxury") return "🎁";
+if(cat==="romantic") return "💝";
+if(cat==="fun") return "🎉";
+if(cat==="crystal") return "✨";
+if(cat==="custom") return "🪔";
+return "🎁";
+}
+
+function safe(str){
+return String(str).replace(/'/g,"&#39;");
+}
+
+/* MODAL */
 function showDetails(title,text){
 document.getElementById("modalTitle").innerText = title;
 document.getElementById("modalText").innerText = text;
@@ -800,9 +612,7 @@ document.getElementById("modal").style.display = "none";
 }
 
 window.onclick = function(e){
-if(e.target.id === "modal"){
-closeModal();
-}
+if(e.target.id==="modal") closeModal();
 }
 </script>
 
