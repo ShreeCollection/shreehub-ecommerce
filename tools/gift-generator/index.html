@@ -6,9 +6,9 @@
 
 <title>India’s Smart Gift Finder | Best Gift Ideas by Budget & Occasion</title>
 
-<meta name="description" content="Find the perfect gift instantly with India’s Smart Gift Finder. Discover smart gift ideas for birthdays, anniversaries, weddings, festivals, and every special moment.">
+<meta name="description" content="Find the perfect gift instantly with India’s Smart Gift Finder. Smart recommendations from Shree Collection, with backup ideas from popular online stores.">
 
-<meta name="keywords" content="gift finder India, smart gift finder, birthday gifts India, anniversary gifts, gifts under 500, personalized gifts">
+<meta name="keywords" content="gift finder India, gift ideas, gifts under 500, anniversary gifts, birthday gifts, smart gift finder">
 
 <meta name="author" content="Shree Collection">
 
@@ -18,9 +18,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:'Poppins',sans-serif;
@@ -90,7 +96,9 @@ font-size:14px;
 transition:.3s;
 }
 
-.navbar a:hover{color:#d4af37;}
+.navbar a:hover{
+color:#d4af37;
+}
 
 /* HERO */
 .hero{
@@ -105,7 +113,9 @@ line-height:1.3;
 margin-bottom:15px;
 }
 
-.hero span{color:#d4af37;}
+.hero span{
+color:#d4af37;
+}
 
 .hero p{
 max-width:760px;
@@ -123,12 +133,12 @@ padding:20px;
 }
 
 .glass{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,0.05);
 backdrop-filter:blur(12px);
-border:1px solid rgba(212,175,55,.18);
+border:1px solid rgba(212,175,55,0.18);
 border-radius:22px;
 padding:28px;
-box-shadow:0 18px 45px rgba(0,0,0,.35);
+box-shadow:0 18px 45px rgba(0,0,0,0.35);
 }
 
 .form-grid{
@@ -175,6 +185,7 @@ color:#d4af37;
 margin:42px 0 22px;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -183,10 +194,10 @@ gap:22px;
 
 /* CARD */
 .card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(212,175,55,.14);
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(212,175,55,0.14);
 border-radius:20px;
-padding:22px;
+padding:18px;
 text-align:center;
 transition:.35s;
 }
@@ -197,9 +208,12 @@ border-color:#d4af37;
 box-shadow:0 18px 35px rgba(0,0,0,.45);
 }
 
-.icon{
-font-size:48px;
-margin-bottom:12px;
+.product-image{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:14px;
+margin-bottom:14px;
 }
 
 .card h3{
@@ -254,6 +268,17 @@ color:#d4af37;
 transform:translateY(-2px);
 }
 
+.notice{
+grid-column:1/-1;
+text-align:center;
+padding:14px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(212,175,55,.18);
+border-radius:14px;
+color:#d4af37;
+font-weight:700;
+}
+
 /* MODAL */
 .modal{
 position:fixed;
@@ -279,6 +304,15 @@ animation:pop .25s ease;
 @keyframes pop{
 from{transform:scale(.8);opacity:0;}
 to{transform:scale(1);opacity:1;}
+}
+
+.modal-image{
+width:100%;
+height:230px;
+object-fit:cover;
+border-radius:14px;
+margin-bottom:16px;
+display:none;
 }
 
 .modal-box h3{
@@ -385,8 +419,7 @@ margin-top:12px;
 <section class="hero">
 <h2>Find The <span>Perfect Gift</span> In Seconds 🎁</h2>
 <p>
-Smart gift ideas for birthdays, anniversaries, weddings, festivals and every special moment.
-Choose relation, occasion and budget to get premium recommendations instantly.
+Smart gift ideas powered by Shree Collection products first. If not available, we suggest popular online alternatives.
 </p>
 </section>
 
@@ -395,7 +428,6 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 <div class="glass">
 
 <div class="form-grid">
-
 <select id="relation">
 <option>Girlfriend</option>
 <option>Boyfriend</option>
@@ -420,7 +452,6 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 <option>₹1000 - ₹3000</option>
 <option>Premium</option>
 </select>
-
 </div>
 
 <button onclick="generateGifts()">Find Smart Gifts</button>
@@ -436,6 +467,7 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 <!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-box">
+<img id="modalImage" class="modal-image">
 <h3 id="modalTitle"></h3>
 <p id="modalText"></p>
 <button onclick="closeModal()">Close</button>
@@ -443,9 +475,7 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 </div>
 
 <footer>
-
 <h3>Shree Collection | श्री कलेक्शन</h3>
-
 <p>Premium Gifts • Decor • Party Essentials</p>
 
 <div class="social">
@@ -457,7 +487,6 @@ Choose relation, occasion and budget to get premium recommendations instantly.
 <p>Your trusted destination for premium gifts, customized items, decor & celebration essentials.</p>
 
 <div class="copy">© 2026 India’s Smart Gift Finder • Powered by Shree Collection</div>
-
 </footer>
 
 <script>
@@ -465,17 +494,49 @@ function toggleNav(){
 document.querySelector(".navbar ul").classList.toggle("show");
 }
 
-/* LOAD PRODUCTS */
 let allProducts = [];
 
+/* LOAD YOUR PRODUCTS */
 Promise.all([
 fetch("/gift-items/products.json").then(r=>r.json()),
 fetch("/photo-frames/products.json").then(r=>r.json())
 ])
-.then(([giftItems, photoFrames])=>{
+.then(([giftItems,photoFrames])=>{
 allProducts = [...giftItems,...photoFrames];
 })
 .catch(err=>console.log(err));
+
+/* FALLBACK PRODUCTS */
+const fallbackProducts = [
+{
+name:"Bluetooth Earbuds",
+description:"Trending gadget gift idea.",
+price:"₹1499+",
+image:"https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800",
+link:"https://www.amazon.in/"
+},
+{
+name:"Luxury Perfume",
+description:"Elegant premium fragrance.",
+price:"₹1999+",
+image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800",
+link:"https://www.flipkart.com/"
+},
+{
+name:"Smart Watch",
+description:"Useful premium lifestyle gift.",
+price:"₹2499+",
+image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+link:"https://www.amazon.in/"
+},
+{
+name:"Chocolate Gift Box",
+description:"Classic celebration gift.",
+price:"₹599+",
+image:"https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800",
+link:"https://www.flipkart.com/"
+}
+];
 
 /* MAIN */
 function generateGifts(){
@@ -491,30 +552,32 @@ setTimeout(generateGifts,500);
 return;
 }
 
-let filtered = allProducts.filter(item => {
+let filtered = allProducts.filter(item=>{
 const price = getPrice(item.price);
 return matchRelation(item,relation) &&
 matchOccasion(item,occasion) &&
 matchBudget(price,budget);
 });
 
-if(filtered.length === 0){
-filtered = allProducts.filter(item=>matchRelation(item,relation)).slice(0,6);
+if(filtered.length > 0){
+renderOwn(filtered.slice(0,6),results);
+}else{
+renderFallback(results);
 }
 
-if(filtered.length === 0){
-results.innerHTML = "<div class='card'><h3>No Gifts Found</h3><p>Please try another filter.</p></div>";
-return;
 }
+
+/* OWN PRODUCTS */
+function renderOwn(products,results){
 
 results.innerHTML = "";
 
-filtered.forEach(item=>{
+products.forEach(item=>{
 
 results.innerHTML += `
 <div class="card">
 
-<div class="icon">${getIcon(item.category)}</div>
+<img src="${item.image}" class="product-image">
 
 <h3>${item.name}</h3>
 
@@ -524,8 +587,9 @@ results.innerHTML += `
 
 <div class="btn-row">
 
-<a href="javascript:void(0)" class="small-btn details"
-onclick="showDetails('${safe(item.name)}','${safe(item.description)} Price: ${item.price}')">
+<a href="javascript:void(0)"
+class="small-btn details"
+onclick="showDetails('${safe(item.name)}','${safe(item.description)} Price: ${item.price}','${item.image}')">
 View Details
 </a>
 
@@ -533,6 +597,45 @@ View Details
 target="_blank"
 class="small-btn order">
 WhatsApp
+</a>
+
+</div>
+
+</div>
+`;
+
+});
+
+}
+
+/* FALLBACK */
+function renderFallback(results){
+
+results.innerHTML = `<div class="notice">No matching product available from Shree Collection right now. Showing popular online ideas:</div>`;
+
+fallbackProducts.forEach(item=>{
+
+results.innerHTML += `
+<div class="card">
+
+<img src="${item.image}" class="product-image">
+
+<h3>${item.name}</h3>
+
+<p>${item.description}</p>
+
+<div class="price">${item.price}</div>
+
+<div class="btn-row">
+
+<a href="javascript:void(0)"
+class="small-btn details"
+onclick="showDetails('${safe(item.name)}','${safe(item.description)} Price: ${item.price}','${item.image}')">
+View Details
+</a>
+
+<a href="${item.link}" target="_blank" class="small-btn order">
+Buy Online
 </a>
 
 </div>
@@ -558,7 +661,8 @@ return true;
 }
 
 function matchRelation(item,relation){
-const t=(item.name+" "+item.description).toLowerCase();
+
+const t = (item.name + " " + item.description).toLowerCase();
 
 if(["Girlfriend","Wife"].includes(relation))
 return /rose|couple|romantic|photo|perfume|gift|frame/.test(t);
@@ -567,7 +671,7 @@ if(["Boyfriend","Husband"].includes(relation))
 return /wallet|watch|mug|speaker|frame|gift/.test(t);
 
 if(relation==="Mother")
-return /flower|saree|frame|gift|spiritual/.test(t);
+return /flower|frame|gift|decor|spiritual/.test(t);
 
 if(relation==="Father")
 return /wallet|watch|frame|gift|spiritual/.test(t);
@@ -576,7 +680,8 @@ return true;
 }
 
 function matchOccasion(item,occasion){
-const t=(item.name+" "+item.description).toLowerCase();
+
+const t = (item.name + " " + item.description).toLowerCase();
 
 if(occasion==="Valentine") return /romantic|couple|rose|love/.test(t);
 if(occasion==="Anniversary") return /couple|frame|premium|gift/.test(t);
@@ -586,24 +691,20 @@ if(occasion==="Farewell") return /mug|wallet|speaker|gift/.test(t);
 return true;
 }
 
-function getIcon(cat){
-if(cat==="personalized") return "🖼";
-if(cat==="luxury") return "🎁";
-if(cat==="romantic") return "💝";
-if(cat==="fun") return "🎉";
-if(cat==="crystal") return "✨";
-if(cat==="custom") return "🪔";
-return "🎁";
-}
-
 function safe(str){
 return String(str).replace(/'/g,"&#39;");
 }
 
 /* MODAL */
-function showDetails(title,text){
+function showDetails(title,text,image){
+
 document.getElementById("modalTitle").innerText = title;
 document.getElementById("modalText").innerText = text;
+
+let img = document.getElementById("modalImage");
+img.src = image;
+img.style.display = "block";
+
 document.getElementById("modal").style.display = "flex";
 }
 
@@ -612,7 +713,9 @@ document.getElementById("modal").style.display = "none";
 }
 
 window.onclick = function(e){
-if(e.target.id==="modal") closeModal();
+if(e.target.id==="modal"){
+closeModal();
+}
 }
 </script>
 
