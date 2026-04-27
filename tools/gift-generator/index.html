@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>India’s Smart Gift Finder | Best Gift Ideas by Budget & Occasion</title>
+<title>Smart Gift Finder | Smart Gifts by Budget & Occasion</title>
 
-<meta name="description" content="Find the perfect gift instantly with India’s Smart Gift Finder. Smart recommendations from Shree Collection, with backup ideas from popular online stores.">
+<meta name="description" content="Find perfect gifts instantly. Shree Collection products first, then smart online gift suggestions when unavailable.">
 
-<meta name="keywords" content="gift finder India, gift ideas, gifts under 500, anniversary gifts, birthday gifts, smart gift finder">
+<meta name="keywords" content="gift finder India, gifts under 500, birthday gifts, anniversary gifts, smart gift finder">
 
 <meta name="author" content="Shree Collection">
 
@@ -42,7 +42,7 @@ top:-50%;
 left:-50%;
 width:200%;
 height:200%;
-background:radial-gradient(circle,rgba(212,175,55,0.08),transparent 60%);
+background:radial-gradient(circle,rgba(212,175,55,.08),transparent 60%);
 z-index:-1;
 }
 
@@ -53,9 +53,9 @@ top:0;
 z-index:999;
 padding:18px;
 text-align:center;
-background:rgba(0,0,0,0.78);
+background:rgba(0,0,0,.78);
 backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(212,175,55,0.18);
+border-bottom:1px solid rgba(212,175,55,.18);
 }
 
 header h1{
@@ -127,25 +127,25 @@ font-size:16px;
 
 /* MAIN */
 .container{
-max-width:1150px;
+max-width:1200px;
 margin:auto;
 padding:20px;
 }
 
 .glass{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,.05);
 backdrop-filter:blur(12px);
-border:1px solid rgba(212,175,55,0.18);
+border:1px solid rgba(212,175,55,.18);
 border-radius:22px;
 padding:28px;
-box-shadow:0 18px 45px rgba(0,0,0,0.35);
+box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
 .form-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:18px;
-margin-bottom:22px;
+margin-bottom:18px;
 }
 
 select{
@@ -194,8 +194,8 @@ gap:22px;
 
 /* CARD */
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(212,175,55,0.14);
+background:rgba(255,255,255,.05);
+border:1px solid rgba(212,175,55,.14);
 border-radius:20px;
 padding:18px;
 text-align:center;
@@ -298,12 +298,6 @@ background:#111;
 border:1px solid rgba(212,175,55,.2);
 border-radius:20px;
 padding:28px;
-animation:pop .25s ease;
-}
-
-@keyframes pop{
-from{transform:scale(.8);opacity:0;}
-to{transform:scale(1);opacity:1;}
 }
 
 .modal-image{
@@ -333,7 +327,6 @@ text-align:center;
 padding:40px 20px;
 margin-top:60px;
 background:rgba(0,0,0,.55);
-backdrop-filter:blur(8px);
 border-top:1px solid rgba(212,175,55,.14);
 }
 
@@ -349,20 +342,6 @@ color:#bbb;
 font-size:14px;
 margin-bottom:16px;
 }
-
-.social a{
-display:inline-block;
-margin:6px;
-padding:10px 18px;
-border-radius:30px;
-text-decoration:none;
-font-size:14px;
-font-weight:600;
-}
-
-.whatsapp{background:#25D366;color:#fff;}
-.instagram{background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);color:#fff;}
-.facebook{border:1px solid #d4af37;color:#d4af37;}
 
 .copy{
 margin-top:18px;
@@ -385,15 +364,22 @@ border-radius:12px;
 margin-top:12px;
 }
 
-.navbar ul.show{display:flex;}
+.navbar ul.show{
+display:flex;
+}
 
-.navbar li{margin:8px 0;}
+.hero h2{
+font-size:34px;
+}
 
-.hero h2{font-size:34px;}
+.section-title{
+font-size:28px;
+}
 
-.section-title{font-size:28px;}
+.btn-row{
+flex-direction:column;
+}
 
-.btn-row{flex-direction:column;}
 }
 </style>
 </head>
@@ -419,7 +405,7 @@ margin-top:12px;
 <section class="hero">
 <h2>Find The <span>Perfect Gift</span> In Seconds 🎁</h2>
 <p>
-Smart gift ideas powered by Shree Collection products first. If not available, we suggest popular online alternatives.
+We show Shree Collection products first. If unavailable, smart online gift ideas appear automatically.
 </p>
 </section>
 
@@ -428,6 +414,7 @@ Smart gift ideas powered by Shree Collection products first. If not available, w
 <div class="glass">
 
 <div class="form-grid">
+
 <select id="relation">
 <option>Girlfriend</option>
 <option>Boyfriend</option>
@@ -452,6 +439,13 @@ Smart gift ideas powered by Shree Collection products first. If not available, w
 <option>₹1000 - ₹3000</option>
 <option>Premium</option>
 </select>
+
+<select id="sort">
+<option value="relevance">Sort by Relevance</option>
+<option value="low">Price Low to High</option>
+<option value="high">Price High to Low</option>
+</select>
+
 </div>
 
 <button onclick="generateGifts()">Find Smart Gifts</button>
@@ -477,16 +471,7 @@ Smart gift ideas powered by Shree Collection products first. If not available, w
 <footer>
 <h3>Shree Collection | श्री कलेक्शन</h3>
 <p>Premium Gifts • Decor • Party Essentials</p>
-
-<div class="social">
-<a href="https://wa.me/919886901584" target="_blank" class="whatsapp">WhatsApp</a>
-<a href="https://www.instagram.com/shreecollection.store/" target="_blank" class="instagram">Instagram</a>
-<a href="https://www.facebook.com/shreecollection.store/" target="_blank" class="facebook">Facebook</a>
-</div>
-
-<p>Your trusted destination for premium gifts, customized items, decor & celebration essentials.</p>
-
-<div class="copy">© 2026 India’s Smart Gift Finder • Powered by Shree Collection</div>
+<div class="copy">© 2026 India’s Smart Gift Finder</div>
 </footer>
 
 <script>
@@ -494,46 +479,49 @@ function toggleNav(){
 document.querySelector(".navbar ul").classList.toggle("show");
 }
 
-let allProducts = [];
+/* YOUR PRODUCTS */
+let myProducts = [];
 
-/* LOAD YOUR PRODUCTS */
 Promise.all([
 fetch("/gift-items/products.json").then(r=>r.json()),
 fetch("/photo-frames/products.json").then(r=>r.json())
 ])
 .then(([giftItems,photoFrames])=>{
-allProducts = [...giftItems,...photoFrames];
-})
-.catch(err=>console.log(err));
+myProducts = [...giftItems,...photoFrames];
+});
 
-/* FALLBACK PRODUCTS */
-const fallbackProducts = [
+/* SMART FALLBACK PRODUCTS */
+const onlineProducts = [
 {
 name:"Bluetooth Earbuds",
-description:"Trending gadget gift idea.",
-price:"₹1499+",
+price:1499,
 image:"https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800",
+description:"Trending tech gift.",
+store:"Amazon",
 link:"https://www.amazon.in/"
 },
 {
 name:"Luxury Perfume",
-description:"Elegant premium fragrance.",
-price:"₹1999+",
+price:1999,
 image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800",
+description:"Elegant fragrance gift.",
+store:"Flipkart",
 link:"https://www.flipkart.com/"
 },
 {
 name:"Smart Watch",
-description:"Useful premium lifestyle gift.",
-price:"₹2499+",
+price:2499,
 image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+description:"Useful premium gift.",
+store:"Amazon",
 link:"https://www.amazon.in/"
 },
 {
 name:"Chocolate Gift Box",
-description:"Classic celebration gift.",
-price:"₹599+",
+price:699,
 image:"https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800",
+description:"Classic celebration gift.",
+store:"Flipkart",
 link:"https://www.flipkart.com/"
 }
 ];
@@ -544,151 +532,175 @@ function generateGifts(){
 const relation = document.getElementById("relation").value;
 const occasion = document.getElementById("occasion").value;
 const budget = document.getElementById("budget").value;
+const sort = document.getElementById("sort").value;
 const results = document.getElementById("results");
 
-if(allProducts.length === 0){
-results.innerHTML = "<div class='card'><h3>Loading...</h3></div>";
+if(myProducts.length===0){
+results.innerHTML="<div class='card'><h3>Loading...</h3></div>";
 setTimeout(generateGifts,500);
 return;
 }
 
-let filtered = allProducts.filter(item=>{
+let own = myProducts.filter(item=>{
 const price = getPrice(item.price);
-return matchRelation(item,relation) &&
-matchOccasion(item,occasion) &&
-matchBudget(price,budget);
+return matchBudget(price,budget);
 });
 
-if(filtered.length > 0){
-renderOwn(filtered.slice(0,6),results);
-}else{
-renderFallback(results);
+own.forEach(item=>{
+item.score = relevanceScore(item,relation,occasion);
+});
+
+sortProducts(own,sort,true);
+own = own.slice(0,6);
+
+let online = [];
+
+if(own.length<6){
+
+online = onlineProducts.filter(item=>
+matchBudget(item.price,budget)
+);
+
+online.forEach(item=>{
+item.score = relevanceScore(item,relation,occasion);
+});
+
+sortProducts(online,sort,false);
+
+online = online.slice(0,6-own.length);
+}
+
+renderAll(own,online,results);
+
+}
+
+/* SORT */
+function sortProducts(arr,sort,isOwn){
+
+if(sort==="low"){
+arr.sort((a,b)=>getNumeric(a.price)-getNumeric(b.price));
+}
+else if(sort==="high"){
+arr.sort((a,b)=>getNumeric(b.price)-getNumeric(a.price));
+}
+else{
+arr.sort((a,b)=>b.score-a.score);
+}
+}
+
+function getNumeric(val){
+return parseInt(String(val).replace(/[^0-9]/g,''))||0;
+}
+
+/* RENDER */
+function renderAll(own,online,results){
+
+results.innerHTML="";
+
+if(own.length>0){
+
+results.innerHTML += `<div class="notice">🎁 Available from Shree Collection</div>`;
+
+own.forEach(item=>{
+results.innerHTML += cardHTML(
+item.name,item.image,item.description,item.price,
+"https://wa.me/919886901584?text=I am interested in "+encodeURIComponent(item.name),
+"WhatsApp"
+);
+});
+}
+
+if(online.length>0){
+
+results.innerHTML += `<div class="notice">🌐 More Online Suggestions</div>`;
+
+online.forEach(item=>{
+results.innerHTML += cardHTML(
+item.name,item.image,item.description,"₹"+item.price,
+item.link,"Buy on "+item.store
+);
+});
 }
 
 }
 
-/* OWN PRODUCTS */
-function renderOwn(products,results){
+/* CARD */
+function cardHTML(name,image,desc,price,link,btn){
 
-results.innerHTML = "";
-
-products.forEach(item=>{
-
-results.innerHTML += `
+return `
 <div class="card">
 
-<img src="${item.image}" class="product-image">
+<img src="${image}" class="product-image">
 
-<h3>${item.name}</h3>
+<h3>${name}</h3>
 
-<p>${item.description}</p>
+<p>${desc}</p>
 
-<div class="price">${item.price}</div>
+<div class="price">${price}</div>
 
 <div class="btn-row">
 
 <a href="javascript:void(0)"
 class="small-btn details"
-onclick="showDetails('${safe(item.name)}','${safe(item.description)} Price: ${item.price}','${item.image}')">
+onclick="showDetails('${safe(name)}','${safe(desc)} Price: ${price}','${image}')">
 View Details
 </a>
 
-<a href="https://wa.me/919886901584?text=I am interested in ${encodeURIComponent(item.name)}"
-target="_blank"
-class="small-btn order">
-WhatsApp
+<a href="${link}" target="_blank" class="small-btn order">
+${btn}
 </a>
 
 </div>
 
 </div>
 `;
-
-});
-
-}
-
-/* FALLBACK */
-function renderFallback(results){
-
-results.innerHTML = `<div class="notice">No matching product available from Shree Collection right now. Showing popular online ideas:</div>`;
-
-fallbackProducts.forEach(item=>{
-
-results.innerHTML += `
-<div class="card">
-
-<img src="${item.image}" class="product-image">
-
-<h3>${item.name}</h3>
-
-<p>${item.description}</p>
-
-<div class="price">${item.price}</div>
-
-<div class="btn-row">
-
-<a href="javascript:void(0)"
-class="small-btn details"
-onclick="showDetails('${safe(item.name)}','${safe(item.description)} Price: ${item.price}','${item.image}')">
-View Details
-</a>
-
-<a href="${item.link}" target="_blank" class="small-btn order">
-Buy Online
-</a>
-
-</div>
-
-</div>
-`;
-
-});
-
 }
 
 /* HELPERS */
 function getPrice(price){
-return parseInt(String(price).replace(/[^0-9]/g,'')) || 0;
+return parseInt(String(price).replace(/[^0-9]/g,''))||0;
 }
 
 function matchBudget(price,budget){
+
 if(budget==="Under ₹500") return price<=500;
 if(budget==="₹500 - ₹1000") return price>500 && price<=1000;
 if(budget==="₹1000 - ₹3000") return price>1000 && price<=3000;
 if(budget==="Premium") return price>3000;
+
 return true;
 }
 
-function matchRelation(item,relation){
+function relevanceScore(item,relation,occasion){
 
-const t = (item.name + " " + item.description).toLowerCase();
+let t=(item.name+" "+item.description).toLowerCase();
+let score=0;
 
 if(["Girlfriend","Wife"].includes(relation))
-return /rose|couple|romantic|photo|perfume|gift|frame/.test(t);
+if(/rose|romantic|couple|frame|perfume/.test(t)) score+=5;
 
 if(["Boyfriend","Husband"].includes(relation))
-return /wallet|watch|mug|speaker|frame|gift/.test(t);
+if(/watch|wallet|earbuds|tech/.test(t)) score+=5;
 
 if(relation==="Mother")
-return /flower|frame|gift|decor|spiritual/.test(t);
+if(/decor|flower|spiritual|frame/.test(t)) score+=5;
 
 if(relation==="Father")
-return /wallet|watch|frame|gift|spiritual/.test(t);
+if(/watch|wallet|spiritual/.test(t)) score+=5;
 
-return true;
-}
+if(occasion==="Valentine")
+if(/romantic|rose|love/.test(t)) score+=6;
 
-function matchOccasion(item,occasion){
+if(occasion==="Anniversary")
+if(/couple|premium|frame/.test(t)) score+=4;
 
-const t = (item.name + " " + item.description).toLowerCase();
+if(occasion==="Wedding")
+if(/premium|gift/.test(t)) score+=4;
 
-if(occasion==="Valentine") return /romantic|couple|rose|love/.test(t);
-if(occasion==="Anniversary") return /couple|frame|premium|gift/.test(t);
-if(occasion==="Wedding") return /premium|hamper|gift/.test(t);
-if(occasion==="Farewell") return /mug|wallet|speaker|gift/.test(t);
+if(occasion==="Farewell")
+if(/mug|wallet|gift/.test(t)) score+=4;
 
-return true;
+return score;
 }
 
 function safe(str){
@@ -698,24 +710,22 @@ return String(str).replace(/'/g,"&#39;");
 /* MODAL */
 function showDetails(title,text,image){
 
-document.getElementById("modalTitle").innerText = title;
-document.getElementById("modalText").innerText = text;
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalText").innerText=text;
 
-let img = document.getElementById("modalImage");
-img.src = image;
-img.style.display = "block";
+let img=document.getElementById("modalImage");
+img.src=image;
+img.style.display="block";
 
-document.getElementById("modal").style.display = "flex";
+document.getElementById("modal").style.display="flex";
 }
 
 function closeModal(){
-document.getElementById("modal").style.display = "none";
+document.getElementById("modal").style.display="none";
 }
 
-window.onclick = function(e){
-if(e.target.id==="modal"){
-closeModal();
-}
+window.onclick=function(e){
+if(e.target.id==="modal") closeModal();
 }
 </script>
 
