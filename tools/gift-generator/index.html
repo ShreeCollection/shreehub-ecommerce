@@ -1,1 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>India’s Smart Gift Finder | Best Gift Ideas by Budget & Occasion</title>
+
+<meta name="description" content="Find the perfect gift instantly with India’s Smart Gift Finder. Discover smart gift ideas for birthdays, anniversaries, weddings, festivals, and every special moment.">
+
+<meta name="keywords" content="gift finder India, smart gift finder, birthday gifts India, anniversary gifts, gifts under 500, personalized gifts">
+
+<meta name="author" content="Shree Collection">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:radial-gradient(circle at top,#1a1a1a,#0f0f0f 60%);
+color:#eee;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:radial-gradient(circle,rgba(212,175,55,0.08),transparent 60%);
+z-index:-1;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+padding:18px;
+text-align:center;
+background:rgba(0,0,0,0.78);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(212,175,55,0.18);
+}
+
+header h1{
+font-family:'Playfair Display',serif;
+font-size:34px;
+color:#d4af37;
+}
+
+header p{
+font-size:12px;
+color:#aaa;
+margin-top:4px;
+margin-bottom:12px;
+}
+
+/* NAVBAR */
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#d4af37;
+cursor:pointer;
+text-align:right;
+padding-right:12px;
+}
+
+.navbar ul{
+display:flex;
+justify-content:center;
+gap:18px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+.navbar a{
+text-decoration:none;
+color:#eee;
+font-size:14px;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#d4af37;
+}
+
+/* HERO */
+.hero{
+padding:75px 20px 45px;
+text-align:center;
+}
+
+.hero h2{
+font-family:'Playfair Display',serif;
+font-size:46px;
+line-height:1.3;
+margin-bottom:15px;
+}
+
+.hero span{
+color:#d4af37;
+}
+
+.hero p{
+max-width:760px;
+margin:auto;
+color:#bbb;
+line-height:1.8;
+font-size:16px;
+}
+
+/* MAIN */
+.container{
+max-width:1150px;
+margin:auto;
+padding:20px;
+}
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(212,175,55,0.18);
+border-radius:22px;
+padding:28px;
+box-shadow:0 18px 45px rgba(0,0,0,0.35);
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-bottom:22px;
+}
+
+select{
+width:100%;
+padding:14px;
+background:#111;
+border:1px solid #333;
+color:#fff;
+border-radius:12px;
+font-size:15px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#d4af37;
+color:#111;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 28px rgba(212,175,55,0.25);
+}
+
+.section-title{
+text-align:center;
+font-family:'Playfair Display',serif;
+font-size:34px;
+color:#d4af37;
+margin:42px 0 22px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(212,175,55,0.14);
+border-radius:20px;
+padding:22px;
+text-align:center;
+transition:0.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+box-shadow:0 18px 35px rgba(0,0,0,0.45);
+}
+
+.icon{
+font-size:48px;
+margin-bottom:12px;
+}
+
+.card h3{
+font-size:22px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+color:#ccc;
+line-height:1.7;
+min-height:55px;
+}
+
+.price{
+margin:12px 0;
+color:#98e198;
+font-size:14px;
+}
+
+.btn-row{
+display:flex;
+gap:10px;
+margin-top:12px;
+}
+
+.small-btn{
+flex:1;
+padding:10px;
+border-radius:10px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+text-align:center;
+}
+
+.details{
+background:#d4af37;
+color:#111;
+}
+
+.order{
+border:1px solid #d4af37;
+color:#d4af37;
+}
+
+.small-btn:hover{
+transform:translateY(-2px);
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.78);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:9999;
+}
+
+.modal-box{
+max-width:520px;
+width:100%;
+background:#111;
+border:1px solid rgba(212,175,55,0.2);
+border-radius:20px;
+padding:28px;
+animation:pop .25s ease;
+}
+
+@keyframes pop{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.modal-box h3{
+font-size:26px;
+color:#d4af37;
+margin-bottom:14px;
+}
+
+.modal-box p{
+color:#ddd;
+line-height:1.8;
+margin-bottom:18px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(8px);
+border-top:1px solid rgba(212,175,55,0.14);
+}
+
+footer h3{
+font-family:'Playfair Display',serif;
+font-size:30px;
+color:#d4af37;
+margin-bottom:8px;
+}
+
+footer p{
+color:#bbb;
+font-size:14px;
+margin-bottom:16px;
+}
+
+.social a{
+display:inline-block;
+margin:6px;
+padding:10px 18px;
+border-radius:30px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+}
+
+.whatsapp{
+background:#25D366;
+color:#fff;
+}
+
+.instagram{
+background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);
+color:#fff;
+}
+
+.facebook{
+border:1px solid #d4af37;
+color:#d4af37;
+}
+
+.copy{
+margin-top:18px;
+font-size:13px;
+color:#777;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.navbar ul{
+display:none;
+flex-direction:column;
+align-items:flex-start;
+background:#111;
+padding:15px;
+border-radius:12px;
+margin-top:12px;
+}
+
+.navbar ul.show{
+display:flex;
+}
+
+.navbar li{
+margin:8px 0;
+}
+
+.hero h2{
+font-size:34px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.btn-row{
+flex-direction:column;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>India’s Smart Gift Finder</h1>
+<p>Presented by Shree Collection</p>
+
+<div class="menu-toggle" onclick="toggleNav()">☰</div>
+
+<nav class="navbar">
+<ul>
+<li><a href="/">🏠 Home</a></li>
+<li><a href="/#products">🎁 Products</a></li>
+<li><a href="/#stores">📍 Stores</a></li>
+<li><a href="/#about">ℹ️ About</a></li>
+<li><a href="/#order">🛒 Order</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>Find The <span>Perfect Gift</span> In Seconds 🎁</h2>
+
+<p>
+Smart gift ideas for birthdays, anniversaries, weddings, festivals and every special moment.
+Choose relation, occasion and budget to get premium recommendations instantly.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="glass">
+
+<div class="form-grid">
+
+<select id="relation">
+<option>Girlfriend</option>
+<option>Boyfriend</option>
+<option>Wife</option>
+<option>Husband</option>
+<option>Mother</option>
+<option>Father</option>
+<option>Friend</option>
+</select>
+
+<select id="occasion">
+<option>Birthday</option>
+<option>Anniversary</option>
+<option>Valentine</option>
+<option>Wedding</option>
+<option>Farewell</option>
+</select>
+
+<select id="budget">
+<option>Under ₹500</option>
+<option>₹500 - ₹1000</option>
+<option>₹1000 - ₹3000</option>
+<option>Premium</option>
+</select>
+
+</div>
+
+<button onclick="generateGifts()">Find Smart Gifts</button>
+
+</div>
+
+<h2 class="section-title">Top Gift Suggestions</h2>
+
+<div class="grid" id="results"></div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-box">
+<h3 id="modalTitle"></h3>
+<p id="modalText"></p>
+<button onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+<h3>Shree Collection | श्री कलेक्शन</h3>
+
+<p>Premium Gifts • Decor • Party Essentials</p>
+
+<div class="social">
+
+<a href="https://wa.me/919886901584" target="_blank" class="whatsapp">WhatsApp</a>
+
+<a href="https://www.instagram.com/shreecollection.store/" target="_blank" class="instagram">Instagram</a>
+
+<a href="https://www.facebook.com/shreecollection.store/" target="_blank" class="facebook">Facebook</a>
+
+</div>
+
+<p>Your trusted destination for premium gifts, customized items, decor & celebration essentials.</p>
+
+<div class="copy">© 2026 India’s Smart Gift Finder • Powered by Shree Collection</div>
+
+</footer>
+
+<script>
+function toggleNav(){
+document.querySelector(".navbar ul").classList.toggle("show");
+}
+
+/* SMART DATABASE */
+const giftData = [
+
+{
+relation:"Girlfriend",
+occasion:["Birthday","Valentine","Anniversary"],
+budget:"Under ₹500",
+icon:"🍫",
+name:"Chocolate Box",
+desc:"Sweet romantic surprise gift.",
+price:"₹399"
+},
+
+{
+relation:"Girlfriend",
+occasion:["Birthday","Valentine","Anniversary"],
+budget:"₹500 - ₹1000",
+icon:"🖼",
+name:"Personalized Photo Frame",
+desc:"Romantic custom memory gift.",
+price:"₹799"
+},
+
+{
+relation:"Girlfriend",
+occasion:["Valentine","Anniversary"],
+budget:"₹1000 - ₹3000",
+icon:"💡",
+name:"Custom LED Lamp",
+desc:"Photo/name engraved glowing lamp.",
+price:"₹1499"
+},
+
+{
+relation:"Girlfriend",
+occasion:["Birthday","Valentine"],
+budget:"Premium",
+icon:"👜",
+name:"Luxury Handbag",
+desc:"Elegant premium handbag.",
+price:"₹2999"
+},
+
+{
+relation:"Boyfriend",
+occasion:["Birthday","Farewell"],
+budget:"Under ₹500",
+icon:"☕",
+name:"Custom Mug",
+desc:"Cute useful personalized mug.",
+price:"₹449"
+},
+
+{
+relation:"Boyfriend",
+occasion:["Birthday","Farewell"],
+budget:"₹500 - ₹1000",
+icon:"👛",
+name:"Leather Wallet",
+desc:"Stylish daily use wallet.",
+price:"₹899"
+},
+
+{
+relation:"Boyfriend",
+occasion:["Birthday","Anniversary"],
+budget:"₹1000 - ₹3000",
+icon:"⌚",
+name:"Stylish Watch",
+desc:"Modern premium watch.",
+price:"₹2499"
+},
+
+{
+relation:"Boyfriend",
+occasion:["Birthday"],
+budget:"Premium",
+icon:"🎧",
+name:"Bluetooth Earbuds",
+desc:"Useful premium gadget gift.",
+price:"₹3999"
+},
+
+{
+relation:"Wife",
+occasion:["Birthday","Anniversary"],
+budget:"₹500 - ₹1000",
+icon:"🌹",
+name:"Rose Combo",
+desc:"Romantic flowers combo.",
+price:"₹999"
+},
+
+{
+relation:"Wife",
+occasion:["Birthday","Anniversary"],
+budget:"₹1000 - ₹3000",
+icon:"🧴",
+name:"Luxury Perfume",
+desc:"Elegant fragrance gift.",
+price:"₹2499"
+},
+
+{
+relation:"Wife",
+occasion:["Anniversary"],
+budget:"Premium",
+icon:"💍",
+name:"Jewelry Set",
+desc:"Beautiful premium jewelry.",
+price:"₹5999"
+},
+
+{
+relation:"Husband",
+occasion:["Birthday","Anniversary"],
+budget:"₹500 - ₹1000",
+icon:"☕",
+name:"Coffee Hamper",
+desc:"Perfect gift for coffee lover.",
+price:"₹899"
+},
+
+{
+relation:"Husband",
+occasion:["Birthday","Anniversary"],
+budget:"₹1000 - ₹3000",
+icon:"⌚",
+name:"Premium Watch",
+desc:"Timeless classy watch.",
+price:"₹2999"
+},
+
+{
+relation:"Mother",
+occasion:["Birthday"],
+budget:"₹500 - ₹1000",
+icon:"🌸",
+name:"Flower Bouquet",
+desc:"Elegant floral surprise.",
+price:"₹799"
+},
+
+{
+relation:"Mother",
+occasion:["Birthday"],
+budget:"₹1000 - ₹3000",
+icon:"🧣",
+name:"Premium Saree",
+desc:"Traditional graceful gift.",
+price:"₹2499"
+},
+
+{
+relation:"Father",
+occasion:["Birthday"],
+budget:"₹500 - ₹1000",
+icon:"👛",
+name:"Leather Wallet",
+desc:"Useful classy gift.",
+price:"₹899"
+},
+
+{
+relation:"Father",
+occasion:["Birthday"],
+budget:"₹1000 - ₹3000",
+icon:"⌚",
+name:"Classic Watch",
+desc:"Elegant timeless style.",
+price:"₹2499"
+},
+
+{
+relation:"Friend",
+occasion:["Birthday","Farewell"],
+budget:"Under ₹500",
+icon:"🍫",
+name:"Chocolate Box",
+desc:"Classic friendship gift.",
+price:"₹399"
+},
+
+{
+relation:"Friend",
+occasion:["Birthday","Farewell"],
+budget:"₹500 - ₹1000",
+icon:"🎁",
+name:"Gift Hamper",
+desc:"Snacks + goodies combo.",
+price:"₹799"
+},
+
+{
+relation:"Friend",
+occasion:["Birthday"],
+budget:"₹1000 - ₹3000",
+icon:"🎧",
+name:"Bluetooth Speaker",
+desc:"Fun premium gift.",
+price:"₹2499"
+}
+
+];
+
+/* MAIN FILTER */
+function generateGifts(){
+
+let relation = document.getElementById("relation").value;
+let occasion = document.getElementById("occasion").value;
+let budget = document.getElementById("budget").value;
+let results = document.getElementById("results");
+
+results.innerHTML = "";
+
+let filtered = giftData.filter(item =>
+item.relation === relation &&
+item.occasion.includes(occasion) &&
+item.budget === budget
+);
+
+/* fallback */
+if(filtered.length === 0){
+filtered = giftData.filter(item =>
+item.relation === relation
+).slice(0,3);
+}
+
+/* no data */
+if(filtered.length === 0){
+results.innerHTML = `
+<div class="card">
+<h3>No Gifts Found</h3>
+<p>Please try another filter.</p>
+</div>
+`;
+return;
+}
+
+/* render */
+filtered.forEach(item=>{
+
+results.innerHTML += `
+<div class="card">
+
+<div class="icon">${item.icon}</div>
+
+<h3>${item.name}</h3>
+
+<p>${item.desc}</p>
+
+<div class="price">${item.price}</div>
+
+<div class="btn-row">
+
+<a href="javascript:void(0)" class="small-btn details"
+onclick="showDetails('${item.name}','${item.desc} Price: ${item.price}')">
+View Details
+</a>
+
+<a href="https://wa.me/919886901584?text=I am interested in ${item.name}"
+target="_blank"
+class="small-btn order">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+`;
+
+});
+
+}
+
+/* popup */
+function showDetails(title,text){
+document.getElementById("modalTitle").innerText = title;
+document.getElementById("modalText").innerText = text;
+document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(e){
+if(e.target.id === "modal"){
+closeModal();
+}
+}
+</script>
+
+</body>
+</html>
