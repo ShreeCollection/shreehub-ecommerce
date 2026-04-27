@@ -6,7 +6,7 @@
 
 <title>India's Smart Gift Finder PRO 2026 | Shree Collection</title>
 
-<meta name="description" content="Find the perfect gift instantly. Your products first, then smart online suggestions with expandable sections.">
+<meta name="description" content="Auto smart gift finder. Select relation, occasion, budget and sort. Products update automatically. Your products first, then online suggestions.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:'Poppins',sans-serif;
@@ -23,6 +31,18 @@ color:#fff;
 overflow-x:hidden;
 }
 
+body::before{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:radial-gradient(circle,rgba(212,175,55,.07),transparent 60%);
+z-index:-1;
+}
+
+/* HEADER */
 header{
 position:sticky;
 top:0;
@@ -67,8 +87,14 @@ flex-wrap:wrap;
 color:#fff;
 text-decoration:none;
 font-size:14px;
+transition:.3s;
 }
 
+.navbar a:hover{
+color:#d4af37;
+}
+
+/* HERO */
 .hero{
 padding:70px 20px 40px;
 text-align:center;
@@ -81,7 +107,9 @@ line-height:1.3;
 margin-bottom:14px;
 }
 
-.hero span{color:#d4af37;}
+.hero span{
+color:#d4af37;
+}
 
 .hero p{
 max-width:760px;
@@ -91,6 +119,7 @@ line-height:1.8;
 font-size:16px;
 }
 
+/* MAIN */
 .container{
 max-width:1250px;
 margin:auto;
@@ -103,33 +132,24 @@ backdrop-filter:blur(12px);
 border:1px solid rgba(212,175,55,.16);
 border-radius:22px;
 padding:28px;
+box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
 .form-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
 gap:16px;
-margin-bottom:18px;
-}
-
-select,button{
-width:100%;
-padding:14px;
-border-radius:12px;
-font-size:15px;
 }
 
 select{
+width:100%;
+padding:14px;
 background:#111;
 border:1px solid #333;
 color:#fff;
-}
-
-button{
-border:none;
-background:#d4af37;
-color:#111;
-font-weight:700;
+border-radius:12px;
+font-size:15px;
+outline:none;
 cursor:pointer;
 }
 
@@ -141,6 +161,7 @@ color:#d4af37;
 margin:42px 0 22px;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -165,6 +186,13 @@ border:1px solid rgba(212,175,55,.14);
 border-radius:20px;
 padding:18px;
 text-align:center;
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+box-shadow:0 18px 35px rgba(0,0,0,.45);
 }
 
 .product-image{
@@ -210,6 +238,11 @@ font-size:14px;
 font-weight:600;
 text-align:center;
 cursor:pointer;
+transition:.3s;
+}
+
+.small-btn:hover{
+transform:translateY(-2px);
 }
 
 .details{
@@ -228,10 +261,21 @@ text-align:center;
 margin-top:10px;
 }
 
+.load-btn{
+padding:14px 24px;
+border:none;
+border-radius:12px;
+background:#d4af37;
+color:#111;
+font-weight:700;
+cursor:pointer;
+}
+
+/* MODAL */
 .modal{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.8);
+background:rgba(0,0,0,.82);
 display:none;
 justify-content:center;
 align-items:center;
@@ -257,19 +301,88 @@ margin-bottom:16px;
 display:none;
 }
 
+.modal-box h3{
+font-size:26px;
+color:#d4af37;
+margin-bottom:14px;
+}
+
+.modal-box p{
+color:#ddd;
+line-height:1.8;
+margin-bottom:18px;
+}
+
+.close-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#d4af37;
+color:#111;
+font-weight:700;
+cursor:pointer;
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:40px 20px;
 margin-top:60px;
 background:rgba(0,0,0,.55);
+border-top:1px solid rgba(212,175,55,.14);
 }
 
+footer h3{
+font-family:'Playfair Display',serif;
+font-size:30px;
+color:#d4af37;
+margin-bottom:8px;
+}
+
+footer p{
+color:#bbb;
+font-size:14px;
+}
+
+.copy{
+margin-top:16px;
+font-size:13px;
+color:#777;
+}
+
+/* MOBILE */
 @media(max-width:768px){
-.menu-toggle{display:block;}
-.navbar ul{display:none;flex-direction:column;background:#111;padding:15px;border-radius:12px;}
-.navbar ul.show{display:flex;}
-.hero h2{font-size:34px;}
-.btn-row{flex-direction:column;}
+
+.menu-toggle{
+display:block;
+}
+
+.navbar ul{
+display:none;
+flex-direction:column;
+background:#111;
+padding:15px;
+border-radius:12px;
+margin-top:12px;
+}
+
+.navbar ul.show{
+display:flex;
+}
+
+.hero h2{
+font-size:34px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.btn-row{
+flex-direction:column;
+}
+
 }
 </style>
 </head>
@@ -287,13 +400,17 @@ background:rgba(0,0,0,.55);
 <li><a href="/">🏠 Home</a></li>
 <li><a href="/gift-items/">🎁 Gift Items</a></li>
 <li><a href="/photo-frames/">🖼 Photo Frames</a></li>
+<li><a href="/#order">🛒 Order</a></li>
 </ul>
 </nav>
 </header>
 
 <section class="hero">
-<h2>Find The <span>Perfect Gift</span> In Seconds 🎁</h2>
-<p>Your products first. Then expandable online gift suggestions.</p>
+<h2>Find The <span>Perfect Gift</span> Automatically 🎁</h2>
+<p>
+No button needed. Change any dropdown and results update instantly.
+Your products appear first, then online suggestions.
+</p>
 </section>
 
 <div class="container">
@@ -335,8 +452,6 @@ background:rgba(0,0,0,.55);
 
 </div>
 
-<button onclick="generateGifts()">Find Smart Gifts</button>
-
 </div>
 
 <h2 class="section-title">Top Gift Suggestions</h2>
@@ -348,16 +463,22 @@ background:rgba(0,0,0,.55);
 <!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-box">
+
 <img id="modalImage" class="modal-image">
+
 <h3 id="modalTitle"></h3>
+
 <p id="modalText"></p>
-<button onclick="closeModal()">Close</button>
+
+<button class="close-btn" onclick="closeModal()">Close</button>
+
 </div>
 </div>
 
 <footer>
 <h3>Shree Collection | श्री कलेक्शन</h3>
 <p>Premium Gifts • Decor • Party Essentials</p>
+<div class="copy">© 2026 India's Smart Gift Finder PRO</div>
 </footer>
 
 <script>
@@ -365,36 +486,51 @@ function toggleNav(){
 document.querySelector(".navbar ul").classList.toggle("show");
 }
 
-let myProducts=[];
-let visibleOnline=20;
-let cachedOwn=[];
-let cachedOnline=[];
-let onlineOpen=true;
+/* ======================================
+DATA
+====================================== */
+let myProducts = [];
+let cachedOwn = [];
+let cachedOnline = [];
+let visibleOnline = 20;
+let onlineOpen = true;
 
-/* Load own products */
+/* LOAD YOUR PRODUCTS */
 Promise.all([
 fetch("/gift-items/products.json").then(r=>r.json()),
 fetch("/photo-frames/products.json").then(r=>r.json())
-]).then(([a,b])=>{
-myProducts=[...a,...b];
-}).catch(()=>{myProducts=[];});
+])
+.then(([giftItems,photoFrames])=>{
+myProducts = [...giftItems,...photoFrames];
+generateGifts();
+})
+.catch(()=>{
+myProducts = [];
+generateGifts();
+});
 
-/* Online fallback products */
-const onlineProducts=[];
+/* FALLBACK DATABASE */
+const onlineProducts = [];
 
 function addSet(prefix,count,relation,occasions,startPrice,store,image){
+
 for(let i=1;i<=count;i++){
+
 onlineProducts.push({
-name:prefix+" "+i,
+name:prefix + " " + i,
 relation:[relation],
 occasion:occasions,
-price:startPrice+(i*90),
+price:startPrice + (i*90),
 store:store,
 image:image,
-description:prefix+" - perfect gift idea.",
-link:store==="Amazon"?"https://www.amazon.in/":"https://www.flipkart.com/"
+description:prefix + " - perfect gift idea.",
+link:store==="Amazon"
+? "https://www.amazon.in/"
+: "https://www.flipkart.com/"
 });
+
 }
+
 }
 
 addSet("Romantic Gift",25,"Girlfriend",["Birthday","Valentine","Anniversary"],499,"Amazon","https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800");
@@ -405,151 +541,280 @@ addSet("Care Gift",20,"Mother",["Birthday"],499,"Amazon","https://images.unsplas
 addSet("Classic Gift",20,"Father",["Birthday"],599,"Flipkart","https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800");
 addSet("Fun Gift",20,"Friend",["Birthday","Farewell"],399,"Amazon","https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800");
 
-/* Main */
+/* ======================================
+AUTO FILTER
+====================================== */
+window.addEventListener("load",function(){
+
+["relation","occasion","budget","sort"].forEach(id=>{
+
+const el = document.getElementById(id);
+
+el.addEventListener("change",debounceGenerate);
+el.addEventListener("input",debounceGenerate);
+
+});
+
+});
+
+let timer;
+
+function debounceGenerate(){
+
+clearTimeout(timer);
+
+showLoading();
+
+timer = setTimeout(generateGifts,250);
+
+}
+
+function showLoading(){
+
+document.getElementById("results").innerHTML = `
+<div class="notice">
+🔄 Updating gift suggestions...
+</div>
+`;
+
+}
+
+/* ======================================
+MAIN ENGINE
+====================================== */
 function generateGifts(){
 
-visibleOnline=20;
-onlineOpen=true;
+visibleOnline = 20;
+onlineOpen = true;
 
-const relation=val("relation");
-const occasion=val("occasion");
-const budget=val("budget");
-const sort=val("sort");
+const relation = val("relation");
+const occasion = val("occasion");
+const budget = val("budget");
+const sort = val("sort");
 
-let own=myProducts.filter(item=>matchBudget(getPrice(item.price),budget));
+/* OWN PRODUCTS FIRST */
+let own = myProducts.filter(item =>
+matchBudget(getPrice(item.price),budget)
+);
 
 own.forEach(item=>{
-item.score=relevance((item.name+" "+item.description).toLowerCase(),relation,occasion);
+item.score = relevance(
+(item.name+" "+item.description).toLowerCase(),
+relation,
+occasion
+);
 });
 
 sortItems(own,sort);
-cachedOwn=own.slice(0,8);
 
-let online=onlineProducts.filter(item=>
+cachedOwn = own.slice(0,8);
+
+/* ONLINE */
+let online = onlineProducts.filter(item =>
 item.relation.includes(relation) &&
 item.occasion.includes(occasion) &&
 matchBudget(item.price,budget)
 );
 
 online.forEach(item=>{
-item.score=relevance(item.name.toLowerCase(),relation,occasion);
+item.score = relevance(item.name.toLowerCase(),relation,occasion);
 });
 
 sortItems(online,sort);
-cachedOnline=online;
+
+cachedOnline = online;
 
 renderResults();
+
 }
 
+/* ======================================
+RENDER
+====================================== */
 function renderResults(){
 
-const results=document.getElementById("results");
-results.innerHTML="";
+const results = document.getElementById("results");
+results.innerHTML = "";
 
-/* own */
+/* OWN */
 if(cachedOwn.length>0){
-results.innerHTML+=`<div class="notice">🎁 Available from Shree Collection</div>`;
+
+results.innerHTML += `
+<div class="notice">
+🎁 Available from Shree Collection
+</div>
+`;
+
 cachedOwn.forEach(item=>{
-results.innerHTML+=card(item.name,item.image,item.description,item.price,
+
+results.innerHTML += card(
+item.name,
+item.image,
+item.description,
+item.price,
 "https://wa.me/919886901584?text="+encodeURIComponent(item.name),
-"WhatsApp");
+"WhatsApp"
+);
+
 });
+
 }
 
-/* clickable online */
-results.innerHTML+=`
+/* ONLINE TOGGLE */
+results.innerHTML += `
 <div class="notice" onclick="toggleOnlineSuggestions()">
-🌐 More Online Suggestions <span id="arrow">${onlineOpen?"▼":"▶"}</span>
+🌐 More Online Suggestions
+<span id="arrow">${onlineOpen ? "▼" : "▶"}</span>
 </div>
+
 <div id="onlineWrap"></div>
 `;
 
 renderOnlineProducts();
+
 }
 
 function toggleOnlineSuggestions(){
-onlineOpen=!onlineOpen;
+
+onlineOpen = !onlineOpen;
+
 renderOnlineProducts();
-document.getElementById("arrow").innerText=onlineOpen?"▼":"▶";
+
+document.getElementById("arrow").innerText =
+onlineOpen ? "▼" : "▶";
+
 }
 
 function renderOnlineProducts(){
 
-const wrap=document.getElementById("onlineWrap");
+const wrap = document.getElementById("onlineWrap");
+
 if(!wrap) return;
 
 if(!onlineOpen){
-wrap.innerHTML="";
+wrap.innerHTML = "";
 return;
 }
 
-wrap.innerHTML="";
+wrap.innerHTML = "";
 
 cachedOnline.slice(0,visibleOnline).forEach(item=>{
-wrap.innerHTML+=card(
-item.name,item.image,item.description,"₹"+item.price,
-item.link,"Buy on "+item.store
+
+wrap.innerHTML += card(
+item.name,
+item.image,
+item.description,
+"₹"+item.price,
+item.link,
+"Buy on "+item.store
 );
+
 });
 
-if(cachedOnline.length>visibleOnline){
-wrap.innerHTML+=`
+if(cachedOnline.length > visibleOnline){
+
+wrap.innerHTML += `
 <div class="load-wrap">
-<button onclick="loadMore()">Load More Gifts</button>
+<button class="load-btn" onclick="loadMore()">
+Load More Gifts
+</button>
 </div>
 `;
+
 }
+
 }
 
 function loadMore(){
-visibleOnline+=20;
+visibleOnline += 20;
 renderOnlineProducts();
 }
 
+/* ======================================
+CARD
+====================================== */
 function card(name,image,desc,price,link,btn){
+
 return `
 <div class="card">
+
 <img src="${image}" class="product-image">
+
 <h3>${name}</h3>
+
 <p>${desc}</p>
+
 <div class="price">${price}</div>
+
 <div class="btn-row">
-<a href="javascript:void(0)" class="small-btn details"
-onclick="showDetails('${safe(name)}','${safe(desc)} Price: ${price}','${image}')">
+
+<a href="javascript:void(0)"
+class="small-btn details"
+onclick="showDetails(
+'${safe(name)}',
+'${safe(desc)} Price: ${price}',
+'${image}'
+)">
 View Details
 </a>
-<a href="${link}" target="_blank" class="small-btn order">${btn}</a>
+
+<a href="${link}"
+target="_blank"
+class="small-btn order">
+${btn}
+</a>
+
 </div>
+
 </div>
 `;
+
 }
 
-function val(id){return document.getElementById(id).value;}
+/* ======================================
+HELPERS
+====================================== */
+function val(id){
+return document.getElementById(id).value;
+}
 
 function getPrice(price){
-return parseInt(String(price).replace(/[^0-9]/g,''))||0;
+return parseInt(String(price).replace(/[^0-9]/g,'')) || 0;
 }
 
 function matchBudget(price,budget){
+
 if(budget==="Under ₹500") return price<=500;
-if(budget==="₹500 - ₹1000") return price>500&&price<=1000;
-if(budget==="₹1000 - ₹3000") return price>1000&&price<=3000;
+if(budget==="₹500 - ₹1000") return price>500 && price<=1000;
+if(budget==="₹1000 - ₹3000") return price>1000 && price<=3000;
 if(budget==="Premium") return price>3000;
+
 return true;
 }
 
 function sortItems(arr,sort){
-if(sort==="low") arr.sort((a,b)=>num(a)-num(b));
-else if(sort==="high") arr.sort((a,b)=>num(b)-num(a));
-else arr.sort((a,b)=>b.score-a.score);
+
+if(sort==="low"){
+arr.sort((a,b)=>num(a)-num(b));
+}
+else if(sort==="high"){
+arr.sort((a,b)=>num(b)-num(a));
+}
+else{
+arr.sort((a,b)=>b.score-a.score);
+}
+
 }
 
 function num(x){
-return typeof x.price==="number"?x.price:getPrice(x.price);
+return typeof x.price==="number"
+? x.price
+: getPrice(x.price);
 }
 
 function relevance(t,relation,occasion){
-let s=0;
+
+let s = 0;
 
 if(["Girlfriend","Wife"].includes(relation))
 if(/romantic|love|luxury|gift/.test(t)) s+=5;
@@ -572,29 +837,37 @@ if(occasion==="Birthday") s+=2;
 if(occasion==="Farewell") s+=2;
 
 return s;
+
 }
 
 function safe(str){
 return String(str).replace(/'/g,"&#39;");
 }
 
+/* ======================================
+MODAL
+====================================== */
 function showDetails(title,text,image){
-document.getElementById("modalTitle").innerText=title;
-document.getElementById("modalText").innerText=text;
 
-let img=document.getElementById("modalImage");
-img.src=image;
-img.style.display="block";
+document.getElementById("modalTitle").innerText = title;
+document.getElementById("modalText").innerText = text;
 
-document.getElementById("modal").style.display="flex";
+let img = document.getElementById("modalImage");
+img.src = image;
+img.style.display = "block";
+
+document.getElementById("modal").style.display = "flex";
+
 }
 
 function closeModal(){
-document.getElementById("modal").style.display="none";
+document.getElementById("modal").style.display = "none";
 }
 
-window.onclick=function(e){
-if(e.target.id==="modal") closeModal();
+window.onclick = function(e){
+if(e.target.id==="modal"){
+closeModal();
+}
 }
 </script>
 
