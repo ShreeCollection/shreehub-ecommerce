@@ -32,6 +32,8 @@ align-items:center;
 position:sticky;
 top:0;
 z-index:999;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .logo{
@@ -53,11 +55,11 @@ font-size:14px;
 }
 
 .container{
-max-width:1550px;
+max-width:1600px;
 margin:auto;
 padding:24px;
 display:grid;
-grid-template-columns:440px 1fr;
+grid-template-columns:460px 1fr;
 gap:24px;
 }
 
@@ -85,6 +87,7 @@ margin-bottom:16px;
 details summary{
 cursor:pointer;
 font-weight:600;
+margin-bottom:10px;
 }
 
 .field-box{
@@ -132,6 +135,11 @@ font-weight:600;
 cursor:pointer;
 width:100%;
 margin-top:10px;
+transition:.25s;
+}
+
+button:hover{
+transform:translateY(-2px);
 }
 
 .btn-primary{background:#2563eb;color:#fff;}
@@ -150,9 +158,10 @@ margin-bottom:15px;
 
 #preview{
 width:210mm;
+min-height:297mm;
 max-width:100%;
 background:#fff;
-padding:18mm;
+padding:16mm;
 border:1px solid #e5e7eb;
 margin:auto;
 overflow:hidden;
@@ -186,6 +195,7 @@ flex:1;
 font-size:32px;
 font-weight:700;
 margin-bottom:6px;
+line-height:1.2;
 }
 
 .bio-sub{
@@ -238,18 +248,23 @@ grid-template-columns:1fr;
 @media(max-width:760px){
 #preview{
 width:100%;
+min-height:auto;
 padding:18px;
 }
+
 .bio-header{
 flex-direction:column;
 }
+
 .item{
 flex-direction:column;
 }
+
 .label2{
 width:auto;
 margin-bottom:4px;
 }
+
 .bio-photo{
 width:110px;
 height:140px;
@@ -261,7 +276,7 @@ height:140px;
 <body>
 
 <nav>
-<div class="logo">Biodata Generator</div>
+<div class="logo">Professional Biodata Generator</div>
 
 <div class="menu">
 <a href="index.html">Home</a>
@@ -273,19 +288,22 @@ height:140px;
 
 <div class="container">
 
-<!-- LEFT -->
+<!-- LEFT PANEL -->
 <div class="card">
 
 <details open>
 <summary>Show / Hide Instructions</summary>
+
 <div class="instructions">
 1. Full Name field cannot be removed.<br>
 2. Upload profile photo optional.<br>
-3. Name appears once only.<br>
-4. Supports multiline values.<br>
+3. Empty values will not appear in biodata.<br>
+4. You can edit any field name/value.<br>
 5. Add unlimited custom fields.<br>
-6. Download PDF or Image.
+6. Auto save enabled.<br>
+7. Download as A4 PDF / PNG image.
 </div>
+
 </details>
 
 <h2>Create Biodata</h2>
@@ -303,10 +321,11 @@ height:140px;
 
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT PANEL -->
 <div class="preview-wrap">
 
 <div class="preview-head">
+
 <h2 style="margin:0">Live Preview</h2>
 
 <select id="template" onchange="generateBio()">
@@ -321,6 +340,7 @@ height:140px;
 <option value="template9">Orange Bright</option>
 <option value="template10">Luxury Black</option>
 </select>
+
 </div>
 
 <div id="preview"></div>
@@ -334,31 +354,40 @@ let photoData = localStorage.getItem("bioPhoto") || "";
 
 const defaultFields = [
 ["Full Name","","personal",true],
-["Age","","personal",false],
+["Date Of Birth","","personal",false],
+["Time Of Birth","","personal",false],
+["Place Of Birth","","personal",false],
+["Weight","","personal",false],
 ["Height","","personal",false],
+["Complexion","","personal",false],
 ["Religion","","personal",false],
+["Caste","","personal",false],
+["Gotra","","personal",false],
 ["Education","","personal",false],
 ["Occupation","","personal",false],
 ["Father Name","","family",false],
-["Mother Name","","family",false],
+["Father's Occupation","","family",false],
+["Mother's Name","","family",false],
+["Mother's Occupation","","family",false],
 ["Address","","contact",false],
-["Phone","","contact",false]
+["Phone","","contact",false],
+["Email","","contact",false]
 ];
 
-window.onload=()=>{
+window.onload = ()=>{
 loadFields();
 generateBio();
 };
 
 document.getElementById("photo").addEventListener("change",function(e){
 
-const file=e.target.files[0];
+const file = e.target.files[0];
 if(!file) return;
 
-const reader=new FileReader();
+const reader = new FileReader();
 
-reader.onload=function(ev){
-photoData=ev.target.result;
+reader.onload = function(ev){
+photoData = ev.target.result;
 localStorage.setItem("bioPhoto",photoData);
 generateBio();
 }
@@ -369,10 +398,11 @@ reader.readAsDataURL(file);
 
 function loadFields(){
 
-let saved=JSON.parse(localStorage.getItem("bioFields"));
-if(!saved) saved=defaultFields;
+let saved = JSON.parse(localStorage.getItem("bioFields"));
 
-document.getElementById("fields").innerHTML="";
+if(!saved) saved = defaultFields;
+
+document.getElementById("fields").innerHTML = "";
 
 saved.forEach(f=>{
 createField(f[0],f[1],f[2],f[3]);
@@ -382,10 +412,10 @@ createField(f[0],f[1],f[2],f[3]);
 
 function createField(label="",value="",section="personal",locked=false){
 
-const div=document.createElement("div");
-div.className="field-box";
+const div = document.createElement("div");
+div.className = "field-box";
 
-div.innerHTML=`
+div.innerHTML = `
 <label>Field Name</label>
 <input class="fname" value="${label}" ${locked?"readonly":""}>
 
@@ -425,7 +455,7 @@ generateBio();
 }
 
 function addField(){
-createField("New Field","","personal",false);
+createField("New Field","","other",false);
 saveFields();
 }
 
@@ -437,15 +467,17 @@ generateBio();
 
 function saveFields(){
 
-let data=[];
+let data = [];
 
 document.querySelectorAll(".field-box").forEach(box=>{
+
 data.push([
 box.querySelector(".fname").value,
 box.querySelector(".fvalue").value,
 box.querySelector(".fsection").value,
 box.querySelector(".fname").value.toLowerCase()=="full name"
 ]);
+
 });
 
 localStorage.setItem("bioFields",JSON.stringify(data));
@@ -462,6 +494,7 @@ return `
 <div class="value2">: ${val.replace(/\n/g,"<br>")}</div>
 </div>
 `;
+
 }
 
 function generateBio(){
@@ -472,28 +505,28 @@ let sub="";
 
 document.querySelectorAll(".field-box").forEach(box=>{
 
-const label=box.querySelector(".fname").value.trim();
-const val=box.querySelector(".fvalue").value.trim();
-const sec=box.querySelector(".fsection").value;
+const label = box.querySelector(".fname").value.trim();
+const val = box.querySelector(".fvalue").value.trim();
+const sec = box.querySelector(".fsection").value;
 
-if(label.toLowerCase()=="full name") fullName=val;
+if(label.toLowerCase()=="full name") fullName = val;
 
-if(label.toLowerCase().includes("occupation") && val){
-sub=val;
+if(label.toLowerCase()=="occupation" && val){
+sub = val;
 }
 
-const html=row(label,val);
+const html = row(label,val);
 
-if(sec=="personal") personal+=html;
-if(sec=="family") family+=html;
-if(sec=="contact") contact+=html;
-if(sec=="other") other+=html;
+if(sec=="personal") personal += html;
+if(sec=="family") family += html;
+if(sec=="contact") contact += html;
+if(sec=="other") other += html;
 
 });
 
 if(fullName==""){
-document.getElementById("preview").innerHTML=`
-<div style="text-align:center;padding:60px 20px;">
+document.getElementById("preview").innerHTML = `
+<div style="text-align:center;padding:80px 20px;">
 <h2>Please Enter Full Name</h2>
 <p>Biodata will generate after entering name.</p>
 </div>
@@ -501,9 +534,9 @@ document.getElementById("preview").innerHTML=`
 return;
 }
 
-const template=document.getElementById("template").value;
+const template = document.getElementById("template").value;
 
-document.getElementById("preview").innerHTML=`
+document.getElementById("preview").innerHTML = `
 <div class="${template}">
 
 <div class="bio-header">
@@ -526,42 +559,35 @@ ${other?`<div class="section"><h4>Other Details</h4>${other}</div>`:""}
 `;
 
 saveFields();
+
 }
 
 function downloadPDF(){
 
-generateBio(); // ensures latest preview updates first
+generateBio();
 
 const element = document.getElementById("preview");
 
 const opt = {
-margin: 0,
-filename: "Biodata.pdf",
-image: { type: "jpeg", quality: 1 },
-
-html2canvas: {
-scale: 3,
-useCORS: true,
-allowTaint: true,
-scrollX: 0,
-scrollY: 0,
-backgroundColor: "#ffffff"
+margin:0,
+filename:"Biodata.pdf",
+image:{type:"jpeg",quality:1},
+html2canvas:{
+scale:3,
+useCORS:true,
+scrollX:0,
+scrollY:0
 },
-
-jsPDF: {
-unit: "mm",
-format: "a4",
-orientation: "portrait"
-},
-
-pagebreak: {
-mode: ['avoid-all','css','legacy']
+jsPDF:{
+unit:"mm",
+format:"a4",
+orientation:"portrait"
 }
 };
 
-setTimeout(() => {
+setTimeout(()=>{
 html2pdf().set(opt).from(element).save();
-}, 300);
+},300);
 
 }
 
@@ -572,9 +598,9 @@ scale:3,
 useCORS:true
 }).then(canvas=>{
 
-const link=document.createElement("a");
-link.download="Biodata.png";
-link.href=canvas.toDataURL("image/png");
+const link = document.createElement("a");
+link.download = "Biodata.png";
+link.href = canvas.toDataURL("image/png");
 link.click();
 
 });
