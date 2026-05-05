@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Traditional Biodata Generator | ShreeHub</title>
+<meta name="description" content="Create premium traditional marriage biodata online with live preview, photo upload and PDF export.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:100%;
+max-width:1280px;
+margin:auto;
+padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(14px);
+background:rgba(11,17,32,.75);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:28px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#e5e7eb;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+padding:85px 0 70px;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border-radius:50%;
+background:radial-gradient(circle,#2563eb55,transparent 65%);
+top:-120px;
+left:-120px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border-radius:50%;
+background:radial-gradient(circle,#f59e0b33,transparent 65%);
+right:-150px;
+bottom:-180px;
+}
+
+.hero-inner{
+position:relative;
+z-index:2;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 16px;
+border-radius:40px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
+color:#fbbf24;
+font-size:14px;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:56px;
+line-height:1.15;
+margin-bottom:16px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+max-width:760px;
+margin:auto;
+color:#cbd5e1;
+font-size:18px;
+line-height:1.8;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:24px;
+}
+
+.stat{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+padding:12px 16px;
+border-radius:14px;
+font-size:14px;
+color:#e5e7eb;
+}
+
+/* MAIN */
+
+.main-wrap{
+padding:20px 0 70px;
+display:grid;
+grid-template-columns:360px 1fr;
+gap:24px;
+}
+
+.glass{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 40px rgba(0,0,0,.22);
+}
+
+h2{
+font-size:24px;
+margin-bottom:14px;
+}
+
+label.small{
+display:block;
+font-size:13px;
+font-weight:600;
+color:#fbbf24;
+margin-bottom:8px;
+}
+
+.field{
+margin-bottom:14px;
+display:flex;
+flex-direction:column;
+}
+
+.field input,
+.field textarea,
+.field select,
+input[type=file]{
+width:100%;
+padding:13px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.08);
+background:#111827;
+color:#fff;
+font-family:'Poppins',sans-serif;
+outline:none;
+}
+
+.field textarea{
+resize:vertical;
+min-height:70px;
+}
+.btn{
+width:100%;
+padding:13px 16px;
+border:none;
+border-radius:14px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+margin-top:10px;
+transition:.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.gold{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.blue{
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:#fff;
+}
+
+.light{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+color:#fff;
+}
+
+/* INSTRUCTIONS */
+
+.instructions{
+margin-bottom:18px;
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+overflow:hidden;
+}
+
+.instructions-head{
+padding:14px 16px;
+background:rgba(255,255,255,.04);
+font-weight:700;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.instructions-body{
+padding:16px;
+font-size:14px;
+line-height:1.8;
+color:#cbd5e1;
+}
+
+.instructions-body.hidden{
+display:none;
+}
+
+.instructions ol{
+padding-left:18px;
+}
+
+/* PREVIEW */
+
+.preview-wrap{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 40px rgba(0,0,0,.22);
+overflow:auto;
+}
+
+.biodata{
+max-width:850px;
+margin:auto;
+background:#fffdf8;
+color:#111827;
+padding:24px;
+border:10px solid #d4af37;
+}
+
+.inner{
+border:2px solid #c89b2c;
+padding:28px;
+}
+
+.bio-header{
+text-align:center;
+margin-bottom:24px;
+}
+
+.bio-header h3{
+font-size:30px;
+color:#b88716;
+margin-bottom:8px;
+}
+
+.bio-header p{
+font-size:13px;
+color:#666;
+}
+
+.content{
+display:flex;
+gap:24px;
+align-items:flex-start;
+}
+
+.details{
+flex:1;
+}
+
+.row{
+display:flex;
+margin:10px 0;
+font-size:15px;
+}
+
+.label{
+width:170px;
+font-weight:700;
+}
+
+.colon{
+width:12px;
+}
+
+.value{
+flex:1;
+word-break:break-word;
+}
+
+.section-title{
+margin-top:18px;
+padding-bottom:6px;
+border-bottom:1px solid #c89b2c;
+font-weight:700;
+color:#b88716;
+}
+
+.photo-box{
+width:190px;
+height:230px;
+border:3px solid #d4af37;
+background:#fff;
+overflow:hidden;
+}
+
+.photo-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.bio-footer{
+margin-top:20px;
+text-align:center;
+font-size:12px;
+color:#777;
+}
+
+/* FOOTER */
+
+footer{
+padding:35px 0;
+border-top:1px solid rgba(255,255,255,.08);
+color:#94a3b8;
+text-align:center;
+margin-top:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+.main-wrap{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:768px){
+
+nav ul{
+gap:14px;
+}
+
+.logo{
+font-size:26px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.main-wrap{
+padding:20px 0 50px;
+}
+
+.content{
+flex-direction:column-reverse;
+}
+
+.photo-box{
+margin:auto;
+width:170px;
+height:210px;
+}
+
+.row{
+font-size:14px;
+}
+
+.label{
+width:130px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo"><a href="/">Shree<span>Hub</span></a></div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-inner">
+
+<div class="badge">Premium Tool • Marriage Biodata</div>
+
+<h1>Traditional <span>Biodata Generator</span></h1>
+
+<p>
+Create elegant traditional marriage biodata with live preview, photo upload and instant PDF export.
+</p>
+
+<div class="stats">
+<div class="stat">10 Templates</div>
+<div class="stat">A4 PDF</div>
+<div class="stat">Live Preview</div>
+<div class="stat">Mobile Friendly</div>
+</div>
+
+</div>
+</section>
+
+<div class="container main-wrap">
+
+<!-- LEFT -->
+<div class="glass">
+
+<div class="instructions">
+<div class="instructions-head" onclick="toggleInstructions()">
+📋 How to Use <span id="icon">▼</span>
+</div>
+
+<div class="instructions-body" id="instBody">
+<ol>
+<li>Select design template.</li>
+<li>Upload profile photo.</li>
+<li>Fill biodata details.</li>
+<li>Add custom fields.</li>
+<li>Preview live.</li>
+<li>Download PDF or Image.</li>
+</ol>
+</div>
+</div>
+
+<h2>Fill Details</h2>
+
+<label class="small">🎨 Select Design</label>
+
+<select id="templateSelect">
+<option value="royal-red">Royal Red</option>
+<option value="royal-gold">Royal Gold</option>
+<option value="maharaja">Maharaja</option>
+<option value="temple">Temple</option>
+<option value="floral">Floral</option>
+<option value="minimal">Minimal</option>
+<option value="modern-dark">Modern Dark</option>
+<option value="pastel">Pastel</option>
+<option value="elegant">Elegant</option>
+<option value="blue">Blue</option>
+</select>
+
+<label class="small" style="margin-top:12px;">📷 Upload Photo</label>
+<input type="file" id="photo">
+
+<div id="fields"></div>
+
+<button class="btn light" onclick="addField()">+ Add Field</button>
+<button class="btn gold" onclick="downloadPDF()">Download PDF</button>
+<button class="btn blue" onclick="downloadImage()">Download Image</button>
+
+</div>
+
+<!-- RIGHT -->
+<div class="preview-wrap">
+
+<div id="biodata" class="biodata">
+
+<div class="inner">
+
+<div class="bio-header">
+<h3>ॐ श्री गणेशाय नमः</h3>
+<p>Marriage Biodata</p>
+</div>
+
+<div class="content">
+
+<div class="details">
+
+<div id="basic"></div>
+
+<div class="section-title">Family Details</div>
+<div id="family"></div>
+
+<div class="section-title">Contact Details</div>
+<div id="contact"></div>
+
+</div>
+
+<div class="photo-box">
+<img id="previewPhoto">
+</div>
+
+</div>
+
+<div class="bio-footer">
+✨ Designed by ShreeHub ✨
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<footer>
+<div class="container">
+© 2026 ShreeHub.com • Traditional Biodata Generator
+</div>
+</footer>
+
+<script>
+const defaultFields = [
+["Name","basic"],
+["Date of Birth","basic"],
+["Time Of Birth","basic"],
+["Place Of Birth","basic"],
+["Height","basic"],
+["Weight","basic"],
+["Complexion","basic"],
+["Caste","basic"],
+["Gotra","basic"],
+["Education","basic"],
+["Occupation","basic"],
+["Languages","basic"],
+["Hobby","basic"],
+
+["Father's Name","family"],
+["Father's Occupation","family"],
+["Mother's Name","family"],
+["Mother's Occupation","family"],
+
+["Phone","contact"],
+["Address","contact"],
+["Email","contact"]
+];
+
+window.onload = init;
+
+function init(){
+document.getElementById("fields").innerHTML = "";
+defaultFields.forEach(f => createField(f[0],f[1]));
+update();
+loadPhoto();
+}
+
+/* CREATE FIELD */
+function createField(label,section){
+
+const div = document.createElement("div");
+div.className = "field";
+
+div.innerHTML = `
+<input value="${label}">
+<textarea placeholder="Enter ${label}"></textarea>
+<select>
+<option value="basic" ${section==="basic"?"selected":""}>Basic</option>
+<option value="family" ${section==="family"?"selected":""}>Family</option>
+<option value="contact" ${section==="contact"?"selected":""}>Contact</option>
+</select>
+`;
+
+document.getElementById("fields").appendChild(div);
+}
+
+function addField(){
+createField("New Field","basic");
+}
+
+/* LIVE UPDATE */
+document.addEventListener("input",update);
+
+function update(){
+
+document.getElementById("basic").innerHTML="";
+document.getElementById("family").innerHTML="";
+document.getElementById("contact").innerHTML="";
+
+document.querySelectorAll(".field").forEach(f=>{
+
+const l = f.children[0].value.trim();
+const v = f.children[1].value.trim().replace(/\n/g,"<br>");
+const s = f.children[2].value;
+
+if(l && v){
+
+const row = `
+<div class="row">
+<div class="label">${l}</div>
+<div class="colon">:</div>
+<div class="value">${v}</div>
+</div>`;
+
+if(s==="basic") document.getElementById("basic").innerHTML += row;
+if(s==="family") document.getElementById("family").innerHTML += row;
+if(s==="contact") document.getElementById("contact").innerHTML += row;
+
+}
+
+});
+
+}
+
+/* PHOTO */
+document.getElementById("photo").onchange = e => {
+
+const file = e.target.files[0];
+if(!file) return;
+
+const reader = new FileReader();
+
+reader.onload = ev => {
+document.getElementById("previewPhoto").src = ev.target.result;
+localStorage.setItem("bioPhoto",ev.target.result);
+};
+
+reader.readAsDataURL(file);
+};
+
+function loadPhoto(){
+const p = localStorage.getItem("bioPhoto");
+if(p) document.getElementById("previewPhoto").src = p;
+}
+
+/* PDF */
+async function downloadPDF(){
+
+const { jsPDF } = window.jspdf;
+
+const canvas = await html2canvas(document.getElementById("biodata"),{
+scale:3
+});
+
+const img = canvas.toDataURL("image/png");
+
+const pdf = new jsPDF("p","mm","a4");
+
+pdf.addImage(img,"PNG",0,0,210,297);
+pdf.save("traditional-biodata.pdf");
+}
+
+/* IMAGE */
+function downloadImage(){
+
+html2canvas(document.getElementById("biodata"),{
+scale:2
+}).then(canvas=>{
+
+const link = document.createElement("a");
+link.download = "traditional-biodata.png";
+link.href = canvas.toDataURL();
+link.click();
+
+});
+
+}
+
+/* INSTRUCTIONS */
+function toggleInstructions(){
+
+const body = document.getElementById("instBody");
+const icon = document.getElementById("icon");
+
+body.classList.toggle("hidden");
+
+icon.innerText =
+body.classList.contains("hidden")
+? "▲"
+: "▼";
+}
+
+/* TEMPLATE SWITCH */
+document.getElementById("templateSelect").onchange = function(){
+
+const val = this.value;
+const biodata = document.getElementById("biodata");
+
+/* reset */
+biodata.style.background = "";
+biodata.style.color = "";
+biodata.style.borderColor = "";
+
+/* templates */
+
+if(val==="royal-red"){
+biodata.style.background = "linear-gradient(#7a0c0c,#3a0606)";
+biodata.style.color = "#f5d08a";
+biodata.style.borderColor = "#e6b566";
+}
+
+if(val==="royal-gold"){
+biodata.style.background = "#fff8e1";
+biodata.style.color = "#5a3e1b";
+biodata.style.borderColor = "gold";
+}
+
+if(val==="maharaja"){
+biodata.style.background = "#5a0f0f";
+biodata.style.color = "#ffd700";
+biodata.style.borderColor = "#ffd700";
+}
+
+if(val==="temple"){
+biodata.style.background = "#fff8e7";
+biodata.style.color = "#5c3d00";
+biodata.style.borderColor = "#c9a227";
+}
+
+if(val==="floral"){
+biodata.style.background = "#fff0f5";
+biodata.style.color = "#8b004b";
+biodata.style.borderColor = "#ff69b4";
+}
+
+if(val==="minimal"){
+biodata.style.background = "#ffffff";
+biodata.style.color = "#111111";
+biodata.style.borderColor = "#dddddd";
+}
+
+if(val==="modern-dark"){
+biodata.style.background = "#0f172a";
+biodata.style.color = "#e2e8f0";
+biodata.style.borderColor = "#334155";
+}
+
+if(val==="pastel"){
+biodata.style.background = "#fef6ff";
+biodata.style.color = "#6b21a8";
+biodata.style.borderColor = "#d8b4fe";
+}
+
+if(val==="elegant"){
+biodata.style.background = "#f5f5f5";
+biodata.style.color = "#333333";
+biodata.style.borderColor = "#bbbbbb";
+}
+
+if(val==="blue"){
+biodata.style.background = "linear-gradient(#2196f3,#1565c0)";
+biodata.style.color = "#ffffff";
+biodata.style.borderColor = "#dbeafe";
+}
+
+};
+</script>
+
+</body>
+</html>

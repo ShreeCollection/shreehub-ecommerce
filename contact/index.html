@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact ShreeHub | Orders, Support & Business Inquiry</title>
+<meta name="description" content="Contact ShreeHub and Shree Collection for wholesale orders, retail supply, support, custom inquiries and collaborations across India.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b1120;
+  color:#fff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  max-width:1280px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,17,32,0.78);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:18px 0;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#fbbf24;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#e5e7eb;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:#fbbf24;
+}
+
+/* HERO */
+
+.hero{
+  padding:85px 0 65px;
+  text-align:center;
+  background:
+  radial-gradient(circle at left top,#2563eb55,transparent 35%),
+  radial-gradient(circle at right bottom,#f59e0b30,transparent 35%);
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:40px;
+  background:rgba(255,255,255,0.08);
+  color:#fbbf24;
+  margin-bottom:18px;
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:54px;
+  margin-bottom:16px;
+}
+
+.hero h1 span{
+  color:#fbbf24;
+}
+
+.hero p{
+  max-width:760px;
+  margin:auto;
+  color:#cbd5e1;
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* MAIN */
+
+section{
+  padding:70px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.card{
+  background:#111827;
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:24px;
+  padding:30px;
+}
+
+.card h2{
+  font-size:30px;
+  margin-bottom:16px;
+}
+
+.card p{
+  color:#94a3b8;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+.info-box{
+  padding:16px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.04);
+  margin-bottom:14px;
+}
+
+.info-box strong{
+  color:#fff;
+}
+
+.info-box a{
+  color:#fbbf24;
+}
+
+form{
+  display:grid;
+  gap:16px;
+}
+
+input, textarea, select{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#0f172a;
+  color:#fff;
+  font-family:'Poppins',sans-serif;
+  outline:none;
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:12px;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.primary{
+  background:linear-gradient(135deg,#f59e0b,#fbbf24);
+  color:#111827;
+}
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+.secondary{
+  margin-top:8px;
+  border:1px solid rgba(255,255,255,0.08);
+  display:inline-block;
+}
+
+.secondary:hover{
+  background:rgba(255,255,255,0.04);
+}
+
+/* CTA */
+
+.cta{
+  background:linear-gradient(135deg,#1d4ed8,#1e3a8a);
+  border-radius:28px;
+  padding:50px 30px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:#dbeafe;
+  margin-bottom:24px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px 0;
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.grid{
+  grid-template-columns:1fr;
+}
+
+.hero h1{
+  font-size:40px;
+}
+
+}
+
+@media(max-width:768px){
+
+.logo{
+  font-size:26px;
+}
+
+nav ul{
+  gap:14px;
+}
+
+.hero h1{
+  font-size:34px;
+}
+
+.hero p{
+  font-size:16px;
+}
+
+.card h2{
+  font-size:26px;
+}
+
+.cta h2{
+  font-size:28px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo"><a href="/">Shree<span>Hub</a></span></div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="contact/">Contact</a></li>
+<li><a href="/about/" class="active">About</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<div class="badge">Orders • Support • Business Inquiry</div>
+
+<h1>Contact <span>ShreeHub</span></h1>
+
+<p>
+Reach us for wholesale supply, retail orders, support, custom requirements and business collaborations across India.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container grid">
+
+<!-- LEFT -->
+
+<div class="card">
+
+<h2>Get In Touch</h2>
+
+<p>We are ready to help with products, orders and inquiries.</p>
+
+<div class="info-box">
+<strong>WhatsApp / Mobile</strong><br>
+<a href="https://wa.me/919886901584" target="_blank">+91 9886901584</a>
+</div>
+
+<div class="info-box">
+<strong>Email</strong><br>
+<a href="mailto:shreecollectionkart@gmail.com">shreecollectionkart@gmail.com</a>
+</div>
+
+<div class="info-box">
+<strong>Service Area</strong><br>
+All India Supply & Online Support
+</div>
+
+<div class="info-box">
+<strong>Business Hours</strong><br>
+Mon - Sat | 10:00 AM to 7:00 PM
+</div>
+
+<a href="https://wa.me/919886901584" class="btn secondary" target="_blank">
+Chat on WhatsApp
+</a>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="card">
+
+<h2>Send Inquiry</h2>
+
+<form action="https://formsubmit.co/shreecollectionkart@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Inquiry from ShreeHub Website">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="tel" name="phone" placeholder="Phone Number">
+
+<select name="inquiry">
+<option>Select Inquiry Type</option>
+<option>Wholesale Order</option>
+<option>Retail Purchase</option>
+<option>Custom Supply</option>
+<option>Website Support</option>
+<option>Business Partnership</option>
+</select>
+
+<textarea name="message" placeholder="Write your message"></textarea>
+
+<button type="submit" class="btn primary">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+
+<h2>Need Bulk Products Fast?</h2>
+
+<p>
+Contact Shree Collection now for wholesale pricing and custom supply support.
+</p>
+
+<a href="https://wa.me/919886901584" target="_blank" class="btn primary">
+Request Quote
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 ShreeHub.com • Contact & Business Support
+</div>
+</footer>
+
+</body>
+</html>

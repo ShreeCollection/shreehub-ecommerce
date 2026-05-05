@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quotation Maker | Free Online Quote Generator | ShreeHub</title>
+<meta name="description" content="Create professional quotations online free. Add products, pricing, tax, discount and print quotation PDF instantly.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1300px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* MAIN */
+.container{
+max-width:1320px;
+margin:auto;
+padding:24px;
+}
+
+.hero{
+text-align:center;
+padding:18px 0;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+margin-top:10px;
+color:#94a3b8;
+}
+
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-bottom:18px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,textarea,select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+}
+
+textarea{
+resize:vertical;
+min-height:84px;
+}
+
+.toolbar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:14px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.green{
+background:#16a34a;
+color:#fff;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+/* QUOTATION */
+.quote{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+min-height:760px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap;
+border-bottom:2px solid #e5e7eb;
+padding-bottom:14px;
+margin-bottom:16px;
+}
+
+.logo-img{
+width:72px;
+height:72px;
+border-radius:14px;
+object-fit:cover;
+display:none;
+margin-bottom:8px;
+}
+
+.quote-title{
+font-size:30px;
+font-weight:800;
+}
+
+.small{
+font-size:14px;
+line-height:1.75;
+color:#475569;
+}
+
+.status{
+display:inline-block;
+padding:7px 12px;
+border-radius:999px;
+font-size:12px;
+font-weight:800;
+margin-top:8px;
+}
+
+.pending{
+background:#fef3c7;
+color:#92400e;
+}
+
+.accepted{
+background:#dcfce7;
+color:#166534;
+}
+
+.rejected{
+background:#fee2e2;
+color:#991b1b;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:16px;
+}
+
+th,td{
+padding:10px;
+border:1px solid #e5e7eb;
+font-size:14px;
+text-align:left;
+}
+
+th{
+background:#f8fafc;
+}
+
+.right{
+text-align:right;
+}
+
+.summary{
+margin-top:18px;
+margin-left:auto;
+max-width:340px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid #e5e7eb;
+}
+
+.total{
+font-size:20px;
+font-weight:800;
+color:#059669;
+}
+
+.bottom{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:22px;
+}
+
+.note{
+font-size:14px;
+line-height:1.8;
+color:#64748b;
+}
+
+.sign{
+text-align:right;
+padding-top:20px;
+font-weight:700;
+}
+
+/* FOOTER */
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+.layout{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:700px){
+.hero h1{
+font-size:34px;
+}
+.grid,
+.bottom{
+grid-template-columns:1fr;
+}
+.toolbar{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+}
+
+/* PRINT */
+@media print{
+
+header,
+.hero,
+.card,
+footer,
+.toolbar,
+.remove-btn{
+display:none !important;
+}
+
+html,body{
+width:210mm;
+height:297mm;
+margin:0;
+padding:0;
+background:#fff;
+overflow:hidden;
+}
+
+.container{
+max-width:100%;
+padding:0;
+margin:0;
+}
+
+.layout{
+display:block;
+}
+
+.quote{
+border:none;
+border-radius:0;
+box-shadow:none;
+padding:6mm;
+margin:0;
+min-height:auto;
+}
+
+th:last-child,
+td:last-child{
+display:none;
+}
+
+@page{
+size:A4 portrait;
+margin:0;
+}
+
+}
+
+.section{
+margin-top:40px;
+}
+
+.section h2{
+font-size:24px;
+margin-bottom:16px;
+color:#fbbf24;
+}
+
+.links{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+}
+
+.tool-card{
+display:block;
+padding:16px;
+background:#111827;
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+color:#e5e7eb;
+font-weight:600;
+transition:.3s;
+}
+
+.tool-card:hover{
+background:rgba(251,191,36,.15);
+border-color:#fbbf24;
+color:#fbbf24;
+transform:translateY(-3px);
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/tools/business/">Home</a></li>
+<li><a href="/tools/quote-generator/" class="active">Quotation Maker</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>Quotation</span> Maker</h1>
+<p>Create clean professional quotations instantly with print PDF support.</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">Business Details</div>
+
+<div class="grid">
+
+<div class="full">
+<label>Business Name</label>
+<input id="biz" value="ShreeHub Solutions">
+</div>
+
+<div>
+<label>Phone</label>
+<input id="phone" value="+91 9876543210">
+</div>
+
+<div>
+<label>Email</label>
+<input id="email" value="info@shreehub.com">
+</div>
+
+<div class="full">
+<label>Address</label>
+<textarea id="addr">Delhi, India</textarea>
+</div>
+
+<div class="full">
+<label>Logo Upload</label>
+<input type="file" id="logoFile" accept="image/*">
+</div>
+
+</div>
+
+<div class="title">Quotation Details</div>
+
+<div class="grid">
+
+<div>
+<label>Quotation No</label>
+<input id="quoteNo" readonly>
+</div>
+
+<div>
+<label>Status</label>
+<select id="status">
+<option value="pending">Pending</option>
+<option value="accepted">Accepted</option>
+<option value="rejected">Rejected</option>
+</select>
+</div>
+
+<div>
+<label>Date</label>
+<input type="date" id="date">
+</div>
+
+<div>
+<label>Valid Till</label>
+<input type="date" id="valid">
+</div>
+
+<div class="full">
+<label>Customer Name</label>
+<input id="cust" value="Rahul Sharma">
+</div>
+
+<div class="full">
+<label>Customer Address</label>
+<textarea id="caddr">Delhi, India</textarea>
+</div>
+
+</div>
+
+<div class="title">Add Item</div>
+
+<div class="grid">
+
+<div>
+<label>Item</label>
+<input id="item">
+</div>
+
+<div>
+<label>Qty</label>
+<input type="number" id="qty" value="1">
+</div>
+
+<div>
+<label>Rate</label>
+<input type="number" id="rate" value="1000">
+</div>
+
+<div>
+<label>Tax %</label>
+<input type="number" id="tax" value="18">
+</div>
+
+<div>
+<label>Discount ₹</label>
+<input type="number" id="discount" value="0">
+</div>
+
+<div>
+<label>&nbsp;</label>
+<button class="btn green" onclick="addItem()">+ Add</button>
+</div>
+
+</div>
+
+<div class="toolbar">
+<button class="btn primary" onclick="window.print()">Print / PDF</button>
+<button class="btn green" onclick="shareWhatsApp()">WhatsApp</button>
+<button class="btn dark" onclick="resetAll()">Reset</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="quote">
+
+<div class="top">
+
+<div>
+<img id="logoImg" class="logo-img">
+<div class="quote-title" id="bizView"></div>
+<div class="small" id="bizInfo"></div>
+</div>
+
+<div>
+<div class="quote-title">QUOTATION</div>
+<div class="small" id="metaInfo"></div>
+<div id="statusBadge" class="status pending">PENDING</div>
+</div>
+
+</div>
+
+<div class="small">
+<b>To:</b><br>
+<span id="custInfo"></span>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+<th>Qty</th>
+<th>Rate</th>
+<th>Tax</th>
+<th class="right">Amount</th>
+<th>Del</th>
+</tr>
+</thead>
+
+<tbody id="rows"></tbody>
+</table>
+
+<div class="summary" id="summary"></div>
+
+<div class="bottom">
+
+<div class="note">
+<b>Terms & Conditions:</b><br>
+• Prices valid till mentioned date.<br>
+• Taxes extra if applicable.<br>
+• Delivery as discussed.
+</div>
+
+<div class="sign">
+For <span id="signName"></span><br><br><br>
+Authorized Signatory
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>Related Tools</h2>
+
+<div class="links">
+
+<a class="tool-card" href="/tools/gst-invoice/">GST Invoice Maker</a>
+<a class="tool-card" href="/tools/receipt-maker/">Receipt Maker</a>
+<a class="tool-card" href="/tools/purchase-order-maker/">Purchase Order Maker</a>
+<a class="tool-card" href="/tools/profit-calculator/">Profit Calculator</a>
+
+<a class="tool-card" href="/tools/gst-calculator/">GST Calculator</a>
+<a class="tool-card" href="/tools/income-tax-calculator/">Income Tax Calculator</a>
+<a class="tool-card" href="/tools/discount-calculator/">Discount Calculator</a>
+<a class="tool-card" href="/tools/price-calculator/">Price Calculator</a>
+
+<a class="tool-card" href="/tools/salary-calculator/">Salary Calculator</a>
+<a class="tool-card" href="/tools/pdf/">PDF Tools</a>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Free Quotation Maker
+</footer>
+
+<script>
+document.getElementById("date").value=
+new Date().toISOString().split("T")[0];
+
+document.getElementById("valid").value=
+new Date(Date.now()+7*24*60*60*1000).toISOString().split("T")[0];
+
+let items=[];
+
+/* AUTO NUMBER */
+function generateQuoteNo(){
+
+let d=new Date();
+
+let y=d.getFullYear();
+let m=String(d.getMonth()+1).padStart(2,"0");
+let day=String(d.getDate()).padStart(2,"0");
+
+let count=localStorage.getItem("quote_counter");
+count=count?parseInt(count)+1:1;
+
+localStorage.setItem("quote_counter",count);
+
+return "QT-"+y+m+day+"-"+String(count).padStart(3,"0");
+}
+
+document.getElementById("quoteNo").value=
+generateQuoteNo();
+
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+}
+
+function addItem(){
+
+let item=document.getElementById("item").value.trim();
+let qty=+document.getElementById("qty").value;
+let rate=+document.getElementById("rate").value;
+let tax=+document.getElementById("tax").value;
+let discount=+document.getElementById("discount").value;
+
+if(item==="") return alert("Enter item");
+
+items.push({item,qty,rate,tax,discount});
+
+document.getElementById("item").value="";
+generate();
+}
+
+function removeItem(i){
+items.splice(i,1);
+generate();
+}
+
+function resetAll(){
+items=[];
+document.getElementById("quoteNo").value=
+generateQuoteNo();
+generate();
+}
+
+function shareWhatsApp(){
+
+let totalNode=document.querySelector(".total span:last-child");
+let total=totalNode?totalNode.innerText:"₹0.00";
+
+let msg=
+"📄 Quotation\n\n"+
+"Quotation No: "+document.getElementById("quoteNo").value+"\n"+
+"Customer: "+document.getElementById("cust").value+"\n"+
+"Total: "+total+"\n\n"+
+"Generated via ShreeHub";
+
+window.open(
+"https://wa.me/?text="+encodeURIComponent(msg),
+"_blank"
+);
+}
+
+function generate(){
+
+document.getElementById("bizView").innerText=
+document.getElementById("biz").value;
+
+document.getElementById("bizInfo").innerHTML=
+document.getElementById("addr").value+
+"<br>"+document.getElementById("phone").value+
+"<br>"+document.getElementById("email").value;
+
+document.getElementById("metaInfo").innerHTML=
+"Quotation No: "+document.getElementById("quoteNo").value+
+"<br>Date: "+document.getElementById("date").value+
+"<br>Valid Till: "+document.getElementById("valid").value;
+
+document.getElementById("custInfo").innerHTML=
+document.getElementById("cust").value+
+"<br>"+document.getElementById("caddr").value;
+
+document.getElementById("signName").innerText=
+document.getElementById("biz").value;
+
+let status=document.getElementById("status").value;
+let badge=document.getElementById("statusBadge");
+
+badge.className="status "+status;
+badge.innerText=status.toUpperCase();
+
+let rows="";
+let subtotal=0;
+let totalTax=0;
+let totalDiscount=0;
+
+items.forEach((x,i)=>{
+
+let base=x.qty*x.rate;
+let taxAmt=base*x.tax/100;
+let total=base+taxAmt-x.discount;
+
+subtotal+=base;
+totalTax+=taxAmt;
+totalDiscount+=x.discount;
+
+rows+=`
+<tr>
+<td>${i+1}</td>
+<td>${x.item}</td>
+<td>${x.qty}</td>
+<td>${money(x.rate)}</td>
+<td>${x.tax}%</td>
+<td class="right">${money(total)}</td>
+<td>
+<button class="remove-btn" onclick="removeItem(${i})">✕</button>
+</td>
+</tr>
+`;
+});
+
+document.getElementById("rows").innerHTML=
+rows || `
+<tr>
+<td colspan="7" style="text-align:center;color:#64748b;">
+No items added yet
+</td>
+</tr>
+`;
+
+let grand=subtotal+totalTax-totalDiscount;
+
+document.getElementById("summary").innerHTML=`
+<div class="row"><span>Subtotal</span><span>${money(subtotal)}</span></div>
+<div class="row"><span>Tax</span><span>${money(totalTax)}</span></div>
+<div class="row"><span>Discount</span><span>- ${money(totalDiscount)}</span></div>
+<div class="row total"><span>Total</span><span>${money(grand)}</span></div>
+`;
+
+}
+
+/* LIVE */
+[
+"biz","phone","email","addr",
+"cust","caddr","status",
+"date","valid"
+].forEach(id=>{
+document.getElementById(id).addEventListener("input",generate);
+document.getElementById(id).addEventListener("change",generate);
+});
+
+/* LOGO */
+document.getElementById("logoFile").addEventListener("change",function(){
+
+let file=this.files[0];
+if(!file) return;
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+let img=document.getElementById("logoImg");
+img.src=e.target.result;
+img.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+generate();
+</script>
+
+</body>
+</html>

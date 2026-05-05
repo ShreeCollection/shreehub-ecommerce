@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seller Supply & Packaging Material | Courier Bags, Labels, Boxes | ShreeHub</title>
+
+<meta name="description" content="Buy courier bags, thermal labels, corrugated boxes, BOPP tape, bubble wrap and ecommerce seller supplies at wholesale prices. Bulk orders available across India.">
+
+<meta name="keywords" content="seller supply, packaging material, courier bags, thermal labels, shipping boxes, ecommerce packaging, wholesale packaging india">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+max-width:1280px;
+margin:auto;
+padding:0 20px;
+}
+
+/* Header */
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.88);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:24px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#cbd5e1;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* Hero */
+
+.hero{
+padding:90px 0 70px;
+position:relative;
+overflow:hidden;
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+border-radius:50%;
+background:radial-gradient(circle,#2563eb55,transparent 65%);
+top:-100px;
+left:-120px;
+}
+
+.hero:after{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+border-radius:50%;
+background:radial-gradient(circle,#f59e0b35,transparent 65%);
+right:-120px;
+bottom:-120px;
+}
+
+.hero-grid{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 16px;
+border-radius:40px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
+color:#fbbf24;
+margin-bottom:18px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:58px;
+line-height:1.1;
+margin-bottom:18px;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+color:#cbd5e1;
+font-size:18px;
+line-height:1.8;
+margin-bottom:28px;
+max-width:700px;
+}
+
+.btn-wrap{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.secondary{
+border:1px solid rgba(255,255,255,.1);
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+padding:28px;
+backdrop-filter:blur(14px);
+}
+
+.hero-card h3{
+font-size:24px;
+margin-bottom:18px;
+}
+
+.quick-list{
+display:grid;
+gap:14px;
+}
+
+.quick-item{
+padding:14px;
+border-radius:14px;
+background:rgba(255,255,255,.05);
+}
+
+/* Sections */
+
+section{
+padding:70px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:14px;
+}
+
+.section-sub{
+text-align:center;
+color:#94a3b8;
+max-width:760px;
+margin:0 auto 42px;
+line-height:1.8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:28px;
+border-radius:22px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#fbbf24;
+}
+
+.icon{
+font-size:34px;
+margin-bottom:14px;
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#94a3b8;
+line-height:1.8;
+font-size:15px;
+}
+
+/* Form */
+
+.form-box{
+max-width:760px;
+margin:auto;
+background:#111827;
+padding:28px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+input,select,textarea{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.08);
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+margin-bottom:14px;
+}
+
+textarea{
+min-height:130px;
+resize:vertical;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#1d4ed8,#1e3a8a);
+padding:50px 30px;
+border-radius:28px;
+text-align:center;
+}
+
+.cta h2{
+font-size:40px;
+margin-bottom:12px;
+}
+
+.cta p{
+color:#dbeafe;
+margin-bottom:24px;
+}
+
+footer{
+padding:35px 0;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#94a3b8;
+}
+
+.float-wa{
+position:fixed;
+right:18px;
+bottom:18px;
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+background:#25D366;
+z-index:999;
+}
+
+/* Responsive */
+
+@media(max-width:980px){
+
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+}
+
+@media(max-width:768px){
+
+.section-title{
+font-size:30px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+nav ul{
+gap:14px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo"><a href="/">Shree<span>Hub</span></a></div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/seller-supply.html" class="active">Seller Supply</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">Wholesale Packaging • Bulk Orders Welcome</div>
+
+<h1>Seller Supply & <span>Packaging Solutions</span></h1>
+
+<p>
+Everything ecommerce sellers need in one place — courier bags, boxes, thermal labels, tapes and dispatch essentials at wholesale prices.
+</p>
+
+<div class="btn-wrap">
+<a href="#quote" class="btn primary">Get Quote</a>
+<a href="https://wa.me/919886901584" target="_blank" class="btn secondary">WhatsApp</a>
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Popular Products</h3>
+
+<div class="quick-list">
+<div class="quick-item">📦 Corrugated Boxes</div>
+<div class="quick-item">🏷️ Thermal Labels</div>
+<div class="quick-item">📮 Courier Bags</div>
+<div class="quick-item">📌 BOPP Tape</div>
+<div class="quick-item">🫧 Bubble Wrap</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Top Seller Supplies</h2>
+<p class="section-sub">Best packaging products for ecommerce sellers, wholesalers and businesses.</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📦</div>
+<h3>Corrugated Boxes</h3>
+<p>Strong shipping boxes in all sizes for secure dispatch.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏷️</div>
+<h3>Thermal Labels</h3>
+<p>Barcode labels, shipping labels and courier stickers.</p>
+</div>
+
+<div class="card">
+<div class="icon">📮</div>
+<h3>Courier Bags</h3>
+<p>Tamper-proof poly mailers and dispatch bags.</p>
+</div>
+
+<div class="card">
+<div class="icon">📌</div>
+<h3>BOPP Tape</h3>
+<p>Brown tape, transparent tape and branded tape rolls.</p>
+</div>
+
+<div class="card">
+<div class="icon">🫧</div>
+<h3>Bubble Wrap</h3>
+<p>Protection rolls for fragile items and safe packaging.</p>
+</div>
+
+<div class="card">
+<div class="icon">🖨️</div>
+<h3>Label Rolls</h3>
+<p>Printer compatible sticker rolls for sellers.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Why Sellers Choose Us</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">💰</div>
+<h3>Wholesale Pricing</h3>
+<p>Competitive pricing for bulk buyers.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Fast Dispatch</h3>
+<p>Quick order handling and shipment support.</p>
+</div>
+
+<div class="card">
+<div class="icon">📦</div>
+<h3>Bulk Stock</h3>
+<p>Ready inventory for repeat orders.</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Easy Ordering</h3>
+<p>Simple WhatsApp ordering system.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="quote">
+<div class="container">
+
+<h2 class="section-title">Bulk Inquiry Form</h2>
+<p class="section-sub">Send your packaging requirement instantly.</p>
+
+<div class="form-box">
+
+<div class="row">
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+</div>
+
+<div class="row">
+<input type="text" id="business" placeholder="Business Name">
+<input type="text" id="city" placeholder="City">
+</div>
+
+<select id="type">
+<option>Amazon Seller</option>
+<option>Flipkart Seller</option>
+<option>Wholesale Buyer</option>
+<option>Retail Buyer</option>
+</select>
+
+<textarea id="req" placeholder="Products needed, quantity, size, budget"></textarea>
+
+<a href="javascript:void(0)" onclick="sendInquiry()" class="btn primary" style="width:100%;text-align:center;">Send Inquiry</a>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+
+<h2>Need Packaging Material Today?</h2>
+
+<p>Chat now for stock, rates and bulk orders.</p>
+
+<a href="https://wa.me/919886901584" target="_blank" class="btn primary">WhatsApp Now</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 ShreeHub.com • Seller Supply & Packaging Material
+</div>
+</footer>
+
+<a href="https://wa.me/919886901584" target="_blank" class="float-wa">💬</a>
+
+<script>
+
+function sendInquiry(){
+
+let msg =
+"Seller Supply Inquiry:%0A"+
+"Name: "+document.getElementById("name").value+"%0A"+
+"Phone: "+document.getElementById("phone").value+"%0A"+
+"Business: "+document.getElementById("business").value+"%0A"+
+"City: "+document.getElementById("city").value+"%0A"+
+"Type: "+document.getElementById("type").value+"%0A"+
+"Requirement: "+document.getElementById("req").value;
+
+window.open("https://wa.me/919886901584?text="+msg,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>

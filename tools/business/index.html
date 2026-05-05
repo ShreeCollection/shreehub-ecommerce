@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Business Tools Hub India | ShreeHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== ROOT COLORS ===== */
+:root{
+--bg:#0b1120;
+--card:#111827;
+--text:#ffffff;
+--muted:#94a3b8;
+--border:rgba(255,255,255,.08);
+--primary:#fbbf24;
+--primary-dark:#f59e0b;
+}
+
+/* ===== GLOBAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Poppins',sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1320px;margin:auto;padding:0 20px;}
+
+/* ===== HEADER ===== */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.9);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--border);
+}
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+.logo{
+font-size:30px;
+font-weight:800;
+color:#fff;
+}
+.logo span{color:var(--primary);}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+nav a:hover,
+nav a.active{
+color:var(--primary);
+}
+
+/* ===== HERO ===== */
+.hero{
+text-align:center;
+padding:80px 0;
+}
+.hero h1{
+font-size:48px;
+font-weight:700;
+color:#fff;
+}
+.hero h1 span{
+color:var(--primary);
+}
+.hero p{
+margin-top:12px;
+color:var(--muted);
+font-size:16px;
+}
+
+/* ===== SEARCH ===== */
+.search-box{
+max-width:720px;
+margin:25px auto;
+}
+.search-box input{
+width:100%;
+padding:16px;
+border-radius:14px;
+background:var(--card);
+border:1px solid var(--border);
+color:#fff;
+font-size:15px;
+}
+
+/* ===== POPULAR ===== */
+.popular-tools{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+.popular-tools span{
+padding:8px 14px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:999px;
+cursor:pointer;
+font-size:13px;
+color:#e5e7eb;
+}
+.popular-tools span:hover{
+background:rgba(251,191,36,.15);
+border-color:var(--primary);
+}
+
+/* ===== FILTER ===== */
+.filter-wrapper{
+position:sticky;
+top:70px;
+background:var(--bg);
+z-index:998;
+padding:10px 0;
+}
+.category-tabs{
+display:flex;
+gap:10px;
+overflow-x:auto;
+}
+.tab{
+padding:8px 16px;
+border-radius:999px;
+background:var(--card);
+border:1px solid var(--border);
+cursor:pointer;
+color:#e5e7eb;
+font-size:14px;
+}
+.tab.active{
+background:var(--primary);
+color:#111827;
+font-weight:600;
+}
+.reset-btn{
+background:#ef4444;
+color:#fff;
+border:none;
+padding:8px 14px;
+border-radius:999px;
+cursor:pointer;
+}
+
+/* ===== GRID ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+padding:40px 0;
+}
+
+/* ===== CARD ===== */
+.card{
+background:var(--card);
+border:1px solid rgba(255,255,255,.06);
+border-radius:20px;
+padding:25px;
+display:flex;
+flex-direction:column;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-6px);
+border-color:var(--primary);
+}
+.icon{
+font-size:26px;
+margin-bottom:10px;
+}
+.card h3{
+font-size:20px;
+margin-bottom:8px;
+color:#fff;
+}
+.card p{
+color:var(--muted);
+font-size:14px;
+margin-bottom:14px;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+margin-top:auto;
+padding:10px;
+border-radius:10px;
+background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+color:#111827;
+font-weight:700;
+text-align:center;
+font-size:14px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:30px;
+color:var(--muted);
+border-top:1px solid var(--border);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="container navbar">
+<div class="logo">Shree<span>Hub</span></div>
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h1><span>Business</span> Tools Hub</h1>
+<p>Professional tools for GST, billing, pricing and operations.</p>
+
+<div class="search-box">
+<input type="text" id="toolSearch" placeholder="Search GST Invoice, Salary, Profit...">
+</div>
+
+<div class="popular-tools">
+<span onclick="quickSearch('gst')">GST</span>
+<span onclick="quickSearch('invoice')">Invoice</span>
+<span onclick="quickSearch('salary')">Salary</span>
+<span onclick="quickSearch('profit')">Profit</span>
+</div>
+
+</div>
+</section>
+
+<!-- FILTER -->
+<div class="filter-wrapper">
+<div class="container">
+<div class="category-tabs">
+<button class="tab active" data-category="all">All</button>
+<button class="tab" data-category="billing">Billing</button>
+<button class="tab" data-category="tax">Tax</button>
+<button class="tab" data-category="pricing">Pricing</button>
+<button class="tab" data-category="operations">Operations</button>
+<button class="reset-btn" onclick="resetFilters()">Reset</button>
+</div>
+</div>
+</div>
+
+<!-- GRID -->
+<section>
+<div class="container">
+<div class="grid">
+
+<!-- ORIGINAL LINKS -->
+<div class="card" data-category="billing" data-name="GST Invoice Maker" data-keywords="gst invoice">
+<div class="icon">🧾</div>
+<h3>GST Invoice Maker</h3>
+<p>Create professional GST invoices.</p>
+<a href="/tools/gst-invoice/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="billing" data-name="Quotation Maker" data-keywords="quotation">
+<div class="icon">📄</div>
+<h3>Quotation Maker</h3>
+<p>Create quotations instantly.</p>
+<a href="/tools/quote-generator/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="billing" data-name="Receipt Maker" data-keywords="receipt">
+<div class="icon">💵</div>
+<h3>Receipt Maker</h3>
+<p>Generate receipts.</p>
+<a href="/tools/receipt-maker/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="operations" data-name="Purchase Order Maker" data-keywords="purchase order">
+<div class="icon">📦</div>
+<h3>Purchase Order Maker</h3>
+<p>Create purchase orders.</p>
+<a href="/tools/purchase-order-maker/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="pricing" data-name="Profit Calculator" data-keywords="profit">
+<div class="icon">📊</div>
+<h3>Profit Calculator</h3>
+<p>Check profit margin.</p>
+<a href="/tools/profit-calculator/" class="btn">Use Tool</a>
+</div>
+
+<!-- NEW TOOLS -->
+<div class="card" data-category="tax" data-name="GST Calculator" data-keywords="gst tax">
+<div class="icon">🧮</div>
+<h3>GST Calculator</h3>
+<p>Calculate GST instantly.</p>
+<a href="/tools/gst-calculator/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="tax" data-name="Income Tax Calculator" data-keywords="income tax">
+<div class="icon">💰</div>
+<h3>Income Tax Calculator</h3>
+<p>Estimate tax easily.</p>
+<a href="/tools/income-tax-calculator/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="pricing" data-name="Discount Calculator" data-keywords="discount">
+<div class="icon">🏷️</div>
+<h3>Discount Calculator</h3>
+<p>Calculate discounts.</p>
+<a href="/tools/discount-calculator/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="pricing" data-name="Price Calculator" data-keywords="price">
+<div class="icon">💲</div>
+<h3>Price Calculator</h3>
+<p>Calculate selling price.</p>
+<a href="/tools/price-calculator/" class="btn">Use Tool</a>
+</div>
+
+<div class="card" data-category="operations" data-name="Salary Calculator" data-keywords="salary">
+<div class="icon">💼</div>
+<h3>Salary Calculator</h3>
+<p>Calculate salary instantly.</p>
+<a href="/tools/salary-calculator/" class="btn">Use Tool</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 ShreeHub • Business Tools
+</footer>
+
+<script>
+let activeCategory="all";
+let searchValue="";
+
+const cards=document.querySelectorAll(".card");
+const input=document.getElementById("toolSearch");
+const tabs=document.querySelectorAll(".tab");
+
+function applyFilters(){
+cards.forEach(card=>{
+const name=card.dataset.name.toLowerCase();
+const key=card.dataset.keywords.toLowerCase();
+const cat=card.dataset.category;
+
+const matchSearch=name.includes(searchValue)||key.includes(searchValue);
+const matchCategory=activeCategory==="all"||cat===activeCategory;
+
+card.style.display=(matchSearch&&matchCategory)?"flex":"none";
+});
+}
+
+input.addEventListener("input",()=>{
+searchValue=input.value.toLowerCase();
+applyFilters();
+});
+
+tabs.forEach(tab=>{
+tab.addEventListener("click",()=>{
+tabs.forEach(t=>t.classList.remove("active"));
+tab.classList.add("active");
+activeCategory=tab.dataset.category;
+applyFilters();
+});
+});
+
+function resetFilters(){
+activeCategory="all";
+searchValue="";
+input.value="";
+tabs.forEach(t=>t.classList.remove("active"));
+tabs[0].classList.add("active");
+applyFilters();
+}
+
+function quickSearch(term){
+input.value=term;
+searchValue=term;
+applyFilters();
+}
+</script>
+
+</body>
+</html>

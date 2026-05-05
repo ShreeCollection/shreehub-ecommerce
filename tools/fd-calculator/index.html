@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FD Calculator India | Fixed Deposit Interest & Maturity Calculator | ShreeHub</title>
+<meta name="description" content="Free FD Calculator India. Calculate fixed deposit maturity amount, total interest earned and returns instantly with monthly, quarterly or yearly compounding.">
+
+<meta name="keywords" content="fd calculator india, fixed deposit calculator, fd maturity calculator, bank fd calculator, interest calculator india">
+
+<link rel="canonical" href="https://yourdomain.com/tools/fd-calculator/">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+max-width:1320px;
+margin:auto;
+padding:24px;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1320px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:24px 0;
+}
+
+.hero h1{
+font-size:46px;
+font-weight:800;
+line-height:1.15;
+}
+
+.hero h1 span{
+color:#22c55e;
+}
+
+.hero p{
+margin-top:12px;
+color:#94a3b8;
+font-size:17px;
+}
+
+/* LAYOUT */
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+color:#fbbf24;
+margin-bottom:16px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,select{
+width:100%;
+padding:13px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+font-size:15px;
+outline:none;
+}
+
+.buttons{
+display:flex;
+gap:12px;
+margin-top:18px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#16a34a,#22c55e);
+color:#fff;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.green{
+background:#0ea5e9;
+color:#fff;
+}
+
+/* RESULT */
+.result{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.big{
+font-size:42px;
+font-weight:800;
+color:#16a34a;
+margin-bottom:16px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+gap:14px;
+padding:11px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+}
+
+.bar{
+height:14px;
+background:#e5e7eb;
+border-radius:999px;
+overflow:hidden;
+margin-top:18px;
+}
+
+.fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#16a34a,#22c55e);
+transition:.4s;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+line-height:1.8;
+color:#64748b;
+}
+
+/* SEO */
+.section{
+margin-top:36px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:28px;
+border-radius:24px;
+}
+
+.section h2{
+font-size:30px;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.section h3{
+font-size:22px;
+margin:20px 0 10px;
+}
+
+.section p,.section li{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+.section ul{
+padding-left:20px;
+}
+
+.links{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:14px;
+}
+
+.links a{
+padding:10px 16px;
+border-radius:12px;
+background:#0f172a;
+}
+
+/* FOOTER */
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+.layout{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:34px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.big{
+font-size:34px;
+}
+
+.section h2{
+font-size:26px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/tools/finance/">Finance</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>FD</span> Calculator</h1>
+<p>Calculate fixed deposit maturity amount, total interest and investment growth instantly.</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">FD Details</div>
+
+<div class="grid">
+
+<div class="full">
+<label>Deposit Amount ₹</label>
+<input type="number" id="principal" value="100000">
+</div>
+
+<div>
+<label>Interest Rate %</label>
+<input type="number" id="rate" value="7">
+</div>
+
+<div>
+<label>Tenure (Years)</label>
+<input type="number" id="years" value="5">
+</div>
+
+<div class="full">
+<label>Compounding</label>
+<select id="compound">
+<option value="1">Yearly</option>
+<option value="2">Half Yearly</option>
+<option value="4" selected>Quarterly</option>
+<option value="12">Monthly</option>
+</select>
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="btn primary" onclick="calculateFD()">Calculate</button>
+<button class="btn dark" onclick="resetCalc()">Reset</button>
+<button class="btn green" onclick="shareWA()">WhatsApp</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="result">
+
+<div class="big" id="mainValue">₹1,41,777.00</div>
+
+<div class="row">
+<span>Maturity Amount</span>
+<span id="maturityView">₹1,41,777.00</span>
+</div>
+
+<div class="row">
+<span>Total Interest</span>
+<span id="interestView">₹41,777.00</span>
+</div>
+
+<div class="row">
+<span>Principal Amount</span>
+<span id="principalView">₹1,00,000.00</span>
+</div>
+
+<div class="row">
+<span>Interest Rate</span>
+<span id="rateView">7%</span>
+</div>
+
+<div class="row">
+<span>Tenure</span>
+<span id="tenureView">5 Years</span>
+</div>
+
+<div class="bar">
+<div class="fill" id="ratioBar"></div>
+</div>
+
+<div class="note">
+Estimated returns based on compound interest formula. Final bank payout may vary due to TDS or specific bank rules.
+</div>
+
+</div>
+
+</div>
+
+<!-- SEO CONTENT -->
+
+<div class="section">
+
+<h2>How FD Calculator Works</h2>
+
+<p>
+Enter deposit amount, interest rate, tenure and compounding frequency. The calculator instantly shows maturity amount and interest earned.
+</p>
+
+<ul>
+<li>Fixed Deposit Returns</li>
+<li>Interest Comparison</li>
+<li>Investment Planning</li>
+<li>Safe Savings Growth</li>
+</ul>
+
+<h3>Related Tools</h3>
+
+<div class="links">
+<a href="/tools/sip-calculator/">SIP Calculator</a>
+<a href="/tools/emi-calculator/">EMI Calculator</a>
+<a href="/tools/loan-calculator/">Loan Calculator</a>
+<a href="/tools/finance/">Finance Hub</a>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is FD?</h3>
+<p>FD means Fixed Deposit, where money is invested for a fixed period with guaranteed interest.</p>
+
+<h3>Is this FD Calculator free?</h3>
+<p>Yes, completely free to use.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, fully mobile responsive.</p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Free FD Calculator
+</footer>
+
+<script>
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+}
+
+function calculateFD(){
+
+let P=parseFloat(document.getElementById("principal").value)||0;
+let r=parseFloat(document.getElementById("rate").value)||0;
+let t=parseFloat(document.getElementById("years").value)||0;
+let n=parseFloat(document.getElementById("compound").value)||1;
+
+/* Compound Interest */
+let A=P*Math.pow((1+(r/100)/n),(n*t));
+let interest=A-P;
+
+document.getElementById("mainValue").innerText=money(A);
+document.getElementById("maturityView").innerText=money(A);
+document.getElementById("interestView").innerText=money(interest);
+document.getElementById("principalView").innerText=money(P);
+document.getElementById("rateView").innerText=r+"%";
+document.getElementById("tenureView").innerText=t+" Years";
+
+let ratio=(interest/A)*100;
+document.getElementById("ratioBar").style.width=ratio+"%";
+}
+
+function resetCalc(){
+document.getElementById("principal").value=100000;
+document.getElementById("rate").value=7;
+document.getElementById("years").value=5;
+document.getElementById("compound").value=4;
+calculateFD();
+}
+
+function shareWA(){
+
+let msg=
+"🏦 FD Report\n\n"+
+"Maturity Amount: "+document.getElementById("maturityView").innerText+"\n"+
+"Interest Earned: "+document.getElementById("interestView").innerText+"\n"+
+"Deposit: "+document.getElementById("principalView").innerText+"\n\n"+
+"Generated via ShreeHub";
+
+window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+}
+
+["principal","rate","years","compound"].forEach(id=>{
+document.getElementById(id).addEventListener("input",calculateFD);
+document.getElementById(id).addEventListener("change",calculateFD);
+});
+
+calculateFD();
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"What is FD?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"FD means Fixed Deposit where money earns fixed interest for a chosen period."
+}
+},
+{
+"@type":"Question",
+"name":"Is this FD Calculator free?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes, this FD calculator is completely free."
+}
+},
+{
+"@type":"Question",
+"name":"Does it work on mobile?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes, fully mobile responsive."
+}
+}
+]
+}
+</script>
+
+</body>
+</html>

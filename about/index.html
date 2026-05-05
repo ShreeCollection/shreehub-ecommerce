@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About ShreeHub | Our Story, Mission & Services</title>
+<meta name="description" content="Learn about ShreeHub and Shree Collection. Discover our mission, premium services, smart tools, wholesale supply and customer-focused growth solutions.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b1120;
+  color:#ffffff;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:100%;
+  max-width:1280px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,17,32,0.78);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:18px 0;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#fbbf24;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#e5e7eb;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:#fbbf24;
+}
+
+/* HERO */
+
+.hero{
+  padding:85px 0 70px;
+  text-align:center;
+  background:
+  radial-gradient(circle at left top,#2563eb55,transparent 35%),
+  radial-gradient(circle at right bottom,#f59e0b30,transparent 35%);
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:40px;
+  background:rgba(255,255,255,0.08);
+  color:#fbbf24;
+  margin-bottom:18px;
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:56px;
+  margin-bottom:16px;
+}
+
+.hero h1 span{
+  color:#fbbf24;
+}
+
+.hero p{
+  max-width:760px;
+  margin:auto;
+  color:#cbd5e1;
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* SECTION */
+
+section{
+  padding:70px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:14px;
+}
+
+.section-sub{
+  text-align:center;
+  color:#94a3b8;
+  max-width:760px;
+  margin:0 auto 42px;
+  line-height:1.8;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.card{
+  background:#111827;
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:24px;
+  padding:28px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#fbbf24;
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:14px;
+}
+
+.card p{
+  color:#94a3b8;
+  line-height:1.8;
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:14px;
+}
+
+.highlight{
+  color:#fbbf24;
+}
+
+/* CTA */
+
+.cta{
+  background:linear-gradient(135deg,#1d4ed8,#1e3a8a);
+  border-radius:28px;
+  padding:50px 30px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:#dbeafe;
+  margin-bottom:24px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.primary{
+  background:linear-gradient(135deg,#f59e0b,#fbbf24);
+  color:#111827;
+}
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px 0;
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.two-col{
+  grid-template-columns:1fr;
+}
+
+.hero h1{
+  font-size:40px;
+}
+
+}
+
+@media(max-width:768px){
+
+.logo{
+  font-size:26px;
+}
+
+nav ul{
+  gap:14px;
+}
+
+.hero h1{
+  font-size:34px;
+}
+
+.hero p{
+  font-size:16px;
+}
+
+.section-title{
+  font-size:30px;
+}
+
+.card h3{
+  font-size:22px;
+}
+
+.cta h2{
+  font-size:28px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo"><a href="/">Shree<span>Hub</a></span></div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/about/" class="active">About</a></li>
+
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<div class="badge">Our Story • Mission • Values</div>
+
+<h1>About <span>ShreeHub</span></h1>
+
+<p>
+ShreeHub is a growing digital platform built to combine smart tools, shopping solutions and helpful resources in one trusted place for India.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Who We Are</h2>
+<p class="section-sub">
+We created ShreeHub to make everyday tasks easier, shopping smarter and business growth more accessible.
+</p>
+
+<div class="two-col">
+
+<div class="card">
+<h3>Our Vision</h3>
+<p>
+To build a modern Indian platform where people can discover useful tools, quality products and practical solutions with trust and simplicity.
+</p>
+</div>
+
+<div class="card">
+<h3>Our Mission</h3>
+<p>
+To help users save time, grow confidently and shop smarter through premium experiences and reliable service.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">What We Offer</h2>
+<p class="section-sub">
+A powerful ecosystem of services designed for real everyday needs.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🛍</div>
+<h3>Shree Collection</h3>
+<p>
+Wholesale and retail supply with trusted products, gift items and customer-first support.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🛠</div>
+<h3>Smart Tools</h3>
+<p>
+Traditional Biodata Generator, Professional Biodata Generator, Smart Gift Finder and more.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Helpful Content</h3>
+<p>
+Guides, ideas and blog resources about gifts, business and productivity.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Growth Focus</h3>
+<p>
+Everything we build is designed to help users and small businesses grow.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Why Choose Us</h2>
+<p class="section-sub">
+Why customers trust the ShreeHub platform.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3 class="highlight">Premium Experience</h3>
+<p>Modern design, smooth experience and mobile-friendly pages.</p>
+</div>
+
+<div class="card">
+<h3 class="highlight">India Focused</h3>
+<p>Built with Indian users, buyers and businesses in mind.</p>
+</div>
+
+<div class="card">
+<h3 class="highlight">Reliable Support</h3>
+<p>Friendly assistance for orders, tools and inquiries.</p>
+</div>
+
+<div class="card">
+<h3 class="highlight">Growing Platform</h3>
+<p>We continuously improve with new tools and services.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+
+<h2>Join the ShreeHub Journey</h2>
+
+<p>
+Explore our tools, shop products and discover smarter ways to grow.
+</p>
+
+<a href="/" class="btn primary">Back to Home</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 ShreeHub.com • About Our Brand
+</div>
+</footer>
+
+</body>
+</html>

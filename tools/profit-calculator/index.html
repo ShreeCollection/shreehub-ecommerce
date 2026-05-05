@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profit Calculator | Free Profit Margin Calculator | ShreeHub</title>
+<meta name="description" content="Free Profit Calculator. Calculate profit, loss, margin %, markup %, selling price and ROI instantly with professional UI.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1300px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* MAIN */
+.container{
+max-width:1250px;
+margin:auto;
+padding:24px;
+}
+
+.hero{
+text-align:center;
+padding:18px 0;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+margin-top:10px;
+color:#94a3b8;
+}
+
+.layout{
+display:grid;
+grid-template-columns:420px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-bottom:18px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,select{
+width:100%;
+padding:13px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+font-size:15px;
+}
+
+.buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+/* RESULT */
+.result{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:26px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.big{
+font-size:42px;
+font-weight:800;
+margin-bottom:16px;
+}
+
+.profit{
+color:#16a34a;
+}
+
+.loss{
+color:#dc2626;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+color:#64748b;
+line-height:1.8;
+}
+
+/* EXTRA */
+.section{
+margin-top:36px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:24px;
+border-radius:24px;
+}
+
+.section h2{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.section p{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+/* FOOTER */
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+.layout{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:700px){
+.hero h1{
+font-size:34px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>Profit</span> Calculator</h1>
+<p>Calculate profit, loss, margin %, markup %, ROI and selling price instantly.</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">Calculator</div>
+
+<div class="grid">
+
+<div class="full">
+<label>Cost Price (₹)</label>
+<input type="number" id="cost" value="1000">
+</div>
+
+<div class="full">
+<label>Selling Price (₹)</label>
+<input type="number" id="sell" value="1500">
+</div>
+
+<div>
+<label>Extra Expenses (₹)</label>
+<input type="number" id="expense" value="0">
+</div>
+
+<div>
+<label>Quantity</label>
+<input type="number" id="qty" value="1">
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="btn primary" onclick="calculateProfit()">Calculate</button>
+<button class="btn dark" onclick="resetCalc()">Reset</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="result">
+
+<div class="big profit" id="mainResult">₹500.00 Profit</div>
+
+<div class="row">
+<span>Total Cost</span>
+<span id="totalCost">₹1,000.00</span>
+</div>
+
+<div class="row">
+<span>Total Revenue</span>
+<span id="revenue">₹1,500.00</span>
+</div>
+
+<div class="row">
+<span>Net Profit / Loss</span>
+<span id="net">₹500.00</span>
+</div>
+
+<div class="row">
+<span>Profit Margin</span>
+<span id="margin">33.33%</span>
+</div>
+
+<div class="row">
+<span>Markup</span>
+<span id="markup">50.00%</span>
+</div>
+
+<div class="row">
+<span>ROI</span>
+<span id="roi">50.00%</span>
+</div>
+
+<div class="note">
+Profit Margin = Profit ÷ Revenue × 100<br>
+Markup = Profit ÷ Cost × 100
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>How Profit Calculator Works</h2>
+<p>
+Enter your buying cost, selling price, expenses and quantity. This calculator instantly shows total profit or loss, margin percentage, markup and ROI.
+</p>
+</div>
+
+<div class="section">
+<h2>Useful For</h2>
+<p>
+Retail shops • Resellers • Ecommerce • Wholesale • Traders • Manufacturers • Service businesses
+</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Free Profit Calculator
+</footer>
+
+<script>
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+}
+
+function percent(n){
+return Number(n).toFixed(2)+"%";
+}
+
+function calculateProfit(){
+
+let cost=parseFloat(document.getElementById("cost").value)||0;
+let sell=parseFloat(document.getElementById("sell").value)||0;
+let expense=parseFloat(document.getElementById("expense").value)||0;
+let qty=parseFloat(document.getElementById("qty").value)||1;
+
+let totalCost=(cost*qty)+expense;
+let revenue=sell*qty;
+
+let profit=revenue-totalCost;
+
+let margin = revenue>0 ? (profit/revenue)*100 : 0;
+let markup = totalCost>0 ? (profit/totalCost)*100 : 0;
+let roi = totalCost>0 ? (profit/totalCost)*100 : 0;
+
+document.getElementById("totalCost").innerText=money(totalCost);
+document.getElementById("revenue").innerText=money(revenue);
+document.getElementById("net").innerText=money(profit);
+document.getElementById("margin").innerText=percent(margin);
+document.getElementById("markup").innerText=percent(markup);
+document.getElementById("roi").innerText=percent(roi);
+
+let result=document.getElementById("mainResult");
+
+if(profit>=0){
+result.className="big profit";
+result.innerText=money(profit)+" Profit";
+}else{
+result.className="big loss";
+result.innerText=money(Math.abs(profit))+" Loss";
+}
+
+}
+
+function resetCalc(){
+
+document.getElementById("cost").value=1000;
+document.getElementById("sell").value=1500;
+document.getElementById("expense").value=0;
+document.getElementById("qty").value=1;
+
+calculateProfit();
+
+}
+
+/* AUTO LIVE */
+[
+"cost",
+"sell",
+"expense",
+"qty"
+].forEach(id=>{
+document.getElementById(id).addEventListener("input",calculateProfit);
+});
+
+calculateProfit();
+</script>
+
+</body>
+</html>

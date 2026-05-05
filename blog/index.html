@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ShreeHub Blog | Gifts, Biodata, Business & Smart Ideas</title>
+<meta name="description" content="Read premium blog articles from ShreeHub about gifts, biodata formats, wholesale business, smart tools and useful ideas for India.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b1120;
+  color:#ffffff;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:100%;
+  max-width:1280px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,17,32,0.78);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:18px 0;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#fbbf24;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#e5e7eb;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:#fbbf24;
+}
+
+/* HERO */
+
+.hero{
+  padding:85px 0 70px;
+  text-align:center;
+  background:
+  radial-gradient(circle at left top,#2563eb55,transparent 35%),
+  radial-gradient(circle at right bottom,#f59e0b30,transparent 35%);
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:40px;
+  background:rgba(255,255,255,0.08);
+  color:#fbbf24;
+  margin-bottom:18px;
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:56px;
+  margin-bottom:16px;
+}
+
+.hero h1 span{
+  color:#fbbf24;
+}
+
+.hero p{
+  max-width:760px;
+  margin:auto;
+  color:#cbd5e1;
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* SECTION */
+
+section{
+  padding:70px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:14px;
+}
+
+.section-sub{
+  text-align:center;
+  color:#94a3b8;
+  max-width:760px;
+  margin:0 auto 42px;
+  line-height:1.8;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:#111827;
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:24px;
+  padding:28px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#fbbf24;
+}
+
+.tag{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.06);
+  color:#fbbf24;
+  font-size:13px;
+  margin-bottom:14px;
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#94a3b8;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.primary{
+  background:linear-gradient(135deg,#f59e0b,#fbbf24);
+  color:#111827;
+}
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+.social-wrap{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+/* CTA */
+
+.cta{
+  background:linear-gradient(135deg,#1d4ed8,#1e3a8a);
+  border-radius:28px;
+  padding:50px 30px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:#dbeafe;
+  margin-bottom:24px;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:700;
+  z-index:999;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px 0;
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.logo{
+  font-size:26px;
+}
+
+nav ul{
+  gap:14px;
+}
+
+.hero h1{
+  font-size:34px;
+}
+
+.hero p{
+  font-size:16px;
+}
+
+.section-title{
+  font-size:30px;
+}
+
+.cta h2{
+  font-size:28px;
+}
+
+.card h3{
+  font-size:22px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo"><a href="/">Shree<span>Hub</a></span></div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="contact/">Contact</a></li>
+<li><a href="/about/" class="active">About</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<div class="badge">Ideas • Guides • Business Growth</div>
+
+<h1>ShreeHub <span>Blog</span></h1>
+
+<p>
+Explore useful articles about gifts, biodata formats, wholesale business, smart tools and trending ideas designed for India.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Latest Articles</h2>
+<p class="section-sub">
+Fresh insights and practical guides from the ShreeHub ecosystem.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="tag">Gift Ideas</div>
+<h3>Best Gifts Under ₹500 in India</h3>
+<p>Affordable and thoughtful gift ideas for birthdays, anniversaries and festivals.</p>
+<a href="#" class="btn primary">Read Article</a>
+</div>
+
+<div class="card">
+<div class="tag">Biodata</div>
+<h3>Traditional Biodata Format Free Online</h3>
+<p>Learn how to create beautiful marriage biodata using modern free tools.</p>
+<a href="#" class="btn primary">Read Article</a>
+</div>
+
+<div class="card">
+<div class="tag">Business</div>
+<h3>How to Start Wholesale Supply Business</h3>
+<p>Simple steps to launch and grow a wholesale supply business in India.</p>
+<a href="#" class="btn primary">Read Article</a>
+</div>
+
+<div class="card">
+<div class="tag">Wedding</div>
+<h3>Top Return Gift Ideas for Weddings</h3>
+<p>Creative and memorable return gift suggestions for wedding guests.</p>
+<a href="#" class="btn primary">Read Article</a>
+</div>
+
+<div class="card">
+<div class="tag">Tools</div>
+<h3>Smart Gift Finder by ShreeHub</h3>
+<p>How our gift finder tool helps you choose gifts in seconds.</p>
+<a href="#" class="btn primary">Read Article</a>
+</div>
+
+<div class="card">
+<div class="tag">Growth</div>
+<h3>5 Smart Ways to Grow Small Business Online</h3>
+<p>Modern strategies for local businesses to attract more customers online.</p>
+<a href="#" class="btn primary">Read Article</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+
+<h2>Follow Shree Collection Online</h2>
+
+<p>
+Stay updated with new products, gift ideas, offers and latest collections on social media.
+</p>
+
+<div class="social-wrap">
+
+<a href="https://www.instagram.com/shreecollection.store/" target="_blank" class="btn primary">
+Instagram
+</a>
+
+<a href="https://www.facebook.com/shreecollection.store" target="_blank" class="btn primary">
+Facebook
+</a>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+
+<h2>Want More Smart Updates?</h2>
+
+<p>
+Explore tools, shop products and practical ideas across the ShreeHub platform.
+</p>
+
+<a href="/" class="btn primary">Back to Home</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 ShreeHub.com • Premium Blog & Resources
+</div>
+</footer>
+
+<a href="https://wa.me/919886901584" target="_blank" class="whatsapp">
+WhatsApp
+</a>
+
+</body>
+</html>

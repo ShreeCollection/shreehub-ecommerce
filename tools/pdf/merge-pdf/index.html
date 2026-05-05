@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PDF Merge Tool | Combine PDF Files Online Free | ShreeHub</title>
+
+<meta name="description" content="Premium PDF Merge Tool by ShreeHub. Upload PDFs, add more files, sort, clear and merge into one final PDF instantly.">
+
+<meta name="keywords" content="merge pdf, combine pdf, join pdf files, pdf merge tool online">
+
+<meta name="robots" content="index,follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+min-height:100vh;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1100px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#e5e7eb;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.hero{
+text-align:center;
+padding:30px 0 10px;
+}
+
+h1{
+font-size:44px;
+line-height:1.2;
+margin-bottom:12px;
+}
+
+h1 span{
+color:#fbbf24;
+}
+
+.sub{
+max-width:780px;
+margin:auto;
+line-height:1.8;
+color:#94a3b8;
+}
+
+.card{
+margin-top:28px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:26px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.upload{
+display:block;
+border:2px dashed rgba(255,255,255,.15);
+padding:38px;
+text-align:center;
+border-radius:20px;
+cursor:pointer;
+font-weight:700;
+transition:.3s;
+}
+
+.upload:hover{
+border-color:#fbbf24;
+}
+
+input[type=file]{
+display:none;
+}
+
+.toolbar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:18px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.red{
+background:#dc2626;
+color:#fff;
+}
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:14px;
+margin-top:18px;
+}
+
+.stat{
+background:#0f172a;
+padding:16px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.stat h4{
+font-size:13px;
+color:#94a3b8;
+margin-bottom:8px;
+}
+
+.stat p{
+font-size:24px;
+font-weight:800;
+color:#fbbf24;
+}
+
+.file-list{
+display:grid;
+gap:14px;
+margin-top:22px;
+}
+
+.file-item{
+background:#0f172a;
+padding:16px;
+border-radius:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.file-name{
+flex:1;
+word-break:break-word;
+}
+
+.actions{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.small{
+padding:8px 12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+background:#1e293b;
+color:#fff;
+}
+
+.remove{
+background:#dc2626;
+}
+
+.status{
+margin-top:18px;
+padding:14px;
+border-radius:14px;
+background:#0f172a;
+color:#cbd5e1;
+display:none;
+}
+
+.note{
+margin-top:18px;
+color:#94a3b8;
+line-height:1.8;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+padding:35px 0;
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+h1{
+font-size:34px;
+}
+.file-item{
+align-items:flex-start;
+}
+.navbar{
+justify-content:center;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/pdf-tools/" class="active">PDF Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<div class="container">
+
+<section class="hero">
+<h1><span>PDF</span> Merge Tool</h1>
+<p class="sub">
+Upload PDF files, add more anytime, sort, clear and merge all files into one final PDF instantly.
+</p>
+</section>
+
+<div class="card">
+
+<label class="upload">
+<input type="file" id="pdfFiles" multiple accept="application/pdf">
+📄 Click Here to Upload PDF Files
+</label>
+
+<div class="toolbar">
+<button class="btn primary" onclick="document.getElementById('pdfFiles').click()">➕ Add More Files</button>
+<button class="btn dark" onclick="sortAZ()">🔀 Sort A-Z</button>
+<button class="btn red" onclick="clearAllFiles()">🗑 Clear All</button>
+<button class="btn primary" onclick="mergePDFs()">📥 Merge & Download</button>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h4>Total Files</h4>
+<p id="count">0</p>
+</div>
+
+<div class="stat">
+<h4>Total Size</h4>
+<p id="size">0 MB</p>
+</div>
+
+</div>
+
+<div class="file-list" id="fileList"></div>
+
+<div class="status" id="status"></div>
+
+<p class="note">
+Perfect for invoices, reports, study notes, scanned pages, legal papers and office documents.
+</p>
+
+</div>
+
+<footer>
+© 2026 ShreeHub PDF Merge Tool
+</footer>
+
+</div>
+
+<script>
+let selectedFiles = [];
+
+const fileInput = document.getElementById("pdfFiles");
+const fileList = document.getElementById("fileList");
+const statusBox = document.getElementById("status");
+
+fileInput.addEventListener("change", function(){
+
+const newFiles = Array.from(this.files);
+
+selectedFiles = [...selectedFiles, ...newFiles];
+
+selectedFiles = selectedFiles.filter((file,index,self)=>
+index === self.findIndex(f =>
+f.name === file.name &&
+f.size === file.size
+)
+);
+
+renderFiles();
+this.value = "";
+
+});
+
+function renderFiles(){
+
+fileList.innerHTML = "";
+
+if(selectedFiles.length === 0){
+fileList.innerHTML =
+"<p style='color:#94a3b8;'>No PDF files selected yet.</p>";
+updateStats();
+return;
+}
+
+selectedFiles.forEach((file,index)=>{
+
+fileList.innerHTML += `
+<div class="file-item">
+<div class="file-name">${index + 1}. ${file.name}</div>
+
+<div class="actions">
+<button class="small" onclick="moveUp(${index})">↑</button>
+<button class="small" onclick="moveDown(${index})">↓</button>
+<button class="small remove" onclick="removeFile(${index})">✕</button>
+</div>
+</div>
+`;
+
+});
+
+updateStats();
+
+}
+function moveUp(index){
+
+if(index === 0) return;
+
+[selectedFiles[index - 1], selectedFiles[index]] =
+[selectedFiles[index], selectedFiles[index - 1]];
+
+renderFiles();
+
+}
+
+function moveDown(index){
+
+if(index === selectedFiles.length - 1) return;
+
+[selectedFiles[index + 1], selectedFiles[index]] =
+[selectedFiles[index], selectedFiles[index + 1]];
+
+renderFiles();
+
+}
+
+function removeFile(index){
+
+selectedFiles.splice(index,1);
+renderFiles();
+
+}
+
+function sortAZ(){
+
+selectedFiles.sort((a,b)=>a.name.localeCompare(b.name));
+renderFiles();
+showStatus("Files sorted A-Z.");
+
+}
+
+function clearAllFiles(){
+
+if(selectedFiles.length === 0){
+showStatus("No files to clear.");
+return;
+}
+
+if(confirm("Remove all selected files?")){
+selectedFiles = [];
+renderFiles();
+showStatus("All files removed.");
+}
+
+}
+
+function updateStats(){
+
+document.getElementById("count").innerText = selectedFiles.length;
+
+let totalBytes = selectedFiles.reduce((sum,file)=>sum + file.size,0);
+let mb = (totalBytes / (1024 * 1024)).toFixed(2);
+
+document.getElementById("size").innerText = mb + " MB";
+
+}
+
+function showStatus(text){
+
+statusBox.style.display = "block";
+statusBox.innerText = text;
+
+}
+
+async function mergePDFs(){
+
+if(selectedFiles.length < 2){
+showStatus("Please upload at least 2 PDF files.");
+return;
+}
+
+try{
+
+showStatus("Merging PDF files... Please wait.");
+
+const mergedPdf = await PDFLib.PDFDocument.create();
+
+for(const file of selectedFiles){
+
+const bytes = await file.arrayBuffer();
+
+const pdf = await PDFLib.PDFDocument.load(bytes);
+
+const pages = await mergedPdf.copyPages(
+pdf,
+pdf.getPageIndices()
+);
+
+pages.forEach(page => mergedPdf.addPage(page));
+
+}
+
+const mergedBytes = await mergedPdf.save();
+
+const blob = new Blob(
+[mergedBytes],
+{type:"application/pdf"}
+);
+
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement("a");
+a.href = url;
+a.download = "merged-shreehub.pdf";
+
+document.body.appendChild(a);
+a.click();
+a.remove();
+
+URL.revokeObjectURL(url);
+
+showStatus("✅ PDF merged successfully. Download started.");
+
+}catch(error){
+
+console.error(error);
+showStatus("❌ Error merging PDFs. Please try different files.");
+
+}
+
+}
+
+renderFiles();
+</script>
+
+</body>
+</html>

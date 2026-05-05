@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wholesale Price Calculator | Wholesale to Retail Pricing Tool | ShreeHub</title>
+<meta name="description" content="Free Wholesale Price Calculator. Calculate wholesale price, retail selling price, margin, markup, GST, distributor price and dealer profit instantly.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1320px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{color:#fbbf24}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* PAGE */
+.container{
+max-width:1320px;
+margin:auto;
+padding:24px;
+}
+
+.hero{
+text-align:center;
+padding:18px 0;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+margin-top:10px;
+color:#94a3b8;
+}
+
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-bottom:16px;
+}
+
+.full{grid-column:1/-1}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+}
+
+.toolbar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.green{
+background:#16a34a;
+color:#fff;
+}
+
+/* RESULT */
+.result{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.big{
+font-size:40px;
+font-weight:800;
+margin-bottom:16px;
+color:#16a34a;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+line-height:1.8;
+color:#64748b;
+}
+
+.section{
+margin-top:36px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:24px;
+border-radius:24px;
+}
+
+.section h2{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.section p{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+@media(max-width:1050px){
+.layout{grid-template-columns:1fr}
+}
+
+@media(max-width:700px){
+.hero h1{font-size:34px}
+.grid{grid-template-columns:1fr}
+.toolbar{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>Wholesale Price</span> Calculator</h1>
+<p>Calculate wholesale cost, dealer price, retail price, GST, margin and markup instantly.</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">Pricing Inputs</div>
+
+<div class="grid">
+
+<div class="full">
+<label>Manufacturing / Buying Cost ₹</label>
+<input type="number" id="cost" value="500">
+</div>
+
+<div>
+<label>Wholesale Margin %</label>
+<input type="number" id="wmargin" value="20">
+</div>
+
+<div>
+<label>Retail Margin %</label>
+<input type="number" id="rmargin" value="35">
+</div>
+
+<div>
+<label>GST %</label>
+<select id="gst">
+<option>0</option>
+<option>5</option>
+<option>12</option>
+<option selected>18</option>
+<option>28</option>
+</select>
+</div>
+
+<div>
+<label>Shipping ₹</label>
+<input type="number" id="shipping" value="30">
+</div>
+
+<div>
+<label>Packaging ₹</label>
+<input type="number" id="packaging" value="20">
+</div>
+
+<div class="full">
+<label>Quantity</label>
+<input type="number" id="qty" value="1">
+</div>
+
+</div>
+
+<div class="toolbar">
+<button class="btn primary" onclick="calculate()">Calculate</button>
+<button class="btn dark" onclick="resetCalc()">Reset</button>
+<button class="btn green" onclick="shareWA()">WhatsApp</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="result">
+
+<div class="big" id="mainPrice">₹660.00 Wholesale</div>
+
+<div class="row">
+<span>Total Base Cost</span>
+<span id="baseCost">₹550.00</span>
+</div>
+
+<div class="row">
+<span>Wholesale Price</span>
+<span id="wholesale">₹660.00</span>
+</div>
+
+<div class="row">
+<span>Retail Price</span>
+<span id="retail">₹891.00</span>
+</div>
+
+<div class="row">
+<span>GST Amount</span>
+<span id="gstAmt">₹160.38</span>
+</div>
+
+<div class="row">
+<span>MRP (Incl. GST)</span>
+<span id="mrp">₹1,051.38</span>
+</div>
+
+<div class="row">
+<span>Wholesale Profit</span>
+<span id="wprofit">₹110.00</span>
+</div>
+
+<div class="row">
+<span>Retail Profit</span>
+<span id="rprofit">₹231.00</span>
+</div>
+
+<div class="note">
+Use this tool for traders, distributors, resellers, manufacturers and shop owners.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>How Wholesale Price Calculator Works</h2>
+<p>
+Enter product cost, wholesale margin, retail margin, GST and extra costs like shipping. Instantly get dealer price, retail price and MRP.
+</p>
+</div>
+
+<div class="section">
+<h2>Useful For</h2>
+<p>
+Wholesalers • Distributors • Retail Shops • Manufacturers • Ecommerce Sellers • Resellers
+</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Free Wholesale Price Calculator
+</footer>
+
+<script>
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+}
+
+function calculate(){
+
+let cost=parseFloat(document.getElementById("cost").value)||0;
+let wmargin=parseFloat(document.getElementById("wmargin").value)||0;
+let rmargin=parseFloat(document.getElementById("rmargin").value)||0;
+let gst=parseFloat(document.getElementById("gst").value)||0;
+let shipping=parseFloat(document.getElementById("shipping").value)||0;
+let packaging=parseFloat(document.getElementById("packaging").value)||0;
+let qty=parseFloat(document.getElementById("qty").value)||1;
+
+let base=(cost*qty)+shipping+packaging;
+
+let wholesale=base+(base*wmargin/100);
+let retail=wholesale+(wholesale*rmargin/100);
+let gstAmt=retail*gst/100;
+let mrp=retail+gstAmt;
+
+let wprofit=wholesale-base;
+let rprofit=retail-wholesale;
+
+document.getElementById("mainPrice").innerText=money(wholesale)+" Wholesale";
+document.getElementById("baseCost").innerText=money(base);
+document.getElementById("wholesale").innerText=money(wholesale);
+document.getElementById("retail").innerText=money(retail);
+document.getElementById("gstAmt").innerText=money(gstAmt);
+document.getElementById("mrp").innerText=money(mrp);
+document.getElementById("wprofit").innerText=money(wprofit);
+document.getElementById("rprofit").innerText=money(rprofit);
+}
+
+function resetCalc(){
+
+document.getElementById("cost").value=500;
+document.getElementById("wmargin").value=20;
+document.getElementById("rmargin").value=35;
+document.getElementById("gst").value=18;
+document.getElementById("shipping").value=30;
+document.getElementById("packaging").value=20;
+document.getElementById("qty").value=1;
+
+calculate();
+}
+
+function shareWA(){
+
+let txt=
+"📦 Wholesale Price Report\n\n"+
+"Wholesale Price: "+document.getElementById("wholesale").innerText+"\n"+
+"Retail Price: "+document.getElementById("retail").innerText+"\n"+
+"MRP: "+document.getElementById("mrp").innerText+"\n\n"+
+"Generated via ShreeHub";
+
+window.open(
+"https://wa.me/?text="+encodeURIComponent(txt),
+"_blank"
+);
+}
+
+[
+"cost","wmargin","rmargin","gst",
+"shipping","packaging","qty"
+].forEach(id=>{
+document.getElementById(id).addEventListener("input",calculate);
+document.getElementById(id).addEventListener("change",calculate);
+});
+
+calculate();
+</script>
+
+</body>
+</html>

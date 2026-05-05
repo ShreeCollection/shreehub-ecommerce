@@ -3,300 +3,403 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shree Collection | श्री कलेक्शन</title>
 
-<meta name="google-site-verification" content="YOUR_CODE" />
-<meta name="description" content="ShreeHub provides free online tools like biodata generator, gift generator and more. Easy, fast and free to use." />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="canonical" href="https://www.shreehub.com/" />
+<title>ShreeHub India | Gifts, Services, Packaging, Tools & Business Supply</title>
 
-<!-- Open Graph -->
-<meta property="og:title" content="ShreeHub - Free Online Tools" />
-<meta property="og:description" content="Use free tools like biodata generator and gift generator." />
-<meta property="og:url" content="https://www.shreehub.com/" />
-<meta property="og:type" content="website" />
-  
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta name="description" content="ShreeHub India offers gifts, photo frames, GST help, website development, packaging supplies, wholesale products, calculators, PDF tools and smart online business tools.">
+
+<meta name="keywords" content="ShreeHub India, gift shop Darbhanga, gift shop Patna, GST services Bihar, website development India, packaging supplies, wholesale supplier Bihar, photo frames, online services, EMI calculator, SIP calculator, PDF tools, business tools">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-html {
-  scroll-behavior: smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-    font-family:'Poppins',sans-serif;
-    background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 60%);
-    color:#eee;
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
 }
 
-/* GOLD GLOW */
-body::before{
-    content:'';
-    position:fixed;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-    background: radial-gradient(circle, rgba(212,175,55,0.08), transparent 60%);
-    z-index:-1;
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:100%;
+max-width:1360px;
+margin:auto;
+padding:0 20px;
+}
+
+/* TOPBAR */
+
+.topbar{
+background:#f59e0b;
+color:#111827;
+padding:10px 15px;
+font-size:14px;
+font-weight:700;
+text-align:center;
 }
 
 /* HEADER */
+
 header{
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-    padding:20px;
-    text-align:center;
-    border-bottom:1px solid rgba(212,175,55,0.2);
-    position:sticky;
-    top:0;
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(11,17,32,.78);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-header h1{
-    font-family:'Playfair Display',serif;
-    color:#d4af37;
-    font-size:34px;
-    letter-spacing:2px;
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+padding:18px 0;
+flex-wrap:wrap;
 }
 
-header p{color:#aaa;font-size:12px;}
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:22px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#e5e7eb;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
 
 /* HERO */
+
 .hero{
-    height:85vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
-    url('https://images.unsplash.com/photo-1513885535751-8b9238bd345a') center/cover;
+position:relative;
+padding:95px 0 80px;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:560px;
+height:560px;
+border-radius:50%;
+background:radial-gradient(circle,#2563eb55,transparent 65%);
+top:-130px;
+left:-170px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:560px;
+height:560px;
+border-radius:50%;
+background:radial-gradient(circle,#f59e0b30,transparent 65%);
+right:-160px;
+bottom:-180px;
+}
+
+.hero-grid{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:42px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 16px;
+border-radius:40px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
+color:#fbbf24;
+font-size:14px;
+margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:44px;
-    font-family:'Playfair Display',serif;
+font-size:58px;
+line-height:1.12;
+margin-bottom:18px;
+font-weight:800;
 }
 
-.hero p{color:#bbb;margin-top:10px;}
+.hero h1 span{
+color:#fbbf24;
+}
 
-/* BUTTONS */
+.hero p{
+font-size:18px;
+line-height:1.85;
+color:#cbd5e1;
+max-width:740px;
+margin-bottom:28px;
+}
+
+.btn-wrap{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
 .btn{
-    margin:10px;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:500;
-    transition:0.3s;
+display:inline-block;
+padding:14px 24px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
 }
 
-.whatsapp-btn{background:#25D366;color:white;}
-.insta-btn{background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);color:white;}
-.fb-btn{border:1px solid #d4af37;color:#d4af37;}
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.secondary{
+border:1px solid rgba(255,255,255,.12);
+}
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+transform:translateY(-3px);
+}
+.hero-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
+border-radius:24px;
+padding:30px;
+box-shadow:0 25px 50px rgba(0,0,0,.25);
 }
 
-/* SECTION */
-.section{
-    padding:70px 20px;
+.hero-card h3{
+font-size:22px;
+margin-bottom:18px;
 }
 
-.section h2{
-    text-align:center;
-    color:#d4af37;
-    font-family:'Playfair Display',serif;
-    margin-bottom:50px;
+.mini-list{
+display:grid;
+gap:14px;
 }
 
-/* GRID */
+.mini-item{
+padding:16px;
+border-radius:14px;
+background:rgba(255,255,255,.05);
+}
+
+section{
+padding:72px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:14px;
+}
+
+.section-sub{
+text-align:center;
+max-width:860px;
+margin:0 auto 42px;
+color:#94a3b8;
+line-height:1.8;
+}
+
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:22px;
 }
 
-/* GLASS CARD */
 .card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(12px);
-    padding:25px;
-    border-radius:18px;
-    border:1px solid rgba(212,175,55,0.2);
-    text-align:center;
-    transition:0.3s;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:22px;
+padding:28px;
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:#d4af37;
-    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+transform:translateY(-8px);
+border-color:#fbbf24;
 }
 
-.icon{font-size:50px;margin-bottom:10px;}
-
-.card h3{color:#d4af37;}
-.card ul{list-style:none;color:#ccc;font-size:14px;}
-.card p{color:#ccc;font-size:14px;}
-
-/* STORE BUTTONS */
-.call-btn,.dir-btn{
-    display:inline-block;
-    margin:10px 5px;
-    padding:10px 18px;
-    border-radius:25px;
-    text-decoration:none;
+.icon{
+font-size:30px;
+margin-bottom:14px;
 }
 
-.call-btn{background:#d4af37;color:black;}
-.dir-btn{border:1px solid #d4af37;color:#d4af37;}
-
-/* FORM */
-form{
-    max-width:420px;
-    margin:auto;
+.card h3{
+font-size:22px;
+margin-bottom:10px;
 }
 
-input,textarea{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    background:rgba(255,255,255,0.05);
-    border:1px solid #333;
-    color:white;
-    border-radius:8px;
+.card p{
+color:#94a3b8;
+line-height:1.8;
 }
 
-button{
-    width:100%;
-    padding:12px;
-    background:#d4af37;
-    border:none;
-    border-radius:8px;
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-/* MAP */
-.map{margin-top:40px;}
+.stat-card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:22px;
+padding:28px;
+text-align:center;
+}
 
-/* FOOTER */
+.stat-card h3{
+font-size:34px;
+color:#fbbf24;
+margin-bottom:8px;
+}
+
+.content-box{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:30px;
+line-height:1.9;
+color:#cbd5e1;
+}
+
+.faq{
+display:grid;
+gap:14px;
+}
+
+.faq-item{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:18px;
+padding:22px;
+}
+
+.faq-item h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.map-box{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:20px;
+}
+
+.cta{
+background:linear-gradient(135deg,#1d4ed8,#1e3a8a);
+border-radius:28px;
+padding:50px 30px;
+text-align:center;
+}
+
+.cta h2{
+font-size:38px;
+margin-bottom:12px;
+}
+
+.cta p{
+color:#dbeafe;
+margin-bottom:24px;
+}
+
 footer{
-    text-align:center;
-    padding:20px;
-    color:#aaa;
-    border-top:1px solid rgba(212,175,55,0.2);
+padding:35px 0;
+border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
+color:#94a3b8;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-    color:white;
+.float-wa{
+position:fixed;
+right:18px;
+bottom:18px;
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+background:#25D366;
+color:#fff;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-/* NAVBAR */
-.navbar{
-    margin-top:15px;
+@media(max-width:980px){
+.hero-grid{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:44px;
+}
 }
 
-.navbar ul{
-    display:flex;
-    justify-content:flex-start;
-    list-style:none;
-    padding-left:20px;
-}
-.navbar li{
-    position:relative;
-    margin:0 15px;
-}
-
-.navbar a{
-    color:#eee;
-    text-decoration:none;
-    font-size:14px;
-    transition:0.3s;
-}
-
-.navbar a:hover{
-    color:#d4af37;
-}
-
-/* DROPDOWN */
-.dropdown-menu{
-    position:absolute;
-    top:30px;
-    left:0;
-    background:#111;
-    border-radius:10px;
-    display:none;
-    min-width:180px;
-}
-
-.dropdown-menu a{
-    display:block;
-    padding:10px 15px;
-}
-
-.dropdown-menu{
-    position:absolute;
-    top:30px;
-    left:0;
-    background:#111;
-    border-radius:10px;
-    display:none;
-    min-width:180px;
-}
-
-.dropdown-menu.show{
-    display:block;
-}
-
-/* MOBILE NAV FIX */
-.menu-toggle{
-    display:none;
-    font-size:26px;
-    color:#d4af37;
-    cursor:pointer;
-    text-align:right;
-    padding-right:20px;
-}
-
-/* Mobile Styles */
 @media(max-width:768px){
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .navbar ul{
-        flex-direction:column;
-        align-items:flex-start;
-        background:#111;
-        position:absolute;
-        top:100%;
-        left:0;
-        width:100%;
-        display:none;
-        padding:15px;
-    }
-
-    .navbar ul.show{
-        display:flex;
-    }
-
-    .navbar li{
-        margin:10px 0;
-    }
+.logo{
+font-size:26px;
 }
-
+nav ul{
+gap:14px;
+}
+.hero h1{
+font-size:34px;
+}
+.hero p{
+font-size:16px;
+}
+.section-title{
+font-size:30px;
+}
+.cta h2{
+font-size:28px;
+}
+}
 </style>
 
 <!-- Google Analytics code here -->
@@ -307,315 +410,487 @@ footer{
   gtag('js', new Date());
   gtag('config', 'G-WZMWB0QC7K');
 </script>
-    
+
+<meta name="google-site-verification" content="YOUR_CODE_HERE">
+
+<meta property="og:title" content="ShreeHub India">
+<meta property="og:description" content="Gifts, Services, Packaging Supplies & Useful Tools in One Place">
+<meta property="og:url" content="https://shreehub.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://shreehub.com/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ShreeHub India">
+<meta name="twitter:description" content="Shopping, Services, Supply & Tools Platform">
+
 </head>
 
 <body>
 
+<div class="topbar">
+📞 Call / WhatsApp: +91 9886901584 | ⭐ Store + Services + Supply Available
+</div>
+
 <header>
+<div class="container navbar">
 
-<h1>Shree Collection | श्री कलेक्शन</h1>
-<p>Premium Gifts • Decor • Party Essentials</p>
+<div class="logo"><a href="/">Shree<span>Hub</span></a></div>
 
-<div class="menu-toggle" onclick="toggleNav()">☰</div>
-
-<nav class="navbar">
+<nav>
 <ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#products">Products</a></li>
-
-<li><a href="#stores">Our Stores</a></li>
-
-<li><a href="#order">Place Order</a></li>
-
-<li class="dropdown">
-<a href="#" onclick="toggleMenu(event)">Tools ▾</a>
-
-<div class="dropdown-menu" id="dropdownMenu">
-<a href="tools/biodata-generator/" target="_blank">Traditional Biodata Generator</a>
-<a href="tools/biodata-generator/professional/" target="_blank">Professional Biodata Generator</a>
-<a href="tools/gift-generator/" target="_blank">Smart Gift Finder</a>  
-</div>  
-</li>
-
+<li><a href="/" class="active">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/seller-supply/">Packaging</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/about/">About</a></li>
 </ul>
 </nav>
 
+</div>
 </header>
 
 <section class="hero">
-<h1>Luxury Gifting Experience 🎁</h1>
-<p>Make Every Occasion Special</p>
+<div class="container hero-grid">
 
-<a class="btn whatsapp-btn" href="https://wa.me/919886901584">WhatsApp</a>
-<a class="btn insta-btn" href="https://www.instagram.com/shreecollection.store/">Instagram</a>
-<a class="btn fb-btn" href="https://www.facebook.com/shreecollection.store/">Facebook</a>
+<div>
+
+<div class="badge">All-in-One Shopping, Services & Supply Platform</div>
+
+<h1>Store, Services & <span>Supply Hub</span></h1>
+
+<p>
+Welcome to ShreeHub — your trusted destination for gifts, premium photo frames, GST help, website development, toys, stationery, home decor, packaging supplies, wholesale products and useful online tools.
+</p>
+
+<div class="btn-wrap">
+<a href="/shop/" class="btn primary">Explore Shop</a>
+<a href="/services/" class="btn secondary">Our Services</a>
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Popular on ShreeHub</h3>
+
+<div class="mini-list">
+
+<a href="/shop/gift-items/" class="mini-item">
+🎁 Gift Items
+</a>
+
+<a href="/services/" class="mini-item">
+💼 GST & Business Help
+</a>
+
+<a href="/seller-supply/" class="mini-item">
+📦 Packaging Supplies
+</a>
+
+<a href="/tools/" class="mini-item">
+🛠 Smart Tools
+</a>
+
+</div>
+
+</div>
+
+</div>
 </section>
 
-<!-- PRODUCTS -->
-<section id="products" class="section">
-<h2>Our Products</h2>
+<section>
+<div class="container">
+
+<h2 class="section-title">Mega Product Categories</h2>
+<p class="section-sub">
+Everything you need for shopping, celebrations, supply and daily lifestyle needs.
+</p>
 
 <div class="grid">
 
-<!-- PHOTO FRAMES -->
-<a href="/photo-frames/" style="text-decoration:none;color:inherit;">
-<div class="card">
-  <div class="icon">🖼</div>
-  <h3>Photo Frames</h3>
-  <ul>
-    <li>Crystal • Matte </li>
-    <li>Laminated </li>
-    <li>3D • 5D</li>
-    <li>Customised • LED</li>
-  </ul>
-</div>
+<a href="/shop/gift-items/" class="card">
+<div class="icon">🎁</div>
+<h3>Gift Items</h3>
+<p>Birthday, wedding, personalized and premium gifts.</p>
 </a>
 
-<!-- GIFT ITEMS -->
-<a href="/gift-items/" style="text-decoration:none;color:inherit;">
-<div class="card">
-  <div class="icon">🎁</div>
-  <h3>Gift Items</h3>
-  <ul>
-    <li>Personalized Gifts</li>
-    <li>Experience Gifts</li>
-    <li>Luxury & Premium</li>
-    <li>Romantic Gifts</li>
-  </ul>
-</div>
+<a href="/shop/photo-frames/" class="card">
+<div class="icon">🖼</div>
+<h3>Photo Frames</h3>
+<p>Crystal, matte, laminated, 3D, 5D and custom frames.</p>
 </a>
 
-<!-- OTHER CARDS -->
-<div class="card">
+<a href="#" class="card">
+<div class="icon">🧸</div>
+<h3>Toys & Games</h3>
+<p>Kids toys, puzzles, learning toys and fun products.</p>
+</a>
+
+<a href="#" class="card">
+<div class="icon">✏️</div>
+<h3>Kids Stationery</h3>
+<p>Bags, bottles, pencil boxes and school essentials.</p>
+</a>
+
+<a href="#" class="card">
+<div class="icon">🎈</div>
+<h3>Decorations</h3>
+<p>Birthday, anniversary, marriage and festival decor.</p>
+</a>
+
+<a href="#" class="card">
 <div class="icon">🏠</div>
 <h3>Home Decor</h3>
-<ul>
-<li>Wall Decor</li>
-<li>Showpieces</li>
-</ul>
-</div>
+<p>Showpieces, wall decor and trending lifestyle items.</p>
+</a>
 
-<div class="card">
-<div class="icon">🧸</div>
-<h3>Toys & Kids</h3>
-<ul>
-<li>Toys</li>
-<li>Teddy</li>
-<li>Stationary</li>
-</ul>
-</div>
-
-<div class="card">
+<a href="#" class="card">
 <div class="icon">👜</div>
-<h3>Bags</h3>
-<ul>
-<li>Handbags</li>
-<li>Daily Use</li>
-</ul>
-</div>
+<h3>Accessories</h3>
+<p>Purse, belts, wallets, perfumes and keychains.</p>
+</a>
 
-<div class="card">
-<div class="icon">🔑</div>
-<h3>Key Chains</h3>
-<ul>
-<li>Customised</li>
-<li>Couple</li>
-<li>Name Keychain</li>
-<li>Photo Keychain</li>
-</ul>
-</div>
-
-<div class="card">
+<a href="#" class="card">
 <div class="icon">🍽</div>
 <h3>Crockery</h3>
-<ul>
-<li>Kitchen</li>
-<li>Serving</li>
-</ul>
-</div>
+<p>Cups, bottles, dinner sets and kitchen items.</p>
+</a>
 
-<div class="card">
-<div class="icon">✨</div>
-<h3>Figurines</h3>
-<ul>
-<li>Showpieces</li>
-<li>Action Figures</li>
-</ul>
 </div>
 
 </div>
 </section>
 
-<!-- PARTY -->
-<section id="party" class="section">
-<h2>Party & Decoration</h2>
-<div class="grid">
+<section>
+<div class="container">
 
-<div class="card"><div class="icon">🎂</div><h3>Decoration</h3><ul><li>Birthday</li><li>Anniversary</li></ul></div>
-
-<div class="card"><div class="icon">🎈</div><h3>Balloons</h3><ul><li>Balloons</li><li>Pumps</li></ul></div>
-
-<div class="card"><div class="icon">🕯</div><h3>Candles</h3><ul><li>Musical</li><li>Number</li></ul></div>
-
-<div class="card"><div class="icon">🎀</div><h3>Party Items</h3><ul><li>Banners</li><li>Foil</li></ul></div>
-
-</div>
-</section>
-
-<!-- STORES -->
-<section id="stores" class="section">
-<h2>Our Stores</h2>
-<div class="grid">
-
-<div class="card">
-<div class="icon">📍</div>
-<h3>Darbhanga</h3>
-<p>Radhi, Near Mahadai Chouk, Jale, Bihar - 847302</p>
-<a href="tel:919886901584" class="call-btn">Call</a>
-<a href="https://maps.app.goo.gl/CNuBbW3yx4srGxc99" target="_blank" class="dir-btn">Directions</a>
-</div>
-
-<div class="card">
-<div class="icon">📍</div>
-<h3>Patna</h3>
-<p>Gupta Complex, Gardanibagh, Patna - 800001</p>
-<a href="tel:919886901584" class="call-btn">Call</a>
-<a href="https://maps.app.goo.gl/CNuBbW3yx4srGxc99" target="_blank" class="dir-btn">Directions</a>
-</div>
-
-</div>
-
-<div class="map">
-<iframe src="https://www.google.com/maps?q=https://maps.app.goo.gl/CNuBbW3yx4srGxc99&output=embed"
-width="100%" height="300" style="border-radius:12px;"></iframe>
-</div>
-
-</section>
-
-<!-- ORDER -->
-<section id="order" class="section">
-<h2>Place Your Order</h2>
-<form onsubmit="sendWhatsApp(); return false;">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="text" id="product" placeholder="Product Name" required>
-<textarea id="address" placeholder="Delivery Address" required></textarea>
-<button type="submit">Send Order</button>
-</form>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-<h2>About Us</h2>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">🏪</div>
-<h3>Who We Are</h3>
-<p>
-Shree Collection is your one-stop destination for premium gifting, home decor, and party essentials.
-We bring trendy, affordable, and high-quality products for every occasion.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🎯</div>
-<h3>Our Mission</h3>
-<p>
-Our mission is to make every celebration special by providing unique and stylish products that
-add joy to your moments.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">💎</div>
-<h3>Why Choose Us</h3>
-<ul>
-<li>Premium Quality Products</li>
-<li>Latest Trending Items</li>
-<li>Affordable Pricing</li>
-<li>Trusted by Customers</li>
-</ul>
-</div>
-
-</div>
-
-<p style="text-align:center;margin-top:20px;">
-📧 ShreeCollectionKart@gmail.com
+<h2 class="section-title">Professional Services</h2>
+<p class="section-sub">
+Fast and simple support for documents, registrations, digital work and business growth.
 </p>
 
-</section> 
+<div class="grid">
 
-<!-- COUNTERS -->
-<section class="section">
-<h2>Our Achievements</h2>
+<a href="#" class="card">
+<div class="icon">📑</div>
+<h3>GST & Tax Help</h3>
+<p>GST registration, returns and billing guidance.</p>
+</a>
+
+<a href="#" class="card">
+<div class="icon">⚖️</div>
+<h3>Legal Documents</h3>
+<p>Affidavit drafting and document support.</p>
+</a>
+
+<a href="#" class="card">
+<div class="icon">💍</div>
+<h3>Certificates</h3>
+<p>Marriage and birth certificate assistance.</p>
+</a>
+
+<a href="services/website-development/" class="card">
+<div class="icon">💻</div>
+<h3>Website Development</h3>
+<p>Business websites and landing pages.</p>
+</a>
+
+<a href="#" class="card">
+<div class="icon">🧾</div>
+<h3>Billing Setup</h3>
+<p>Invoice systems and business records help.</p>
+</a>
+
+<a href="#" class="card">
+<div class="icon">🚀</div>
+<h3>Business Growth</h3>
+<p>Catalog, branding and setup support.</p>
+</a>
+
+</div>
+
+</div>
+</section>
+<section>
+<div class="container">
+
+<h2 class="section-title">Packaging & Business Supply</h2>
+<p class="section-sub">
+Reliable supply support for retailers, resellers, e-commerce sellers and repeat business buyers.
+</p>
 
 <div class="grid">
 
-<div class="card">
-<div class="icon">😊</div>
-<h3><span class="counter" data-target="1000">1000</span>+</h3>
+<div class="grid">
+
+<a href="/seller-supply/" class="card">
+<div class="icon">📦</div>
+<h3>Corrugated Boxes</h3>
+<p>Strong shipping boxes in multiple sizes for safe dispatch.</p>
+</a>
+
+<a href="/seller-supply/" class="card">
+<div class="icon">🏷️</div>
+<h3>Thermal Labels</h3>
+<p>Shipping labels, barcode labels and courier sticker rolls.</p>
+</a>
+
+<a href="/seller-supply/" class="card">
+<div class="icon">📮</div>
+<h3>Courier Bags</h3>
+<p>Tamper-proof bags, poly mailers and dispatch essentials.</p>
+</a>
+
+<a href="/seller-supply/" class="card">
+<div class="icon">📌</div>
+<h3>Tape & Packing</h3>
+<p>BOPP tape, branded tape, bubble wrap and accessories.</p>
+</a>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Useful Online Tools</h2>
+<p class="section-sub">
+Smart tools built to save time and help customers online.
+</p>
+<div class="grid">
+
+<a href="/tools/business/" class="card">
+<div class="icon">🏢</div>
+<h3>Business Hub</h3>
+<p>Professional tools for billing, quotations, receipts, purchase orders, salary and business management.</p>
+</a>
+
+<a href="/tools/ecommerce/" class="card">
+<div class="icon">🛒</div>
+<h3>Ecommerce Hub</h3>
+<p>Professional tools for online sellers, resellers, wholesalers and marketplace businesses to grow faster</p>
+</a>
+
+<a href="/tools/finance/" class="card">
+<div class="icon">💰</div>
+<h3>Finance Hub</h3>
+<p>Use powerful calculators for EMI, SIP, salary, tax, loans and wealth planning. Fast, accurate and mobile friendly.</p>
+</a>
+
+<a href="/tools/pdf/" class="card">
+<div class="icon">📄</div>
+<h3>PDF Editor</h3>
+<p>Use powerful free PDF tools online. Merge, crop, split, rotate, compress, convert and secure PDF files in one place..</p>
+</a>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Why Customers Trust Us</h2>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h3>13+</h3>
+<p>Main Categories</p>
+</div>
+
+<div class="stat-card">
+<h3>1000+</h3>
 <p>Happy Customers</p>
 </div>
 
+<div class="stat-card">
+<h3>5000+</h3>
+<p>Products & Services Delivered</p>
+</div>
+
+<div class="stat-card">
+<h3>Fast</h3>
+<p>WhatsApp Support</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">What Customers Say</h2>
+
+<div class="grid">
+
 <div class="card">
-<div class="icon">🎁</div>
-<h3><span class="counter" data-target="5000">50000</span>+</h3>
-<p>Products Sold</p>
+<div class="icon">⭐</div>
+<h3>Everything in One Place</h3>
+<p>Products, services and helpful support together.</p>
 </div>
 
 <div class="card">
 <div class="icon">⭐</div>
-<h3><span class="counter" data-target="4.8">4.8</span></h3>
-<p>Customer Rating</p>
+<h3>Good Pricing</h3>
+<p>Fair prices for products and business services.</p>
 </div>
 
 <div class="card">
-<div class="icon">🏪</div>
-<h3><span class="counter" data-target="2">2</span>+</h3>
-<p>Store Locations</p>
+<div class="icon">⭐</div>
+<h3>Quick Response</h3>
+<p>Easy ordering and fast replies on WhatsApp.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Visit / Contact Us</h2>
+
+<div class="grid">
+
+<div class="card">
+  <div class="icon">📍</div>
+  <h3>Location</h3>
+  <p>Darbhanga & Patna, Bihar, India</p>
+</div>
+
+<div class="card">
+<div class="icon">🕒</div>
+<h3>Business Hours</h3>
+<p>Open Daily • 9 AM to 9 PM</p>
+</div>
+
+<div class="card">
+<div class="icon">📞</div>
+<h3>Support</h3>
+<p>+91 9886901584</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">About ShreeHub</h2>
+
+<div class="content-box">
+<p>
+ShreeHub is an all-in-one platform combining shopping, professional services, business supply and useful digital tools. Through Shree Collection, we provide gifts, premium frames, toys, stationery, decor, accessories and trending products.
+</p>
+
+<p style="margin-top:16px;">
+We also support individuals and businesses with GST help, documentation support, certificate assistance, website development, billing setup and packaging materials for e-commerce sellers.
+</p>
+
+<p style="margin-top:16px;">
+Our mission is to make shopping, business setup and daily service needs easier from one trusted place.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+<h3>What does ShreeHub offer?</h3>
+<p>Products, services, packaging supplies and useful online tools.</p>
+</div>
+
+<div class="faq-item">
+<h3>Do you provide GST and business help?</h3>
+<p>Yes, we assist with registrations, billing and related support services.</p>
+</div>
+
+<div class="faq-item">
+<h3>Do you sell packaging materials?</h3>
+<p>Yes. Boxes, labels, courier bags, tapes and shipping essentials.</p>
+</div>
+
+<div class="faq-item">
+<h3>Can I contact on WhatsApp?</h3>
+<p>Yes. Message us directly for orders or service inquiries.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="map-box">
+  <iframe
+    src="https://www.google.com/maps?q=Darbhanga,Bihar,India&output=embed"
+    width="100%"
+    height="350"
+    style="border:0; border-radius:18px;"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+<h2>Need Products, Services or Supply?</h2>
+<p>
+Chat with ShreeHub for gifts, GST help, websites, packaging supplies, wholesale support or tools.
+</p>
+
+<a href="https://wa.me/919886901584" target="_blank" class="btn primary">
+Contact on WhatsApp
+</a>
+
 </div>
 
 </div>
 </section>
 
 <footer>
-<p>© 2026 Shree Collection</p>
+<div class="container">
+© 2026 ShreeHub.com • Store, Services, Tools & Business Supply Platform
+</div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919886901584">💬</a>
+<a href="https://wa.me/919886901584" target="_blank" class="float-wa">💬</a>
 
-<script>
-
-function toggleNav(){
-    document.querySelector(".navbar ul").classList.toggle("show");
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"ShreeHub",
+  "url":"https://shreehub.com",
+  "telephone":"+91-9886901584",
+  "description":"Platform for shopping, online services, packaging supply, wholesale support and useful digital tools.",
+  "areaServed":"India"
 }
-
-function sendWhatsApp(){
-let name=document.getElementById("name").value;
-let product=document.getElementById("product").value;
-let address=document.getElementById("address").value;
-
-let msg=`Order Details:%0AName:${name}%0AProduct:${product}%0AAddress:${address}`;
-window.open(`https://wa.me/919886901584?text=${msg}`);
-}
-
-function toggleMenu(e){
-    e.preventDefault();
-    document.getElementById("dropdownMenu").classList.toggle("show");
-}
-
-// close dropdown when clicking outside
-window.addEventListener("click", function(e){
-    if (!e.target.closest(".dropdown")){
-        document.getElementById("dropdownMenu").classList.remove("show");
-    }
-});
 </script>
 
 </body>

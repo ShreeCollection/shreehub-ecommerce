@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ecommerce Tools Hub India | Seller Profit, Pricing, GST & Marketplace Tools | ShreeHub</title>
+
+<meta name="description" content="Free Ecommerce Tools Hub India. Use Seller Profit Calculator, Wholesale Price Calculator, GST tools, pricing tools and marketplace seller tools online.">
+
+<meta name="keywords" content="ecommerce tools india, seller tools india, amazon seller calculator, profit calculator, wholesale price calculator, ecommerce pricing tools">
+
+<link rel="canonical" href="https://yourdomain.com/tools/ecommerce/">
+
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+max-width:1320px;
+margin:auto;
+padding:0 20px;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* HERO */
+.hero{
+padding:80px 0 50px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:540px;
+height:540px;
+border-radius:50%;
+background:radial-gradient(circle,#f59e0b25,transparent 65%);
+left:-180px;
+top:-180px;
+}
+
+.hero:after{
+content:"";
+position:absolute;
+width:540px;
+height:540px;
+border-radius:50%;
+background:radial-gradient(circle,#3b82f625,transparent 65%);
+right:-180px;
+bottom:-180px;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.badge{
+display:inline-block;
+padding:10px 16px;
+border-radius:999px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.08);
+color:#fbbf24;
+font-size:14px;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:56px;
+font-weight:800;
+line-height:1.15;
+}
+
+.hero h1 span{
+color:#38bdf8;
+}
+
+.hero p{
+margin-top:14px;
+font-size:18px;
+color:#94a3b8;
+max-width:760px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.8;
+}
+
+.search-box{
+max-width:720px;
+margin:28px auto 0;
+}
+
+.search-box input{
+width:100%;
+padding:16px 18px;
+border:none;
+border-radius:16px;
+background:#111827;
+color:#fff;
+font-size:16px;
+font-family:'Poppins',sans-serif;
+border:1px solid rgba(255,255,255,.08);
+outline:none;
+}
+
+/* SECTIONS */
+section{
+padding:70px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:14px;
+}
+
+.section-sub{
+text-align:center;
+color:#94a3b8;
+max-width:760px;
+margin:0 auto 42px;
+line-height:1.8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:28px;
+transition:.3s;
+display:flex;
+flex-direction:column;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#38bdf8;
+}
+
+.icon{
+font-size:34px;
+margin-bottom:14px;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#94a3b8;
+line-height:1.8;
+margin-bottom:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:auto;
+padding:12px 18px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+}
+
+.primary{
+background:linear-gradient(135deg,#0284c7,#38bdf8);
+color:#fff;
+}
+
+.primary:hover{
+transform:translateY(-2px);
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.stat{
+background:#111827;
+padding:28px;
+border-radius:24px;
+text-align:center;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.stat h3{
+font-size:38px;
+color:#38bdf8;
+margin-bottom:8px;
+}
+
+.stat p{
+color:#94a3b8;
+}
+
+/* INFO */
+.info-list{
+display:grid;
+gap:16px;
+max-width:960px;
+margin:auto;
+}
+
+.info-item{
+background:#111827;
+padding:22px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.info-item h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.info-item p{
+color:#94a3b8;
+line-height:1.8;
+}
+
+/* CTA */
+.cta{
+background:linear-gradient(135deg,#0284c7,#075985);
+padding:52px 30px;
+border-radius:28px;
+text-align:center;
+}
+
+.cta h2{
+font-size:38px;
+margin-bottom:12px;
+}
+
+.cta p{
+color:#e0f2fe;
+margin-bottom:22px;
+}
+
+/* FOOTER */
+footer{
+padding:32px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section-title{
+font-size:30px;
+}
+
+.cta h2{
+font-size:28px;
+}
+
+.logo{
+font-size:26px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/tools/ecommerce/" class="active">Ecommerce</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-content">
+
+<div class="badge">Free Ecommerce Seller Tools</div>
+
+<h1><span>Ecommerce</span> Tools Hub</h1>
+
+<p>
+Professional tools for online sellers, resellers, wholesalers and marketplace businesses to grow faster.
+</p>
+
+<div class="search-box">
+<input type="text" placeholder="Search Seller Profit, Pricing, GST, Wholesale Tools...">
+</div>
+
+</div>
+</section>
+
+<!-- TOOLS -->
+<section>
+<div class="container">
+
+<h2 class="section-title">Popular Ecommerce Tools</h2>
+<p class="section-sub">
+Everything online sellers need to manage pricing, profit and growth.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>Seller Profit Suite</h3>
+<p>Calculate profit after fees, shipping, GST and ads.</p>
+<a href="/tools/seller-profit-suite/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">🏷️</div>
+<h3>Wholesale Price Calculator</h3>
+<p>Find wholesale, retail and MRP pricing instantly.</p>
+<a href="/tools/wholesale-price-calculator/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">💸</div>
+<h3>Discount Calculator</h3>
+<p>Calculate offers, discounts and final sale price.</p>
+<a href="/tools/discount-calculator/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">🧾</div>
+<h3>GST Calculator</h3>
+<p>Calculate inclusive and exclusive GST instantly.</p>
+<a href="/tools/gst-calculator/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>Profit Calculator</h3>
+<p>Check margin, markup and ROI on every order.</p>
+<a href="/tools/profit-calculator/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">🚚</div>
+<h3>Shipping Cost Calculator</h3>
+<p>Estimate shipping charges and delivery costs.</p>
+<a href="/tools/shipping-calculator/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">📦</div>
+<h3>Purchase Order Maker</h3>
+<p>Create supplier purchase orders professionally.</p>
+<a href="/tools/purchase-order-maker/" class="btn primary">Use Tool</a>
+</div>
+
+<div class="card">
+<div class="icon">💵</div>
+<h3>Receipt Maker</h3>
+<p>Generate receipts for COD and direct payments.</p>
+<a href="/tools/receipt-maker/" class="btn primary">Use Tool</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- STATS -->
+<section>
+<div class="container">
+
+<h2 class="section-title">Why Sellers Use ShreeHub</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>8+</h3>
+<p>Ecommerce Tools</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Free Tools</p>
+</div>
+
+<div class="stat">
+<h3>Fast</h3>
+<p>Instant Results</p>
+</div>
+
+<div class="stat">
+<h3>Growth</h3>
+<p>Seller Focused</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- SEO CONTENT -->
+<section>
+<div class="container">
+
+<h2 class="section-title">Ecommerce Tools for India</h2>
+
+<div class="info-list">
+
+<div class="info-item">
+<h3>Pricing Optimization</h3>
+<p>Use wholesale, retail and discount tools to price products competitively.</p>
+</div>
+
+<div class="info-item">
+<h3>Profit Tracking</h3>
+<p>Track fees, shipping, GST and ad spend before selling online.</p>
+</div>
+
+<div class="info-item">
+<h3>Seller Operations</h3>
+<p>Create receipts, purchase orders and invoices for smoother business operations.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<section>
+<div class="container">
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div class="info-list">
+
+<div class="info-item">
+<h3>Are these ecommerce tools free?</h3>
+<p>Yes, all public tools are free to use.</p>
+</div>
+
+<div class="info-item">
+<h3>Who can use these tools?</h3>
+<p>Amazon sellers, Flipkart sellers, resellers, wholesalers, D2C brands and shop owners.</p>
+</div>
+
+<div class="info-item">
+<h3>Do tools work on mobile?</h3>
+<p>Yes, fully responsive on phones, tablets and desktop.</p>
+</div>
+
+<div class="info-item">
+<h3>Will more seller tools be added?</h3>
+<p>Yes, new marketplace and ecommerce tools are added regularly.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<div class="container">
+
+<div class="cta">
+<h2>Need Ecommerce Growth Services?</h2>
+<p>ShreeHub helps sellers with websites, SEO, branding, catalog setup and custom tools.</p>
+<a href="/contact/" class="btn primary">Contact Now</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 ShreeHub.com • Ecommerce Tools Hub
+</footer>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Are these ecommerce tools free?",
+"acceptedAnswer":{"@type":"Answer","text":"Yes, all public ecommerce tools are free to use."}
+},
+{
+"@type":"Question",
+"name":"Who can use these tools?",
+"acceptedAnswer":{"@type":"Answer","text":"Amazon sellers, Flipkart sellers, resellers, wholesalers and brands can use these tools."}
+},
+{
+"@type":"Question",
+"name":"Do tools work on mobile?",
+"acceptedAnswer":{"@type":"Answer","text":"Yes, fully mobile responsive."}
+}
+]
+}
+</script>
+
+</body>
+</html>

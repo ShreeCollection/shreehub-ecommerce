@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PDF Compress Tool | Reduce PDF Size Online Free | ShreeHub</title>
+
+<meta name="description" content="Free PDF Compress Tool by ShreeHub. Reduce PDF file size online with quality options for email, WhatsApp and uploads.">
+
+<meta name="keywords" content="compress pdf, reduce pdf size, pdf compressor online, shrink pdf file">
+
+<meta name="robots" content="index,follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+min-height:100vh;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#e5e7eb;
+font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.hero{
+text-align:center;
+padding:30px 0 10px;
+}
+
+h1{
+font-size:44px;
+line-height:1.2;
+margin-bottom:12px;
+}
+
+h1 span{
+color:#fbbf24;
+}
+
+.sub{
+max-width:780px;
+margin:auto;
+line-height:1.8;
+color:#94a3b8;
+}
+
+.card{
+margin-top:28px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:26px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.upload{
+display:block;
+border:2px dashed rgba(255,255,255,.15);
+padding:36px;
+text-align:center;
+border-radius:20px;
+cursor:pointer;
+font-weight:700;
+transition:.3s;
+}
+
+.upload:hover{
+border-color:#fbbf24;
+}
+
+input[type=file]{
+display:none;
+}
+
+label{
+display:block;
+font-size:14px;
+margin-top:18px;
+margin-bottom:8px;
+color:#cbd5e1;
+}
+
+select{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.08);
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+}
+
+.toolbar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+margin-top:20px;
+}
+
+.stat{
+background:#0f172a;
+padding:16px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.stat h4{
+font-size:13px;
+color:#94a3b8;
+margin-bottom:6px;
+}
+
+.stat p{
+font-size:20px;
+font-weight:800;
+color:#fbbf24;
+}
+.status{
+margin-top:18px;
+padding:14px;
+border-radius:14px;
+background:#0f172a;
+color:#cbd5e1;
+display:none;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+line-height:1.8;
+color:#94a3b8;
+}
+
+footer{
+text-align:center;
+padding:35px 0;
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+h1{
+font-size:34px;
+}
+.navbar{
+justify-content:center;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/pdf-tools/" class="active">PDF Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<section class="hero">
+<h1><span>PDF</span> Compress Tool</h1>
+<p class="sub">
+Reduce PDF size for email, WhatsApp, uploads and storage with quality options.
+</p>
+</section>
+
+<div class="card">
+
+<label class="upload">
+<input type="file" id="pdfFile" accept="application/pdf">
+📄 Click Here to Upload PDF File
+</label>
+
+<label>Compression Level</label>
+<select id="quality">
+<option value="0.9">High Quality (Larger File)</option>
+<option value="0.7" selected>Balanced Recommended</option>
+<option value="0.5">Medium Compression</option>
+<option value="0.35">Strong Compression</option>
+<option value="0.2">Maximum Compression</option>
+</select>
+
+<div class="toolbar">
+<button class="btn primary" onclick="compressPDF()">📦 Compress PDF</button>
+<button class="btn dark" onclick="resetTool()">🔄 Reset</button>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h4>Original Size</h4>
+<p id="originalSize">0 MB</p>
+</div>
+
+<div class="stat">
+<h4>Compressed Size</h4>
+<p id="compressedSize">0 MB</p>
+</div>
+
+<div class="stat">
+<h4>Saved</h4>
+<p id="savedPercent">0%</p>
+</div>
+
+</div>
+
+<div class="status" id="status"></div>
+
+<p class="note">
+Best for scanned PDFs, image-heavy files, invoices, reports and documents with large file size.
+</p>
+
+</div>
+
+<footer>
+© 2026 ShreeHub PDF Compress Tool
+</footer>
+
+</div>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+let uploadedFile = null;
+
+const input = document.getElementById("pdfFile");
+const statusBox = document.getElementById("status");
+
+input.addEventListener("change", function(){
+
+uploadedFile = this.files[0];
+
+if(uploadedFile){
+
+const mb = (uploadedFile.size / (1024*1024)).toFixed(2);
+
+document.getElementById("originalSize").innerText =
+mb + " MB";
+
+showStatus("PDF uploaded successfully.");
+
+}
+
+});
+
+function showStatus(text){
+
+statusBox.style.display = "block";
+statusBox.innerText = text;
+
+}
+
+function resetTool(){
+
+uploadedFile = null;
+input.value = "";
+
+document.getElementById("originalSize").innerText = "0 MB";
+document.getElementById("compressedSize").innerText = "0 MB";
+document.getElementById("savedPercent").innerText = "0%";
+
+showStatus("Tool reset.");
+
+}
+async function compressPDF(){
+
+if(!uploadedFile){
+showStatus("Please upload a PDF file first.");
+return;
+}
+
+try{
+
+showStatus("Compressing PDF... Please wait.");
+
+const quality = parseFloat(
+document.getElementById("quality").value
+);
+
+const bytes = await uploadedFile.arrayBuffer();
+
+const sourcePdf = await pdfjsLib.getDocument({
+data:bytes
+}).promise;
+
+const outputPdf = await PDFLib.PDFDocument.create();
+
+for(let i = 1; i <= sourcePdf.numPages; i++){
+
+const page = await sourcePdf.getPage(i);
+
+/* Render each page to image */
+const viewport = page.getViewport({scale:1.5});
+
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = viewport.width;
+canvas.height = viewport.height;
+
+await page.render({
+canvasContext:ctx,
+viewport:viewport
+}).promise;
+
+/* Convert page to compressed JPG */
+const imgData = canvas.toDataURL(
+"image/jpeg",
+quality
+);
+
+const img = await outputPdf.embedJpg(imgData);
+
+/* Create same size page */
+const pdfPage = outputPdf.addPage([
+canvas.width,
+canvas.height
+]);
+
+pdfPage.drawImage(img,{
+x:0,
+y:0,
+width:canvas.width,
+height:canvas.height
+});
+
+}
+
+const outBytes = await outputPdf.save();
+
+const outBlob = new Blob(
+[outBytes],
+{type:"application/pdf"}
+);
+
+const outSize = outBlob.size;
+
+const originalMB =
+(uploadedFile.size / (1024*1024)).toFixed(2);
+
+const compressedMB =
+(outSize / (1024*1024)).toFixed(2);
+
+const saved =
+Math.max(
+0,
+Math.round(
+(1 - (outSize / uploadedFile.size)) * 100
+)
+);
+
+document.getElementById("compressedSize").innerText =
+compressedMB + " MB";
+
+document.getElementById("savedPercent").innerText =
+saved + "%";
+
+const url = URL.createObjectURL(outBlob);
+
+const a = document.createElement("a");
+a.href = url;
+a.download = "compressed-shreehub.pdf";
+
+document.body.appendChild(a);
+a.click();
+a.remove();
+
+URL.revokeObjectURL(url);
+
+showStatus(
+"✅ PDF compressed successfully. Download started."
+);
+
+}catch(error){
+
+console.error(error);
+showStatus("❌ Could not compress PDF.");
+
+}
+
+}
+</script>
+
+</body>
+</html>

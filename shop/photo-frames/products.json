@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "name": "7 Horse Stone Frame",
+    "category": "custom",
+    "price": "₹399",
+    "image": "/assets/images/photo-frames/7horse-stone.png",
+    "description": "Symbol of success, speed and financial growth for home or office.",
+    "features": [
+      "Vastu Approved",
+      "Business Growth Symbol",
+      "Premium Print Quality"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Haare Ka Sahara Frame",
+    "category": "custom",
+    "price": "₹399",
+    "image": "/assets/images/photo-frames/Haare-ka-Sahara.png",
+    "description": "Spiritual frame bringing peace, positivity and devotion.",
+    "features": [
+      "Religious Design",
+      "Perfect For Mandir",
+      "High Quality Finish"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Increase Sales Frame",
+    "category": "custom",
+    "price": "₹399",
+    "image": "/assets/images/photo-frames/IncreasesSales.png",
+    "description": "Ideal for shops and offices to attract customers and growth.",
+    "features": [
+      "Business Use",
+      "Attract Customers",
+      "Vastu Friendly"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Shree Yantra Frame",
+    "category": "crystal",
+    "price": "₹399",
+    "image": "/assets/images/photo-frames/ShreeYantra.png",
+    "description": "Powerful symbol of wealth, harmony and divine energy.",
+    "features": [
+      "Wealth Attraction",
+      "Spiritual Energy",
+      "Premium Design"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Laxmi Kuber Frame",
+    "category": "crystal",
+    "price": "₹399",
+    "image": "/assets/images/photo-frames/axmi_Kuber.png",
+    "description": "Brings prosperity, success and financial stability.",
+    "features": [
+      "Money Attraction",
+      "Divine Design",
+      "Best For Home & Office"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Crystal Radha Krishna RK-CF-1212-01",
+    "category": "crystal",
+    "price": "₹199",
+    "image": "/assets/images/photo-frames/Crystal-RK-12x12-01.png",
+    "description": "Elegant Radha Krishna crystal photo frame.",
+    "features": [
+      "Size 12 x 12 Inch",
+      "Blessings For Your Space",
+      "Premium Finish"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Crystal Radha Krishna RK-CF-1212-02",
+    "category": "crystal",
+    "price": "₹199",
+    "image": "/assets/images/photo-frames/Crystal-RK-12x12-02.png",
+    "description": "Beautiful Radha Krishna crystal frame design.",
+    "features": [
+      "Size 12 x 12 Inch",
+      "Decorative Look",
+      "Premium Finish"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Crystal Radha Krishna RK-CF-1212-03",
+    "category": "crystal",
+    "price": "₹199",
+    "image": "/assets/images/photo-frames/Crystal-RK-12x12-03.png",
+    "description": "Premium Radha Krishna frame for home decor.",
+    "features": [
+      "Size 12 x 12 Inch",
+      "Spiritual Decor",
+      "Best Seller"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Crystal Radha Krishna RK-CF-1212-04",
+    "category": "crystal",
+    "price": "₹199",
+    "image": "/assets/images/photo-frames/Crystal-RK-12x12-04.png",
+    "description": "Graceful Radha Krishna crystal photo frame.",
+    "features": [
+      "Size 12 x 12 Inch",
+      "Premium Quality",
+      "Gift Ready"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Crystal Khatu Shyam KS-CF-1212-01",
+    "category": "crystal",
+    "price": "₹199",
+    "image": "/assets/images/photo-frames/crystal-KS-1212-01.png",
+    "description": "Khatu Shyam crystal photo frame with divine blessings.",
+    "features": [
+      "Size 12 x 12 Inch",
+      "Spiritual Presence",
+      "Best For Home & Office"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Golden Om Frame",
+    "category": "custom",
+    "price": "₹299",
+    "image": "/assets/images/photo-frames/golden-om-frame.png",
+    "description": "Sacred Om frame for peace and positive energy.",
+    "features": [
+      "Golden Finish",
+      "Temple Decor",
+      "Compact Size"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Premium Ganesh Crystal Frame",
+    "category": "crystal",
+    "price": "₹499",
+    "image": "/assets/images/photo-frames/ganesh-crystal.png",
+    "description": "Lord Ganesh crystal frame for prosperity and wisdom.",
+    "features": [
+      "Crystal Shine",
+      "Auspicious Gift",
+      "Premium Quality"
+    ]
+  }
+]

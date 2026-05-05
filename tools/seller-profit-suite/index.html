@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seller Profit Suite | Amazon Flipkart Meesho Profit Calculator | ShreeHub</title>
+<meta name="description" content="All-in-one seller profit calculator for Amazon, Flipkart, Meesho and custom marketplaces. Calculate fees, GST, profit, margin and ROI instantly.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1320px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{color:#fbbf24}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* PAGE */
+.container{
+max-width:1320px;
+margin:auto;
+padding:24px;
+}
+
+.hero{
+text-align:center;
+padding:18px 0;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+margin-top:10px;
+color:#94a3b8;
+}
+
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.tabs{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-bottom:16px;
+}
+
+.tab{
+padding:11px 10px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:#fff;
+}
+
+.tab.active{
+background:#fbbf24;
+color:#111827;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-bottom:16px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+}
+
+.toolbar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.green{
+background:#16a34a;
+color:#fff;
+}
+
+/* RESULT */
+.result{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.big{
+font-size:42px;
+font-weight:800;
+margin-bottom:16px;
+color:#16a34a;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+}
+
+.red{
+color:#dc2626;
+}
+
+.greenText{
+color:#16a34a;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+color:#64748b;
+line-height:1.8;
+}
+
+/* COMPARE */
+.compare{
+margin-top:22px;
+padding:18px;
+border-radius:18px;
+background:#f8fafc;
+}
+
+.compare h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.best{
+font-weight:800;
+color:#16a34a;
+}
+
+/* EXTRA */
+.section{
+margin-top:36px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:24px;
+border-radius:24px;
+}
+
+.section h2{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.section p{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+/* FOOTER */
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* MOBILE */
+@media(max-width:1050px){
+.layout{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:700px){
+.hero h1{
+font-size:34px;
+}
+
+.tabs{
+grid-template-columns:1fr 1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.toolbar{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>Seller</span> Profit Suite</h1>
+<p>Amazon • Flipkart • Meesho • Custom Profit Calculator</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">Choose Marketplace</div>
+
+<div class="tabs">
+<button class="tab active" onclick="setMarket('amazon',this)">Amazon</button>
+<button class="tab" onclick="setMarket('flipkart',this)">Flipkart</button>
+<button class="tab" onclick="setMarket('meesho',this)">Meesho</button>
+<button class="tab" onclick="setMarket('custom',this)">Custom</button>
+</div>
+
+<div class="grid">
+
+<div>
+<label>Cost Price ₹</label>
+<input type="number" id="cost" value="500">
+</div>
+
+<div>
+<label>Selling Price ₹</label>
+<input type="number" id="sell" value="1000">
+</div>
+
+<div>
+<label>Quantity</label>
+<input type="number" id="qty" value="1">
+</div>
+
+<div>
+<label>GST %</label>
+<select id="gst">
+<option>0</option>
+<option>5</option>
+<option>12</option>
+<option selected>18</option>
+<option>28</option>
+</select>
+</div>
+
+<div>
+<label>Shipping ₹</label>
+<input type="number" id="shipping" value="60">
+</div>
+
+<div>
+<label>Packaging ₹</label>
+<input type="number" id="packaging" value="20">
+</div>
+
+<div class="full">
+<label>Ads Spend ₹</label>
+<input type="number" id="ads" value="50">
+</div>
+
+</div>
+
+<div class="toolbar">
+<button class="btn primary" onclick="calculate()">Calculate</button>
+<button class="btn dark" onclick="resetCalc()">Reset</button>
+<button class="btn green" onclick="shareWA()">WhatsApp</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="result">
+
+<div class="big" id="profitMain">₹220.00 Profit</div>
+
+<div class="row">
+<span>Marketplace</span>
+<span id="marketName">Amazon</span>
+</div>
+
+<div class="row">
+<span>Revenue</span>
+<span id="revenue">₹1,000.00</span>
+</div>
+
+<div class="row">
+<span>Platform Fee</span>
+<span id="fee">₹150.00</span>
+</div>
+
+<div class="row">
+<span>GST Amount</span>
+<span id="gstAmt">₹180.00</span>
+</div>
+
+<div class="row">
+<span>Total Cost</span>
+<span id="costTotal">₹780.00</span>
+</div>
+
+<div class="row">
+<span>Net Profit</span>
+<span id="net">₹220.00</span>
+</div>
+
+<div class="row">
+<span>Profit Margin</span>
+<span id="margin">22.00%</span>
+</div>
+
+<div class="row">
+<span>ROI</span>
+<span id="roi">28.21%</span>
+</div>
+
+<div class="compare">
+<h3>Best Marketplace</h3>
+<div id="bestMarket" class="best">Amazon gives highest profit</div>
+</div>
+
+<div class="note">
+Estimated fees for planning purposes. Real marketplace fees may vary by category and program.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>How Seller Profit Suite Works</h2>
+<p>
+Enter product cost, selling price, GST, shipping, ads and packaging. Instantly compare estimated profit across Amazon, Flipkart, Meesho or Custom selling channels.
+</p>
+</div>
+
+<div class="section">
+<h2>Useful For</h2>
+<p>
+Amazon sellers • Flipkart sellers • Meesho resellers • D2C brands • Dropshippers • Traders
+</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Seller Profit Suite
+</footer>
+
+<script>
+let market="amazon";
+
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+}
+
+function percent(n){
+return Number(n).toFixed(2)+"%";
+}
+
+function setMarket(name,btn){
+
+market=name;
+
+document.querySelectorAll(".tab").forEach(t=>{
+t.classList.remove("active");
+});
+
+btn.classList.add("active");
+
+calculate();
+}
+
+function feeRate(name){
+
+if(name==="amazon") return 15;
+if(name==="flipkart") return 18;
+if(name==="meesho") return 12;
+return 10;
+}
+
+function label(name){
+
+if(name==="amazon") return "Amazon";
+if(name==="flipkart") return "Flipkart";
+if(name==="meesho") return "Meesho";
+return "Custom";
+}
+
+function calcMarket(name){
+
+let cost=parseFloat(document.getElementById("cost").value)||0;
+let sell=parseFloat(document.getElementById("sell").value)||0;
+let qty=parseFloat(document.getElementById("qty").value)||1;
+let gst=parseFloat(document.getElementById("gst").value)||0;
+let shipping=parseFloat(document.getElementById("shipping").value)||0;
+let packaging=parseFloat(document.getElementById("packaging").value)||0;
+let ads=parseFloat(document.getElementById("ads").value)||0;
+
+let revenue=sell*qty;
+let fee=revenue*feeRate(name)/100;
+let gstAmt=revenue*gst/100;
+
+let totalCost=(cost*qty)+shipping+packaging+ads+fee;
+let net=revenue-totalCost;
+let margin=revenue>0 ? (net/revenue)*100 : 0;
+let roi=totalCost>0 ? (net/totalCost)*100 : 0;
+
+return {
+name:label(name),
+revenue,
+fee,
+gstAmt,
+totalCost,
+net,
+margin,
+roi
+};
+
+}
+
+function calculate(){
+
+let data=calcMarket(market);
+
+document.getElementById("marketName").innerText=data.name;
+document.getElementById("revenue").innerText=money(data.revenue);
+document.getElementById("fee").innerText=money(data.fee);
+document.getElementById("gstAmt").innerText=money(data.gstAmt);
+document.getElementById("costTotal").innerText=money(data.totalCost);
+document.getElementById("net").innerText=money(data.net);
+document.getElementById("margin").innerText=percent(data.margin);
+document.getElementById("roi").innerText=percent(data.roi);
+
+let main=document.getElementById("profitMain");
+
+if(data.net>=0){
+main.className="big greenText";
+main.innerText=money(data.net)+" Profit";
+}else{
+main.className="big red";
+main.innerText=money(Math.abs(data.net))+" Loss";
+}
+
+compareMarkets();
+}
+
+function compareMarkets(){
+
+let arr=[
+calcMarket("amazon"),
+calcMarket("flipkart"),
+calcMarket("meesho"),
+calcMarket("custom")
+];
+
+arr.sort((a,b)=>b.net-a.net);
+
+document.getElementById("bestMarket").innerText=
+arr[0].name+" gives highest profit ("+money(arr[0].net)+")";
+}
+
+function shareWA(){
+
+let txt=
+"📦 Seller Profit Report\n\n"+
+"Marketplace: "+document.getElementById("marketName").innerText+"\n"+
+"Profit: "+document.getElementById("net").innerText+"\n"+
+"Margin: "+document.getElementById("margin").innerText+"\n"+
+"ROI: "+document.getElementById("roi").innerText+"\n\n"+
+"Generated via ShreeHub";
+
+window.open(
+"https://wa.me/?text="+encodeURIComponent(txt),
+"_blank"
+);
+
+}
+
+function resetCalc(){
+
+document.getElementById("cost").value=500;
+document.getElementById("sell").value=1000;
+document.getElementById("qty").value=1;
+document.getElementById("gst").value=18;
+document.getElementById("shipping").value=60;
+document.getElementById("packaging").value=20;
+document.getElementById("ads").value=50;
+
+calculate();
+}
+
+[
+"cost","sell","qty","gst",
+"shipping","packaging","ads"
+].forEach(id=>{
+document.getElementById(id).addEventListener("input",calculate);
+document.getElementById(id).addEventListener("change",calculate);
+});
+
+calculate();
+</script>
+
+</body>
+</html>

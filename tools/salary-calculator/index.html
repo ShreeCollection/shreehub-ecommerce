@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Salary Calculator | In-Hand Salary, CTC, PF, Tax Calculator | ShreeHub</title>
+<meta name="description" content="Free Salary Calculator to calculate monthly salary, annual CTC, PF, tax deduction, bonuses and in-hand salary instantly.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1320px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{color:#fbbf24}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* PAGE */
+.container{
+max-width:1320px;
+margin:auto;
+padding:24px;
+}
+
+.hero{
+text-align:center;
+padding:18px 0;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+margin-top:10px;
+color:#94a3b8;
+}
+
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-bottom:16px;
+}
+
+.full{grid-column:1/-1}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+}
+
+.toolbar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.green{
+background:#16a34a;
+color:#fff;
+}
+
+/* RESULT */
+.result{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.big{
+font-size:42px;
+font-weight:800;
+margin-bottom:16px;
+color:#16a34a;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+line-height:1.8;
+color:#64748b;
+}
+
+.section{
+margin-top:36px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:24px;
+border-radius:24px;
+}
+
+.section h2{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.section p{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+@media(max-width:1050px){
+.layout{grid-template-columns:1fr}
+}
+
+@media(max-width:700px){
+.hero h1{font-size:34px}
+.grid{grid-template-columns:1fr}
+.toolbar{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>Salary</span> Calculator</h1>
+<p>Calculate monthly in-hand salary, CTC, PF, tax deductions and bonuses instantly.</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">Salary Details</div>
+
+<div class="grid">
+
+<div class="full">
+<label>Monthly Gross Salary ₹</label>
+<input type="number" id="gross" value="50000">
+</div>
+
+<div>
+<label>Provident Fund (PF %) </label>
+<input type="number" id="pf" value="12">
+</div>
+
+<div>
+<label>Professional Tax ₹</label>
+<input type="number" id="ptax" value="200">
+</div>
+
+<div>
+<label>Income Tax ₹</label>
+<input type="number" id="itax" value="1000">
+</div>
+
+<div>
+<label>Other Deductions ₹</label>
+<input type="number" id="other" value="0">
+</div>
+
+<div>
+<label>Bonus ₹</label>
+<input type="number" id="bonus" value="0">
+</div>
+
+<div class="full">
+<label>Working Days / Month</label>
+<input type="number" id="days" value="26">
+</div>
+
+</div>
+
+<div class="toolbar">
+<button class="btn primary" onclick="calculateSalary()">Calculate</button>
+<button class="btn dark" onclick="resetCalc()">Reset</button>
+<button class="btn green" onclick="shareWA()">WhatsApp</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="result">
+
+<div class="big" id="mainSalary">₹42,800.00</div>
+
+<div class="row">
+<span>Monthly Gross</span>
+<span id="grossView">₹50,000.00</span>
+</div>
+
+<div class="row">
+<span>Total Deductions</span>
+<span id="deductionView">₹7,200.00</span>
+</div>
+
+<div class="row">
+<span>Monthly In-Hand</span>
+<span id="netView">₹42,800.00</span>
+</div>
+
+<div class="row">
+<span>Annual In-Hand</span>
+<span id="annualView">₹5,13,600.00</span>
+</div>
+
+<div class="row">
+<span>Annual CTC</span>
+<span id="ctcView">₹6,00,000.00</span>
+</div>
+
+<div class="row">
+<span>Per Day Earnings</span>
+<span id="dayView">₹1,646.15</span>
+</div>
+
+<div class="row">
+<span>Per Hour (8 hrs)</span>
+<span id="hourView">₹205.77</span>
+</div>
+
+<div class="note">
+Estimated salary breakdown. Actual deductions depend on company policy and tax regime.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>How Salary Calculator Works</h2>
+<p>
+Enter gross monthly salary and deductions like PF, professional tax and income tax. Instantly see your in-hand monthly salary, annual salary and daily earnings.
+</p>
+</div>
+
+<div class="section">
+<h2>Useful For</h2>
+<p>
+Employees • HR Teams • Job Offers • Salary Negotiation • Freelancers • Payroll Planning
+</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Free Salary Calculator
+</footer>
+
+<script>
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+}
+
+function calculateSalary(){
+
+let gross=parseFloat(document.getElementById("gross").value)||0;
+let pfPercent=parseFloat(document.getElementById("pf").value)||0;
+let ptax=parseFloat(document.getElementById("ptax").value)||0;
+let itax=parseFloat(document.getElementById("itax").value)||0;
+let other=parseFloat(document.getElementById("other").value)||0;
+let bonus=parseFloat(document.getElementById("bonus").value)||0;
+let days=parseFloat(document.getElementById("days").value)||26;
+
+let pf=(gross*pfPercent)/100;
+let deductions=pf+ptax+itax+other;
+
+let net=gross-deductions+bonus;
+let annual=net*12;
+let ctc=(gross*12)+bonus;
+let perDay=net/days;
+let perHour=perDay/8;
+
+document.getElementById("mainSalary").innerText=money(net);
+document.getElementById("grossView").innerText=money(gross);
+document.getElementById("deductionView").innerText=money(deductions);
+document.getElementById("netView").innerText=money(net);
+document.getElementById("annualView").innerText=money(annual);
+document.getElementById("ctcView").innerText=money(ctc);
+document.getElementById("dayView").innerText=money(perDay);
+document.getElementById("hourView").innerText=money(perHour);
+}
+
+function resetCalc(){
+
+document.getElementById("gross").value=50000;
+document.getElementById("pf").value=12;
+document.getElementById("ptax").value=200;
+document.getElementById("itax").value=1000;
+document.getElementById("other").value=0;
+document.getElementById("bonus").value=0;
+document.getElementById("days").value=26;
+
+calculateSalary();
+}
+
+function shareWA(){
+
+let txt=
+"💼 Salary Breakdown\n\n"+
+"In-Hand Salary: "+document.getElementById("netView").innerText+"\n"+
+"Annual In-Hand: "+document.getElementById("annualView").innerText+"\n"+
+"CTC: "+document.getElementById("ctcView").innerText+"\n\n"+
+"Generated via ShreeHub";
+
+window.open(
+"https://wa.me/?text="+encodeURIComponent(txt),
+"_blank"
+);
+}
+
+[
+"gross","pf","ptax","itax","other","bonus","days"
+].forEach(id=>{
+document.getElementById(id).addEventListener("input",calculateSalary);
+});
+
+calculateSalary();
+</script>
+
+</body>
+</html>

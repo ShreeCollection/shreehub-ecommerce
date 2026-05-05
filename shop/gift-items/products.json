@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "name": "Custom Photo Frame",
+    "category": "personalized",
+    "price": "₹499",
+    "image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=900&q=80",
+    "description": "Beautiful personalized frame for special memories.",
+    "features": [
+      "Custom Name & Photo",
+      "LED Option Available",
+      "Premium Finish"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Premium Gift Hamper",
+    "category": "luxury",
+    "price": "₹1499",
+    "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=900&q=80",
+    "description": "Luxury hamper with chocolates, decor and premium packing.",
+    "features": [
+      "Premium Packaging",
+      "Ready To Gift",
+      "Wedding Special"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Couple Gift Box",
+    "category": "romantic",
+    "price": "₹999",
+    "image": "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80",
+    "description": "Romantic surprise gift box for couples and anniversaries.",
+    "features": [
+      "Love Theme",
+      "Anniversary Special",
+      "Couple Items Included"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Funny Mug",
+    "category": "fun",
+    "price": "₹299",
+    "image": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80",
+    "description": "Quirky mug to make friends smile every day.",
+    "features": [
+      "Funny Design",
+      "Budget Friendly",
+      "Perfect For Friends"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "LED Name Frame",
+    "category": "personalized",
+    "price": "₹899",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+    "description": "Custom LED frame with names and photo.",
+    "features": [
+      "Warm LED Glow",
+      "Custom Text",
+      "Gift Ready"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Luxury Chocolate Basket",
+    "category": "luxury",
+    "price": "₹1899",
+    "image": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=900&q=80",
+    "description": "Premium assorted chocolates in elegant basket.",
+    "features": [
+      "Imported Chocolates",
+      "Premium Basket",
+      "Festival Gift"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Rose Teddy Combo",
+    "category": "romantic",
+    "price": "₹799",
+    "image": "https://images.unsplash.com/photo-1615486363973-f79f6d7f45b4?auto=format&fit=crop&w=900&q=80",
+    "description": "Cute teddy with rose combo for special moments.",
+    "features": [
+      "Soft Teddy",
+      "Rose Theme",
+      "Valentine Favorite"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Comic Quote Cushion",
+    "category": "fun",
+    "price": "₹599",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+    "description": "Funny printed cushion with quirky quotes.",
+    "features": [
+      "Soft Fabric",
+      "Funny Quotes",
+      "Home Decor Gift"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Custom Magic Mug",
+    "category": "personalized",
+    "price": "₹449",
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?auto=format&fit=crop&w=900&q=80",
+    "description": "Heat changing mug with your custom photo.",
+    "features": [
+      "Magic Reveal Print",
+      "Custom Photo",
+      "Best Seller"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Royal Perfume Set",
+    "category": "luxury",
+    "price": "₹2499",
+    "image": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80",
+    "description": "Elegant fragrance gift set for premium gifting.",
+    "features": [
+      "Luxury Fragrance",
+      "Premium Box",
+      "Unisex Gift"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Heart Memory Scrapbook",
+    "category": "romantic",
+    "price": "₹699",
+    "image": "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80",
+    "description": "Memory scrapbook for love stories and moments.",
+    "features": [
+      "DIY Memory Pages",
+      "Heart Theme",
+      "Couple Gift"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Funny Desk Toy",
+    "category": "fun",
+    "price": "₹399",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
+    "description": "Fun desk toy perfect for office gifting.",
+    "features": [
+      "Stress Relief",
+      "Office Gift",
+      "Compact Design"
+    ]
+  }
+]

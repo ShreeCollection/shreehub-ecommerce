@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Income Tax Calculator India | Old vs New Regime Calculator | ShreeHub</title>
+<meta name="description" content="Free Income Tax Calculator India. Compare old tax regime vs new tax regime and calculate annual tax instantly.">
+
+<meta name="keywords" content="income tax calculator india, tax calculator old regime, new regime tax calculator, salary tax calculator india">
+
+<link rel="canonical" href="https://yourdomain.com/tools/income-tax-calculator/">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+max-width:1320px;
+margin:auto;
+padding:24px;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(11,17,32,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+max-width:1320px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{color:#fbbf24}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-weight:600;
+color:#e5e7eb;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:24px 0;
+}
+
+.hero h1{
+font-size:46px;
+font-weight:800;
+line-height:1.15;
+}
+
+.hero h1 span{
+color:#ef4444;
+}
+
+.hero p{
+margin-top:12px;
+color:#94a3b8;
+font-size:17px;
+}
+
+/* LAYOUT */
+.layout{
+display:grid;
+grid-template-columns:430px 1fr;
+gap:24px;
+margin-top:24px;
+}
+
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.title{
+font-size:18px;
+font-weight:700;
+color:#fbbf24;
+margin-bottom:16px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.full{grid-column:1/-1}
+
+label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#cbd5e1;
+}
+
+input,select{
+width:100%;
+padding:13px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+font-size:15px;
+outline:none;
+}
+
+.buttons{
+display:flex;
+gap:12px;
+margin-top:18px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:13px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+font-family:'Poppins',sans-serif;
+}
+
+.primary{
+background:linear-gradient(135deg,#ef4444,#f97316);
+color:#fff;
+}
+
+.dark{
+background:#1e293b;
+color:#fff;
+}
+
+.green{
+background:#16a34a;
+color:#fff;
+}
+
+/* RESULT */
+.result{
+background:#fff;
+color:#111827;
+border-radius:24px;
+padding:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.big{
+font-size:38px;
+font-weight:800;
+color:#ef4444;
+margin-bottom:16px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+gap:14px;
+padding:11px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+line-height:1.8;
+color:#64748b;
+}
+
+/* SEO */
+.section{
+margin-top:36px;
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:28px;
+border-radius:24px;
+}
+
+.section h2{
+font-size:30px;
+margin-bottom:14px;
+color:#fbbf24;
+}
+
+.section h3{
+font-size:22px;
+margin:20px 0 10px;
+}
+
+.section p,.section li{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+.section ul{
+padding-left:20px;
+}
+
+.links{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:14px;
+}
+
+.links a{
+padding:10px 16px;
+border-radius:12px;
+background:#0f172a;
+}
+
+/* FOOTER */
+footer{
+margin-top:36px;
+padding:28px 20px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+@media(max-width:1000px){
+.layout{grid-template-columns:1fr}
+}
+
+@media(max-width:700px){
+
+.hero h1{font-size:34px}
+
+.grid{grid-template-columns:1fr}
+
+.buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.big{font-size:30px}
+
+.section h2{font-size:26px}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+
+<a href="/" class="logo">Shree<span>Hub</span></a>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tools/" class="active">Tools</a></li>
+<li><a href="/tools/finance/">Finance</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h1><span>Income Tax</span> Calculator</h1>
+<p>Compare Old Regime vs New Regime and estimate your annual tax instantly.</p>
+</div>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div class="card">
+
+<div class="title">Tax Details</div>
+
+<div class="grid">
+
+<div class="full">
+<label>Annual Income ₹</label>
+<input type="number" id="income" value="1200000">
+</div>
+
+<div>
+<label>Deductions ₹ (80C etc.)</label>
+<input type="number" id="deduction" value="150000">
+</div>
+
+<div>
+<label>Age Group</label>
+<select id="age">
+<option value="normal" selected>Below 60</option>
+<option value="senior">60+</option>
+<option value="super">80+</option>
+</select>
+</div>
+
+<div class="full">
+<label>Compare Regime</label>
+<select id="regime">
+<option value="both" selected>Old vs New</option>
+<option value="old">Old Only</option>
+<option value="new">New Only</option>
+</select>
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="btn primary" onclick="calculateTax()">Calculate</button>
+<button class="btn dark" onclick="resetCalc()">Reset</button>
+<button class="btn green" onclick="shareWA()">WhatsApp</button>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="result">
+
+<div class="big" id="mainValue">₹54,600</div>
+
+<div class="row">
+<span>Old Regime Tax</span>
+<span id="oldView">₹54,600</span>
+</div>
+
+<div class="row">
+<span>New Regime Tax</span>
+<span id="newView">₹62,400</span>
+</div>
+
+<div class="row">
+<span>Best Option</span>
+<span id="bestView">Old Regime</span>
+</div>
+
+<div class="row">
+<span>Taxable Income</span>
+<span id="taxableView">₹10,50,000</span>
+</div>
+
+<div class="row">
+<span>Annual Income</span>
+<span id="incomeView">₹12,00,000</span>
+</div>
+
+<div class="note">
+Estimated calculator based on simplified slabs. Final tax may vary due to cess, surcharge or policy changes.
+</div>
+
+</div>
+
+</div>
+
+<!-- SEO -->
+
+<div class="section">
+
+<h2>How Income Tax Calculator Works</h2>
+
+<p>
+Enter annual income and deductions. Instantly compare old regime and new regime tax liability.
+</p>
+
+<ul>
+<li>Old vs New Regime</li>
+<li>Tax Planning</li>
+<li>Salary Tax Estimate</li>
+<li>Annual Liability Check</li>
+</ul>
+
+<h3>Related Tools</h3>
+
+<div class="links">
+<a href="/tools/salary-calculator/">Salary Calculator</a>
+<a href="/tools/fd-calculator/">FD Calculator</a>
+<a href="/tools/sip-calculator/">SIP Calculator</a>
+<a href="/tools/finance/">Finance Hub</a>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is this free?</h3>
+<p>Yes, completely free to use.</p>
+
+<h3>Which regime is better?</h3>
+<p>Depends on deductions and income level. Use comparison results.</p>
+
+<h3>Does it work on mobile?</h3>
+<p>Yes, fully responsive.</p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 ShreeHub • Income Tax Calculator
+</footer>
+
+<script>
+function money(n){
+return "₹"+Number(n).toLocaleString("en-IN",{
+maximumFractionDigits:0
+});
+}
+
+function calcOldTax(income,ded){
+
+let taxable=Math.max(0,income-ded);
+let tax=0;
+
+if(taxable>1000000){
+tax += (taxable-1000000)*0.30;
+taxable=1000000;
+}
+if(taxable>500000){
+tax += (taxable-500000)*0.20;
+taxable=500000;
+}
+if(taxable>250000){
+tax += (taxable-250000)*0.05;
+}
+
+return tax*1.04;
+}
+
+function calcNewTax(income){
+
+let tax=0;
+let slabs=[
+[400000,0],
+[800000,0.05],
+[1200000,0.10],
+[1600000,0.15],
+[2000000,0.20],
+[2400000,0.25],
+[999999999,0.30]
+];
+
+let prev=0;
+
+for(let i=0;i<slabs.length;i++){
+let limit=slabs[i][0];
+let rate=slabs[i][1];
+
+if(income>prev){
+let taxable=Math.min(income,limit)-prev;
+tax += taxable*rate;
+prev=limit;
+}
+}
+
+return tax*1.04;
+}
+
+function calculateTax(){
+
+let income=parseFloat(document.getElementById("income").value)||0;
+let ded=parseFloat(document.getElementById("deduction").value)||0;
+
+let oldTax=calcOldTax(income,ded);
+let newTax=calcNewTax(income);
+
+let best=(oldTax<newTax)?"Old Regime":"New Regime";
+
+document.getElementById("mainValue").innerText=money(Math.min(oldTax,newTax));
+document.getElementById("oldView").innerText=money(oldTax);
+document.getElementById("newView").innerText=money(newTax);
+document.getElementById("bestView").innerText=best;
+document.getElementById("taxableView").innerText=money(income-ded);
+document.getElementById("incomeView").innerText=money(income);
+}
+
+function resetCalc(){
+document.getElementById("income").value=1200000;
+document.getElementById("deduction").value=150000;
+document.getElementById("age").value="normal";
+document.getElementById("regime").value="both";
+calculateTax();
+}
+
+function shareWA(){
+
+let txt=
+"💸 Income Tax Report\n\n"+
+"Old Regime: "+document.getElementById("oldView").innerText+"\n"+
+"New Regime: "+document.getElementById("newView").innerText+"\n"+
+"Best Option: "+document.getElementById("bestView").innerText+"\n\n"+
+"Generated via ShreeHub";
+
+window.open(
+"https://wa.me/?text="+encodeURIComponent(txt),
+"_blank"
+);
+}
+
+["income","deduction","age","regime"].forEach(id=>{
+document.getElementById(id).addEventListener("input",calculateTax);
+document.getElementById(id).addEventListener("change",calculateTax);
+});
+
+calculateTax();
+</script>
+
+</body>
+</html>

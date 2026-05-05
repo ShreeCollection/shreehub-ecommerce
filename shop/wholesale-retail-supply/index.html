@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wholesale & Retail Supply | Shree Collection | ShreeHub</title>
+<meta name="description" content="Bulk wholesale and retail supply of gifts, photo frames, decor and party essentials by Shree Collection.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:100%;
+max-width:1280px;
+margin:auto;
+padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(11,17,32,.78);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:26px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#e5e7eb;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#fbbf24;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+padding:90px 0 75px;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border-radius:50%;
+background:radial-gradient(circle,#2563eb55,transparent 65%);
+top:-120px;
+left:-150px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border-radius:50%;
+background:radial-gradient(circle,#f59e0b30,transparent 65%);
+right:-140px;
+bottom:-160px;
+}
+
+.hero-grid{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 16px;
+border-radius:40px;
+background:rgba(255,255,255,.08);
+color:#fbbf24;
+border:1px solid rgba(255,255,255,.08);
+margin-bottom:18px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:56px;
+line-height:1.15;
+margin-bottom:16px;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+color:#cbd5e1;
+font-size:18px;
+line-height:1.8;
+margin-bottom:28px;
+max-width:650px;
+}
+
+.btn-wrap{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-block;
+padding:14px 22px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+}
+
+.primary{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+.secondary{
+border:1px solid rgba(255,255,255,.1);
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
+border-radius:24px;
+padding:28px;
+}
+
+.hero-card h3{
+margin-bottom:18px;
+font-size:22px;
+}
+
+.quick-list{
+display:grid;
+gap:14px;
+}
+
+.quick-item{
+padding:15px;
+border-radius:14px;
+background:rgba(255,255,255,.05);
+}
+section{
+padding:70px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:14px;
+}
+
+.section-sub{
+text-align:center;
+color:#94a3b8;
+max-width:760px;
+margin:0 auto 42px;
+line-height:1.8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+.card{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+border-radius:22px;
+padding:28px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#fbbf24;
+}
+
+.icon{
+font-size:34px;
+margin-bottom:14px;
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.card p,
+.card li{
+color:#94a3b8;
+line-height:1.8;
+font-size:15px;
+}
+
+.card ul{
+padding-left:18px;
+margin-top:8px;
+}
+
+/* PROCESS */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.step{
+background:#111827;
+border:1px solid rgba(255,255,255,.06);
+padding:26px;
+border-radius:22px;
+text-align:center;
+}
+
+.step-no{
+width:52px;
+height:52px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 14px;
+font-weight:800;
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:#111827;
+}
+
+/* FORM */
+
+.form-box{
+max-width:720px;
+margin:auto;
+background:#111827;
+padding:28px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+input,select,textarea{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.08);
+background:#0f172a;
+color:#fff;
+font-family:'Poppins',sans-serif;
+margin-bottom:14px;
+}
+
+textarea{
+min-height:130px;
+resize:vertical;
+}
+
+/* COVERAGE */
+
+.coverage{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.tag{
+padding:10px 16px;
+border-radius:30px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#1d4ed8,#1e3a8a);
+border-radius:28px;
+padding:50px 30px;
+text-align:center;
+}
+
+.cta h2{
+font-size:38px;
+margin-bottom:12px;
+}
+
+.cta p{
+color:#dbeafe;
+margin-bottom:24px;
+}
+
+/* FOOTER */
+
+footer{
+padding:35px 0;
+border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
+color:#94a3b8;
+}
+
+.float-wa{
+position:fixed;
+right:18px;
+bottom:18px;
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+background:#25D366;
+color:#fff;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* MOBILE */
+
+@media(max-width:980px){
+.hero-grid{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:44px;
+}
+}
+
+@media(max-width:768px){
+
+.logo{
+font-size:26px;
+}
+
+nav ul{
+gap:14px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section-title{
+font-size:30px;
+}
+
+.cta h2{
+font-size:28px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo"><a href="/">Shree<span>Hub</span></a></div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shop/">Shop</a></li>
+<li><a href="/wholesale/" class="active">Supply</a></li>
+<li><a href="/tools/">Tools</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">Shree Collection • Bulk Orders Welcome</div>
+
+<h1>Wholesale & <span>Retail Supply</span></h1>
+
+<p>
+Reliable supply partner for gift shops, event planners, resellers and retail customers. Get quality products, custom sourcing and competitive pricing.
+</p>
+
+<div class="btn-wrap">
+<a href="#inquiry" class="btn primary">Get Quote</a>
+<a href="https://wa.me/919886901584" target="_blank" class="btn secondary">WhatsApp</a>
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Popular Supply Categories</h3>
+
+<div class="quick-list">
+<div class="quick-item">🎁 Gift Items & Return Gifts</div>
+<div class="quick-item">🖼 Photo Frames & Decor</div>
+<div class="quick-item">🎈 Party Supplies & Events</div>
+<div class="quick-item">📦 Shop Stock & Bulk Orders</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">What We Supply</h2>
+<p class="section-sub">
+High-demand categories for retailers, resellers and celebrations.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎁</div>
+<h3>Gift Items</h3>
+<p>Birthday gifts, couple gifts, return gifts and seasonal gifting products.</p>
+</div>
+
+<div class="card">
+<div class="icon">🖼</div>
+<h3>Photo Frames</h3>
+<p>Custom frames, crystal frames, religious frames and decorative frames.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎈</div>
+<h3>Party Supplies</h3>
+<p>Balloons, candles, banners and event decoration essentials.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏠</div>
+<h3>Home Decor</h3>
+<p>Decor items, utility products and attractive display pieces.</p>
+</div>
+
+<div class="card">
+<div class="icon">🧸</div>
+<h3>Toys & Kids</h3>
+<p>Trending toys, teddies and fun products for children.</p>
+</div>
+
+<div class="card">
+<div class="icon">👜</div>
+<h3>Accessories</h3>
+<p>Bags, utility products and lifestyle accessories.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">How It Works</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-no">1</div>
+<h3>Send Requirement</h3>
+<p>Tell us products, quantity and city.</p>
+</div>
+
+<div class="step">
+<div class="step-no">2</div>
+<h3>Receive Quote</h3>
+<p>We share pricing and availability quickly.</p>
+</div>
+
+<div class="step">
+<div class="step-no">3</div>
+<h3>Confirm Order</h3>
+<p>Approve items and finalize order details.</p>
+</div>
+
+<div class="step">
+<div class="step-no">4</div>
+<h3>Dispatch Supply</h3>
+<p>Fast and safe shipment support.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+<section>
+<div class="container">
+
+<h2 class="section-title">Why Choose Us</h2>
+<p class="section-sub">
+Built for repeat buyers, growing shops and customers who need dependable supply.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">💰</div>
+<h3>Competitive Pricing</h3>
+<p>Strong value for wholesale buyers and fair retail rates.</p>
+</div>
+
+<div class="card">
+<div class="icon">⭐</div>
+<h3>Quality Focus</h3>
+<p>Products selected for demand, finish and customer satisfaction.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚚</div>
+<h3>Fast Dispatch</h3>
+<p>Quick order handling with practical shipping support.</p>
+</div>
+
+<div class="card">
+<div class="icon">🤝</div>
+<h3>Long-Term Support</h3>
+<p>Reliable sourcing for repeat business and seasonal needs.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Custom Sourcing</h3>
+<p>Need specific items? We can help arrange supply options.</p>
+</div>
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>Reseller Friendly</h3>
+<p>Useful for shops, online sellers and local resellers.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Cities We Serve</h2>
+<p class="section-sub">
+Serving Bihar and expanding supply support to more locations.
+</p>
+
+<div class="coverage">
+<div class="tag">Patna</div>
+<div class="tag">Darbhanga</div>
+<div class="tag">Muzaffarpur</div>
+<div class="tag">Samastipur</div>
+<div class="tag">Madhubani</div>
+<div class="tag">Sitamarhi</div>
+<div class="tag">Begusarai</div>
+<div class="tag">Across India</div>
+</div>
+
+</div>
+</section>
+
+<section id="inquiry">
+<div class="container">
+
+<h2 class="section-title">Bulk Inquiry Form</h2>
+<p class="section-sub">
+Send your requirement instantly on WhatsApp.
+</p>
+
+<div class="form-box">
+
+<div class="row">
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+</div>
+
+<div class="row">
+<input type="text" id="business" placeholder="Shop / Business Name">
+<select id="buyerType">
+<option>Wholesale Buyer</option>
+<option>Retail Customer</option>
+<option>Reseller</option>
+<option>Event Planner</option>
+</select>
+</div>
+
+<input type="text" id="city" placeholder="City">
+
+<textarea id="requirement" placeholder="Products needed, quantity, budget, delivery details"></textarea>
+
+<a href="javascript:void(0)" onclick="sendInquiry()" class="btn primary" style="width:100%;text-align:center;">
+Send Inquiry
+</a>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="cta">
+<h2>Need Fast Supply Support?</h2>
+<p>
+Chat with Shree Collection for pricing, stock availability and custom bulk sourcing.
+</p>
+
+<a href="https://wa.me/919886901584" target="_blank" class="btn primary">Contact on WhatsApp</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 ShreeHub.com • Shree Collection Wholesale & Retail Supply
+</div>
+</footer>
+
+<a href="https://wa.me/919886901584" target="_blank" class="float-wa">💬</a>
+
+<script>
+function sendInquiry(){
+
+const name = document.getElementById("name").value.trim();
+const phone = document.getElementById("phone").value.trim();
+const business = document.getElementById("business").value.trim();
+const buyerType = document.getElementById("buyerType").value;
+const city = document.getElementById("city").value.trim();
+const requirement = document.getElementById("requirement").value.trim();
+
+const msg =
+"Wholesale / Retail Inquiry:%0A" +
+"Name: " + name + "%0A" +
+"Phone: " + phone + "%0A" +
+"Business: " + business + "%0A" +
+"Buyer Type: " + buyerType + "%0A" +
+"City: " + city + "%0A" +
+"Requirement: " + requirement;
+
+window.open(
+"https://wa.me/919886901584?text=" + msg,
+"_blank"
+);
+
+}
+</script>
+
+</body>
+</html>
